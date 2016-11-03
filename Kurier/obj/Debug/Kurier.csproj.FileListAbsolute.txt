@@ -1,0 +1,10 @@
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\TestAPSNET.dll.config
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\TestAPSNET.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\TestAPSNET.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\TestAPSNET.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\TestAPSNET.pdb
