@@ -98,6 +98,8 @@
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Views\IVCentralaKurierzy.cs" />
     <Compile Include="Views\IVCentralaLogowanie.cs" />
+    <Compile Include="Views\IVCentralaPaczki.cs" />
+    <Compile Include="Views\IVCentralaSamochody.cs" />
     <Compile Include="Views\IVCentralaStatystyka.cs" />
     <Compile Include="Views\IView.cs" />
     <Compile Include="Views\IVKurier.cs" />
