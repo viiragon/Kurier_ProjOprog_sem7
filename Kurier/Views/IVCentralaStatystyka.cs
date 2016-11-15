@@ -9,9 +9,9 @@ namespace Kurier.Views
 {
     interface IVCentralaStatystyka
     {
-        void wyswietlOknoNajczestszychObszarowPaczek(Models.StatystykaObszaru statystyka);
-        void wyswietlOknoObciazeniaKurierow(Models.ObciazenieKurierow statystyka);
-        void wyswietlOknoStatystykPaczek(Models.StatystykaPaczek statystyka);
+        void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka);
+        void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka);
+        void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka);
         void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka);
     }
 }

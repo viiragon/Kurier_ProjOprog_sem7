@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Kurier.Models.DTO;
-
-namespace Kurier.Models
+﻿namespace Kurier.Models.DTO
 {
     public class StatystykaPaczek
     {
