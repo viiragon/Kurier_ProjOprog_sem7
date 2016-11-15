@@ -8,7 +8,7 @@ namespace Kurier.Models.DTO
   public class DaneKuriera : DaneUzytkownika
   {
     public int NumerPracowanika { get; set; }
-  //  public DaneUzytkownika DaneUzytkonika { get; set; }
+  
   }
 
 }

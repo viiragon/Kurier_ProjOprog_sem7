@@ -6,7 +6,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Kurier.Models.DTO
 {
-  public class DaneAuth 
+  public class DaneAuth
   {
     private string Login { get; set; }
     public  string Haslo { get; set; }
