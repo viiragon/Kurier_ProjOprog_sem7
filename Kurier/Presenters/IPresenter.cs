@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TestAPSNET.Presenters
+namespace Kurier.Presenters
 {
     public interface IPresenter
     {

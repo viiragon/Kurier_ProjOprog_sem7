@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kurier.Models.DTO;
 
-namespace TestAPSNET.Views
+namespace Kurier.Views
 {
     interface IVCentralaSamochody
     {
-        void aktualizujOknoSzczegolowSamochodu(Models.DaneSamochodu samochod);
+        void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod);
         void wyswietlOknoDodawaniaSamochodu();
-        void wyswietlOknoListySamochodow(Models.DaneSamochodu[] lista);
-        void wyswietlOknoSzczegolowSamochodu(Models.DaneSamochodu samochod);
-        void wyswietlOknoWysylaniaZleceniaDoSerwisu(Models.DaneSamochodu samochod);
+        void wyswietlOknoListySamochodow(DaneSamochodu[] lista);
+        void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod);
+        void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod);
     }
 }

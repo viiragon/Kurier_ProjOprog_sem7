@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestAPSNET
+namespace Kurier
 {
 
 

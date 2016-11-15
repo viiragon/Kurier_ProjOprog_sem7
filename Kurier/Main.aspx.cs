@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TestAPSNET
+namespace Kurier
 {
     public partial class View : System.Web.UI.Page
     {

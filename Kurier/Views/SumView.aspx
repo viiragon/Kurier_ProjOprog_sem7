@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SumView.aspx.cs" Inherits="TestAPSNET.SumView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SumView.aspx.cs" Inherits="Kurier.SumView" %>
 
 <!DOCTYPE html>
 

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestAPSNET</RootNamespace>
-    <AssemblyName>TestAPSNET</AssemblyName>
+    <RootNamespace>Kurier</RootNamespace>
+    <AssemblyName>Kurier</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -55,6 +55,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -93,16 +94,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DaneKuriera.cs" />
-    <Compile Include="Models\DanePaczki.cs" />
-    <Compile Include="Models\DaneSamochodu.cs" />
-    <Compile Include="Models\DaneUzytkownika.cs" />
+    <Compile Include="Models\DTO\Adres.cs" />
+    <Compile Include="Models\DTO\DaneKlienta.cs" />
+    <Compile Include="Models\DTO\DaneAuth.cs" />
+    <Compile Include="Models\DTO\Status.cs" />
+    <Compile Include="Models\DTO\DaneKuriera.cs" />
+    <Compile Include="Models\DTO\DanePaczki.cs" />
+    <Compile Include="Models\DTO\DaneSamochodu.cs" />
+    <Compile Include="Models\DTO\DaneUzytkownika.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
-    <Compile Include="Models\ObciazenieKurierow.cs" />
-    <Compile Include="Models\StatystykaKlientow.cs" />
-    <Compile Include="Models\StatystykaObszaru.cs" />
-    <Compile Include="Models\StatystykaPaczek.cs" />
+    <Compile Include="Models\DTO\ObciazenieKurierow.cs" />
+    <Compile Include="Models\DTO\StatystykaKlientow.cs" />
+    <Compile Include="Models\DTO\StatystykaObszaru.cs" />
+    <Compile Include="Models\DTO\StatystykaPaczek.cs" />
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Views\IVCentralaKurierzy.cs" />
     <Compile Include="Views\IVCentralaLogowanie.cs" />

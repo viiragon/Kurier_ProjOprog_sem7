@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Kurier.Models.DTO;
 
-namespace TestAPSNET.Views
+namespace Kurier.Views
 {
     interface IVCentralaPaczki
     {
         void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
-        void wyswietlOknoListyPaczek(Models.DanePaczki[] paczki);
-        void wyswietlOknoSzczegolowPaczki(Models.DanePaczki paczka);
+        void wyswietlOknoListyPaczek(DanePaczki[] paczki);
+        void wyswietlOknoSzczegolowPaczki(DanePaczki paczka);
     }
 }
