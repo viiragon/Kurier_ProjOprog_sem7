@@ -1,4 +1,5 @@
 ﻿using Kurier.Models.DTO.Paczka;
+using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Models.DTO.Statystyka
 {
