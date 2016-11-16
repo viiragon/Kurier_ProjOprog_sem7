@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Kurier.Models.DTO
+namespace Kurier.Models.DTO.Paczka
 {
   public class DanePaczki
   {

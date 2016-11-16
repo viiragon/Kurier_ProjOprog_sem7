@@ -1,4 +1,6 @@
-﻿namespace Kurier.Models.DTO
+﻿using Kurier.Models.DTO.Uzytkownik;
+
+namespace Kurier.Models.DTO.Statystyka
 {
     public class ObciazenieKurierow
     {

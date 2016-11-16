@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kurier.Models.DTO;
+using Kurier.Models.DTO.Paczka;
+using Kurier.Models.DTO.Samochod;
 
 namespace Kurier.Views
 {

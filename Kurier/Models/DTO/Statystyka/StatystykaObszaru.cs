@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Kurier.Models.DTO.Paczka;
 
 
-namespace Kurier.Models.DTO
+namespace Kurier.Models.DTO.Statystyka
 {
     public class StatystykaObszaru
     {

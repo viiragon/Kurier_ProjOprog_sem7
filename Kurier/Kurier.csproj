@@ -108,6 +108,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuthUzytkownika.cs" />
+    <Compile Include="Interfaces\Model\IMPaczki.cs" />
+    <Compile Include="Interfaces\Model\IMUzytkownicy.cs" />
     <Compile Include="Migrations\201611152239291_Initial.cs" />
     <Compile Include="Migrations\201611152239291_Initial.Designer.cs">
       <DependentUpon>201611152239291_Initial.cs</DependentUpon>
@@ -118,20 +124,25 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\DataContext.cs" />
+    <Compile Include="Interfaces\Model\IMSamochody.cs" />
+    <Compile Include="Interfaces\Model\IMKurierzy.cs" />
+    <Compile Include="Models\DataAccess\PaczkaModel.cs" />
+    <Compile Include="Models\DataAccess\SamochodyModel.cs" />
+    <Compile Include="Models\DataAccess\KurierzyModel.cs" />
     <Compile Include="Models\DTO\Adres.cs" />
-    <Compile Include="Models\DTO\DaneKlienta.cs" />
-    <Compile Include="Models\DTO\DaneAuth.cs" />
-    <Compile Include="Models\DTO\Status.cs" />
-    <Compile Include="Models\DTO\DaneKuriera.cs" />
-    <Compile Include="Models\DTO\DanePaczki.cs" />
-    <Compile Include="Models\DTO\DaneSamochodu.cs" />
-    <Compile Include="Models\DTO\DaneUzytkownika.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneKlienta.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneAuth.cs" />
+    <Compile Include="Models\DTO\Paczka\Status.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneKuriera.cs" />
+    <Compile Include="Models\DTO\Paczka\DanePaczki.cs" />
+    <Compile Include="Models\DTO\Samochod\DaneSamochodu.cs" />
+    <Compile Include="Models\DTO\Uzytkownik\DaneUzytkownika.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Model.cs" />
-    <Compile Include="Models\DTO\ObciazenieKurierow.cs" />
-    <Compile Include="Models\DTO\StatystykaKlientow.cs" />
-    <Compile Include="Models\DTO\StatystykaObszaru.cs" />
-    <Compile Include="Models\DTO\StatystykaPaczek.cs" />
+    <Compile Include="Models\DTO\Statystyka\ObciazenieKurierow.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaKlientow.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaObszaru.cs" />
+    <Compile Include="Models\DTO\Statystyka\StatystykaPaczek.cs" />
     <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Views\IVCentralaKurierzy.cs" />
     <Compile Include="Views\IVCentralaLogowanie.cs" />
@@ -168,6 +179,9 @@
     <EmbeddedResource Include="Migrations\201611152253243_Dodanie kuriera do statusu.resx">
       <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,6 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Kurier.Models.DTO;
+using Kurier.Models.DTO.Paczka;
+using Kurier.Models.DTO.Samochod;
+using Kurier.Models.DTO.Uzytkownik;
 using Kurier.Views;
 
 namespace Kurier.Models.Context

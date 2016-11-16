@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Kurier.Models.DTO.Uzytkownik;
 
-namespace Kurier.Models.DTO
+namespace Kurier.Models.DTO.Paczka
 {
   public class Status
   {

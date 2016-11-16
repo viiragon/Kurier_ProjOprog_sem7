@@ -1,4 +1,4 @@
-﻿namespace Kurier.Models.DTO
+﻿namespace Kurier.Models.DTO.Uzytkownik
 {
   public class DaneUzytkownika : DaneAuth
   {

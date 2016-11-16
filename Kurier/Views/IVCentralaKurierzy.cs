@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kurier.Models.DTO;
+using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Views
 {
