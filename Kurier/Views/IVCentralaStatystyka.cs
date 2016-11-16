@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kurier.Models.DTO;
+using Kurier.Models.DTO.Statystyka;
 
-namespace TestAPSNET.Views
+namespace Kurier.Views
 {
     interface IVCentralaStatystyka
     {
-        void wyswietlOknoNajczestszychObszarowPaczek(Models.StatystykaObszaru statystyka);
-        void wyswietlOknoObciazeniaKurierow(Models.ObciazenieKurierow statystyka);
-        void wyswietlOknoStatystykPaczek(Models.StatystykaPaczek statystyka);
-        void wyswietlOknoNajczestszychKlientow(Models.StatystykaKlientow statystyka);
+        void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka);
+        void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka);
+        void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka);
+        void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TestAPSNET.Models
+namespace Kurier.Models
 {
     public class Model : IModel
     {

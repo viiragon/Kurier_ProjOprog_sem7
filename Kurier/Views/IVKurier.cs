@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kurier.Models.DTO;
+using Kurier.Models.DTO.Paczka;
+using Kurier.Models.DTO.Samochod;
 
-namespace TestAPSNET.Views
+namespace Kurier.Views
 {
     interface IVKurier
     {
@@ -12,8 +15,8 @@ namespace TestAPSNET.Views
         void wyswietlFormularzLogowaniaJakoKurier();
         void wyswietlKomunikatOBlednychDanychLogowania();
         void wyswietlOknoKolejnegoPrzegladu(DateTime data);
-        void wyswietlOknoListyZlecenKuriera(Models.DanePaczki[] zlecenia);
-        void wyswietlOknoPrzypisanegoSamochodu(Models.DaneSamochodu samochod);
-        void wyswietlOknoWydaniaPaczki(Models.DanePaczki paczki);
+        void wyswietlOknoListyZlecenKuriera(DanePaczki[] zlecenia);
+        void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod);
+        void wyswietlOknoWydaniaPaczki(DanePaczki paczki);
     }
 }
