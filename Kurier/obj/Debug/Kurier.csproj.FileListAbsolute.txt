@@ -19,3 +19,4 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsof
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.dll
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.migration3.resources

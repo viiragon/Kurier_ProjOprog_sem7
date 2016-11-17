@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="Kurier.MainLauncher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuGlowneCentrala.aspx.cs" Inherits="Kurier.Views.Menu.MenuGlowneCentrala" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Button Text="CENTRALA" OnClick="onClickBtCentrala" runat="server"/>
+    
     </div>
     </form>
 </body>

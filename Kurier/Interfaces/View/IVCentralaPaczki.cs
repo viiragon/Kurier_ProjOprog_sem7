@@ -5,7 +5,7 @@ using System.Web;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Paczka;
 
-namespace Kurier.Views
+namespace Kurier.Interfaces.View
 {
     interface IVCentralaPaczki
     {

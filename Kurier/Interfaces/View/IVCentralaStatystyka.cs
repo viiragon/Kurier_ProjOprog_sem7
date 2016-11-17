@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Statystyka;
 
-namespace Kurier.Views
+namespace Kurier.Interfaces.View
 {
     interface IVCentralaStatystyka
     {

@@ -101,19 +101,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SumView.aspx" />
+    <Content Include="Views\Menu\LogowanieCentrali.aspx" />
+    <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
+    <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Presenter\ICMKurierzy.cs" />
+    <Compile Include="Interfaces\Presenter\ICMStatystyka.cs" />
+    <Compile Include="Interfaces\Presenter\ICMLogowanie.cs" />
     <Compile Include="Interfaces\Model\IMStatystyka.cs" />
     <Compile Include="Migrations\201611162126157_migration3.cs" />
     <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Context\AplicationInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
@@ -143,28 +147,39 @@
     <Compile Include="Models\DTO\Paczka\DanePaczki.cs" />
     <Compile Include="Models\DTO\Samochod\DaneSamochodu.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneUzytkownika.cs" />
-    <Compile Include="Models\IModel.cs" />
-    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\DTO\Statystyka\ObciazenieKurierow.cs" />
     <Compile Include="Models\DTO\Statystyka\StatystykaKlientow.cs" />
     <Compile Include="Models\DTO\Statystyka\StatystykaObszaru.cs" />
     <Compile Include="Models\DTO\Statystyka\StatystykaPaczek.cs" />
-    <Compile Include="Presenters\IPresenter.cs" />
-    <Compile Include="Views\IVCentralaKurierzy.cs" />
-    <Compile Include="Views\IVCentralaLogowanie.cs" />
-    <Compile Include="Views\IVCentralaPaczki.cs" />
-    <Compile Include="Views\IVCentralaSamochody.cs" />
-    <Compile Include="Views\IVCentralaStatystyka.cs" />
-    <Compile Include="Views\IView.cs" />
-    <Compile Include="Views\IVKurier.cs" />
-    <Compile Include="Views\SumView.aspx.cs">
-      <DependentUpon>SumView.aspx</DependentUpon>
+    <Compile Include="Interfaces\View\IVCentralaKurierzy.cs" />
+    <Compile Include="Interfaces\View\IVCentralaLogowanie.cs" />
+    <Compile Include="Interfaces\View\IVCentralaPaczki.cs" />
+    <Compile Include="Interfaces\View\IVCentralaSamochody.cs" />
+    <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
+    <Compile Include="Interfaces\View\IVKurier.cs" />
+    <Compile Include="Views\Menu\LogowanieCentrali.aspx.cs">
+      <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\SumView.aspx.designer.cs">
-      <DependentUpon>SumView.aspx</DependentUpon>
+    <Compile Include="Views\Menu\LogowanieCentrali.aspx.designer.cs">
+      <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\Presenter.cs" />
+    <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.cs">
+      <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.designer.cs">
+      <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\NajczestsiKlienci.aspx.cs">
+      <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
+      <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
+    <Compile Include="Views\Menu\VMenuGlowne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -173,7 +188,7 @@
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewFactory.cs" />
+    <Compile Include="Views\Menu\VLogowanieCentrali.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -189,7 +204,9 @@
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presenters\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
