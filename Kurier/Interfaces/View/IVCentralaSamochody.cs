@@ -8,12 +8,18 @@ using Kurier.Models.DTO.Samochod;
 
 namespace Kurier.Interfaces.View
 {
-    interface IVCentralaSamochody
+    public abstract class IVCentralaSamochody
     {
-        void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod);
-        void wyswietlOknoDodawaniaSamochodu();
-        void wyswietlOknoListySamochodow(DaneSamochodu[] lista);
-        void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod);
-        void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod);
+
+        public static IVCentralaSamochody createInstance()
+        {
+            return new Views.Menu.VCentralaSamochody();
+        }
+
+        public abstract void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod);
+        public abstract void wyswietlOknoDodawaniaSamochodu();
+        public abstract void wyswietlOknoListySamochodow(DaneSamochodu[] lista);
+        public abstract void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod);
+        public abstract void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod);
     }
 }

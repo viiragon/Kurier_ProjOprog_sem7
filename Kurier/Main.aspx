@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <asp:Button Text="CENTRALA" OnClick="onClickBtCentrala" runat="server"/>
+        <asp:Button Text="CENTRALA_SAMOCHODY" OnClick="onClickBtCentralaSamochody" runat="server"/>
     </div>
     </form>
 </body>

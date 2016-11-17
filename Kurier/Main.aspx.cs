@@ -39,5 +39,10 @@ namespace Kurier
         {
             Interfaces.View.IVCentralaLogowanie.createInstance().wyswietlFormularzLogowania();
         }
+
+        protected void onClickBtCentralaSamochody(object sender, EventArgs e)
+        {
+            Interfaces.View.IVCentralaSamochody.createInstance().wyswietlOknoDodawaniaSamochodu();
+        }
     }
 }
