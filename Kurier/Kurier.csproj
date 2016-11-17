@@ -101,6 +101,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Menu\CentralaSamochody.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
     <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
@@ -111,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Presenter\ICMKurierzy.cs" />
+    <Compile Include="Interfaces\Presenter\ICMSamochody.cs" />
     <Compile Include="Interfaces\Presenter\ICMStatystyka.cs" />
     <Compile Include="Interfaces\Presenter\ICMLogowanie.cs" />
     <Compile Include="Interfaces\Model\IMStatystyka.cs" />
@@ -157,6 +159,13 @@
     <Compile Include="Interfaces\View\IVCentralaSamochody.cs" />
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
+    <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
+      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentralaSamochody.aspx.designer.cs">
+      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\LogowanieCentrali.aspx.cs">
       <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,6 +187,7 @@
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\VCentralaSamochody.cs" />
     <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
     <Compile Include="Views\Menu\VMenuGlowne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
