@@ -108,6 +108,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Model\IMStatystyka.cs" />
+    <Compile Include="Migrations\201611162126157_migration3.cs" />
+    <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
+      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Context\AplicationInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611152253243_Dodanie kuriera do statusu.resx">
       <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611162126157_migration3.resx">
+      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
