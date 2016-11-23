@@ -19,34 +19,38 @@ namespace KurierTest.Models
       {
         Adres = new Adres()
         {
-          KodPocztowy = "09-201",
+          KodPocztowy = "44-44",
           Miasto = "Sierpc",
           NumerMieszkania = "2",
           Ulica = "Poniatowskiego"
         },
-        Nazwisko = "Kowalski",
-        Imie = "Maciej",
-        NumerPracowanika = 199999
+        Nazwisko = "Mirosławski",
+        Imie = "Stanisław",
+        NumerPracowanika = 100
       };
+
 
       new KurierzyModel().DodajKuriera(daneKuriera);
 
       using (var db = new ApplicationContext())
       {
+        var x = db.Kurierzy.ToList();
+
         pobraneDaneKuriera = db.Kurierzy.FirstOrDefault(
-          p => p.Imie == "Maciej"
-        && p.Nazwisko == "Kowalski"
-        && p.Adres.KodPocztowy == "09-201"
+          p => p.Imie == "Stanisław"
+        && p.Nazwisko == "Mirosławski"
+        && p.Adres.KodPocztowy == "44-44"
         && p.Adres.Miasto == "Sierpc"
           && p.Adres.NumerMieszkania == "2"
           && p.Adres.Ulica == "Poniatowskiego"
-          && p.NumerPracowanika == 199999
+          && p.NumerPracowanika == 100
         );
       }
 
       Assert.IsNotNull(pobraneDaneKuriera);
       using (var db = new ApplicationContext())
       {
+        db.Kurierzy.Attach(pobraneDaneKuriera);
         db.Kurierzy.Remove(pobraneDaneKuriera);
         db.SaveChanges();
       }
