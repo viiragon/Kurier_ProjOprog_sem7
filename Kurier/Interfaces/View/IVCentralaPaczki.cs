@@ -7,10 +7,14 @@ using Kurier.Models.DTO.Paczka;
 
 namespace Kurier.Interfaces.View
 {
-    interface IVCentralaPaczki
+    public abstract class IVCentralaPaczki
     {
-        void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
-        void wyswietlOknoListyPaczek(DanePaczki[] paczki);
-        void wyswietlOknoSzczegolowPaczki(DanePaczki paczka);
+        public static IVCentralaPaczki createInstance(Presenter.ICMPaczki paczkiP)
+        {
+            throw new NotImplementedException();
+        }
+        public abstract void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
+        public abstract void wyswietlOknoListyPaczek(DanePaczki[] paczki);
+        public abstract void wyswietlOknoSzczegolowPaczki(DanePaczki paczka);
     }
 }

@@ -113,13 +113,22 @@
   <ItemGroup>
     <Compile Include="Interfaces\Presenter\ICMKurierzy.cs" />
     <Compile Include="Interfaces\Presenter\ICMSamochody.cs" />
+    <Compile Include="Interfaces\Presenter\ICMPaczki.cs" />
     <Compile Include="Interfaces\Presenter\ICMStatystyka.cs" />
     <Compile Include="Interfaces\Presenter\ICMLogowanie.cs" />
     <Compile Include="Interfaces\Model\IMStatystyka.cs" />
+    <Compile Include="Interfaces\Presenter\IPKlient.cs" />
+    <Compile Include="Interfaces\Presenter\IPKurier.cs" />
+    <Compile Include="Interfaces\View\IVKlient.cs" />
     <Compile Include="Migrations\201611162126157_migration3.cs" />
     <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611231857200_migracja4.cs" />
+    <Compile Include="Migrations\201611231857200_migracja4.Designer.cs">
+      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
@@ -135,7 +144,7 @@
       <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Context\DataContext.cs" />
+    <Compile Include="Models\Context\ApplicationContext.cs" />
     <Compile Include="Interfaces\Model\IMSamochody.cs" />
     <Compile Include="Interfaces\Model\IMKurierzy.cs" />
     <Compile Include="Models\DataAccess\PaczkaModel.cs" />
@@ -159,6 +168,7 @@
     <Compile Include="Interfaces\View\IVCentralaSamochody.cs" />
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
+    <Compile Include="Presenters\Atrapa.cs" />
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,7 +203,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -213,10 +222,11 @@
     <EmbeddedResource Include="Migrations\201611162126157_migration3.resx">
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611231857200_migracja4.resx">
+      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

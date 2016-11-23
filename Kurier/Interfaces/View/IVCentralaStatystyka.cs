@@ -8,11 +8,15 @@ using Kurier.Models.DTO.Statystyka;
 
 namespace Kurier.Interfaces.View
 {
-    interface IVCentralaStatystyka
+    public abstract class IVCentralaStatystyka
     {
-        void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka);
-        void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka);
-        void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka);
-        void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka);
+        public static IVCentralaStatystyka createInstance(Interfaces.Presenter.ICMStatystyka statystykaP)
+        {
+            return new Views.Menu.VCentralaStatystyka(statystykaP);
+        }
+        public abstract void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka);
+        public abstract void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka);
+        public abstract void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka);
+        public abstract void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka);
     }
 }

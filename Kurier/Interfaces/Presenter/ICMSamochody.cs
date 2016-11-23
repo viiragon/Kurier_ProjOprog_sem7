@@ -5,17 +5,17 @@ using System.Web;
 
 namespace Kurier.Interfaces.Presenter
 {
-    public abstract class ICMSamochody
+    public interface ICMSamochody
     {
-        public abstract void wybranoAktualizujSzczegolySamochodu(int id);
-        public abstract void wybranoDodajSamochod();
-        public abstract void wybranoOtworzFormularzZleceniaDoSerwisu(int id);
-        public abstract void wybranoPokazListeSamochodow();
-        public abstract void wybranoPokazSzczegolySamochodu(int id);
-        public abstract void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu);
-        public abstract void wybranoUsunSamochod(int id);
-        public abstract void wybranoWyslijZlecenieDoSerwisu();
-        public abstract void wybranoZapiszNowySamochod(Models.DTO.Samochod.DaneSamochodu dane);
-        public abstract void wybranoZapiszPowiazanieKurieraZSamochodem(int idKuriera);
+        void wybranoAktualizujSzczegolySamochodu(int id);
+        void wybranoDodajSamochod();
+        void wybranoOtworzFormularzZleceniaDoSerwisu(int id);
+        void wybranoPokazListeSamochodow();
+        void wybranoPokazSzczegolySamochodu(int id);
+        void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu);
+        void wybranoUsunSamochod(int id);
+        void wybranoWyslijZlecenieDoSerwisu();
+        void wybranoZapiszNowySamochod(Models.DTO.Samochod.DaneSamochodu dane);
+        void wybranoZapiszPowiazanieKurieraZSamochodem(int idKuriera);
     }
 }

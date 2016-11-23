@@ -5,12 +5,12 @@ using System.Web;
 
 namespace Kurier.Interfaces.Presenter
 {
-    public abstract class ICMKurierzy
+    public interface ICMKurierzy
     {
-        public abstract void wybranoDodajKuriera();
-        public abstract void wybranoEdytujKuriera(int id);
-        public abstract void wybranoPokazListeKurierow();
-        public abstract void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
-        public abstract void wybranoZapiszNowegoKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
+        void wybranoDodajKuriera();
+        void wybranoEdytujKuriera(int id);
+        void wybranoPokazListeKurierow();
+        void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
+        void wybranoZapiszNowegoKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
     }
 }

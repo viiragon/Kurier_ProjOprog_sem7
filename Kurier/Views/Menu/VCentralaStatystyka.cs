@@ -10,16 +10,22 @@ namespace Kurier.Views.Menu
     public class VCentralaStatystyka : Interfaces.View.IVCentralaStatystyka
     {
         private NajczestsiKlienci klienci;
+        private Interfaces.Presenter.ICMStatystyka statystykaP;
+
+        public VCentralaStatystyka(Interfaces.Presenter.ICMStatystyka statystykaP)
+        {
+            this.statystykaP = statystykaP;
+        }
 
         public void setNajczestsiKlienci(NajczestsiKlienci klienci)
         {
             this.klienci = klienci;
         }
 
-        public void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka) { }
-        public void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka) { }
-        public void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka) { }
-        public void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka)
+        public override void wyswietlOknoNajczestszychObszarowPaczek(StatystykaObszaru statystyka) { }
+        public override void wyswietlOknoObciazeniaKurierow(ObciazenieKurierow statystyka) { }
+        public override void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka) { }
+        public override void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka)
         {
             NajczestsiKlienci.wyswietlOkno(this);
         }

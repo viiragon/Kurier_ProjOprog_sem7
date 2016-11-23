@@ -8,9 +8,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <div>
+            <p>
+                Zalogowano jako : <asp:Label ID="lUser" runat="server"></asp:Label>
+                <asp:Button Text="Wyloguj" OnClick="onClickBtWyloguj" runat="server" />
+            </p>
+            <h1>Menu</h1>
+            <p>
+                <asp:Button Text="Lista Kurierów" OnClick="onClickBtListaKurierow" runat="server" />
+            </p>
+            <p>
+                <asp:Button Text="Lista Paczek" OnClick="onClickBtListaPaczek" runat="server" />
+            </p>
+            <p>
+                <asp:Button Text="Lista Samochodów" OnClick="onClickBtListaSamochodow" runat="server" />
+            </p>
+            <p>
+                <asp:Button Text="Najczęstsi klienci" OnClick="onClickBtNajczestsiKlienci" runat="server" />
+            </p>
+        </div>
     </form>
 </body>
 </html>

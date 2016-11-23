@@ -11,11 +11,10 @@ namespace Kurier.Interfaces.View
     public abstract class IVCentralaSamochody
     {
 
-        public static IVCentralaSamochody createInstance()
+        public static IVCentralaSamochody createInstance(Presenter.ICMSamochody samochodyP)
         {
-            return new Views.Menu.VCentralaSamochody();
+            return new Views.Menu.VCentralaSamochody(samochodyP);
         }
-
         public abstract void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod);
         public abstract void wyswietlOknoDodawaniaSamochodu();
         public abstract void wyswietlOknoListySamochodow(DaneSamochodu[] lista);

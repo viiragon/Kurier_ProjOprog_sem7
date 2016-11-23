@@ -11,13 +11,19 @@
         <div>
             <h1>LOGOWANIE</h1>
             <p>
-                Login : <asp:TextBox runat="server"></asp:TextBox>
+                <asp:Label ID="lError" runat="server"></asp:Label>    
             </p>
             <p>
-                Hasło : <asp:TextBox type="password" runat="server"></asp:TextBox>
+                Login : <asp:TextBox ID="tbLogin" runat="server"></asp:TextBox>
+            </p>
+            <p>
+                Hasło : <asp:TextBox ID="tbPassword" type="password" runat="server"></asp:TextBox>
             </p>
             <p>
                 <asp:Button Text="Zaloguj" OnClick="onClickBtLogin" runat="server"/>
+            </p>
+            <p>
+                <asp:Button Text="Hakuj System" OnClick="onClickBtHack" runat="server"/>
             </p>
         </div>
     </form>

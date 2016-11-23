@@ -9,14 +9,18 @@ using Kurier.Models.DTO.Samochod;
 
 namespace Kurier.Interfaces.View
 {
-    interface IVKurier
+    public abstract class IVKurier
     {
-        void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
-        void wyswietlFormularzLogowaniaJakoKurier();
-        void wyswietlKomunikatOBlednychDanychLogowania();
-        void wyswietlOknoKolejnegoPrzegladu(DateTime data);
-        void wyswietlOknoListyZlecenKuriera(DanePaczki[] zlecenia);
-        void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod);
-        void wyswietlOknoWydaniaPaczki(DanePaczki paczki);
+        public static IVKurier createInstance(Presenter.IPKurier kurierP)
+        {
+            throw new NotImplementedException();
+        }
+        public abstract void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
+        public abstract void wyswietlFormularzLogowaniaJakoKurier();
+        public abstract void wyswietlKomunikatOBlednychDanychLogowania();
+        public abstract void wyswietlOknoKolejnegoPrzegladu(DateTime data);
+        public abstract void wyswietlOknoListyZlecenKuriera(DanePaczki[] zlecenia);
+        public abstract void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod);
+        public abstract void wyswietlOknoWydaniaPaczki(DanePaczki paczki);
     }
 }
