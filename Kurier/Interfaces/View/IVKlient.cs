@@ -10,7 +10,7 @@ namespace Kurier.Interfaces.View
     {
         public static IVKlient createInstance(Presenter.IPKlient klientP)
         {
-            throw new NotImplementedException();
+            return new Views.Menu.VKlient(klientP);
         }
         public abstract void wyswietlFormularzLogowaniaKlienta();
         public abstract void wyswietlFormularzNadaniaPaczki();
