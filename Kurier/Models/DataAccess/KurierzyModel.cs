@@ -14,46 +14,42 @@ namespace Kurier.Models.DataAccess
 {
   public class KurierzyModel : IMKurierzy
   {
+    private ApplicationContext _context;
+
+    public KurierzyModel()
+    {
+      _context=new ApplicationContext();
+    }
+
+    public KurierzyModel(ApplicationContext context)
+    {
+      _context = context;
+    }
 
     public void DodajKuriera(DaneKuriera kurier)
     {
-      using (var db = new ApplicationContext())
-      {
-        db.Kurierzy.Add(kurier);
-        db.SaveChanges();
-      }
+        _context.Kurierzy.Add(kurier);
+        _context.SaveChanges();
     }
 
     public DaneKuriera PobierzKuriera(int id)
     {
-      using (var db = new ApplicationContext())
-      {
-        return db.Kurierzy.Find(id);
-      }
+        return _context.Kurierzy.FirstOrDefault(p=>p.Id==id);
     }
 
     public List<DaneKuriera> PobierzListeKurierow()
-    {
-      using (var db = new ApplicationContext())
-      {
-        return db.Kurierzy.ToList();
-      }
+    { 
+        return _context.Kurierzy.ToList();
     }
 
     public List<DanePaczki> PobierzListePaczekKuriera(int idKuriera)
     {
-      using (var db = new ApplicationContext())
-      {
-        return db.Paczki.Where(p=>p.Status.Kurier.Id==idKuriera).ToList();
-      }
+        return _context.Paczki.Where(p=>p.Status!=null).Where(p=>p.Status.Kurier!=null).Where(p=>p.Status.Kurier.Id==idKuriera).ToList();
     }
 
-    public DaneSamochodu PobierzSamochodKuriera(int id)
+    public DaneSamochodu PobierzSamochodKuriera(int idKuriera)
     {
-      using (var db = new ApplicationContext())
-      {
-        return db.Samochody.Find(id);
-      }
+        return _context.Samochody.Where(p=>p.Kurier!=null).FirstOrDefault(p=>p.Kurier.Id==idKuriera);
     }
 
     //TODO: zaimplementoiwać walidację

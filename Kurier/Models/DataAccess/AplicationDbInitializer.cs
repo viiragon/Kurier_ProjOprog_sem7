@@ -24,7 +24,6 @@ namespace Kurier.Models.DataAccess
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        NumerPracowanika = 199999
       };
       DaneKuriera daneKuriera2 = new DaneKuriera()
       {
