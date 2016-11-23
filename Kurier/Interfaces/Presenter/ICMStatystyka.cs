@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Kurier.Interfaces.Presenter
 {
-    public abstract class ICMStatystyka
+    public interface ICMStatystyka
     {
-        public abstract void wybranoPokazNajczestszeObszaryPaczek();
-        public abstract void wybranoPokazNajczestszychKlientow();
-        public abstract void wybranoPokazObciazenieKurierow();
-        public abstract void wybranoPokazStatystykiPaczek();
+        void wybranoPokazNajczestszeObszaryPaczek();
+        void wybranoPokazNajczestszychKlientow();
+        void wybranoPokazObciazenieKurierow();
+        void wybranoPokazStatystykiPaczek();
     }
 }

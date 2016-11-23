@@ -9,6 +9,12 @@ namespace Kurier.Views.Menu
     public class VCentralaSamochody : Interfaces.View.IVCentralaSamochody
     {
         private CentralaSamochody centralaSamochody;
+        private Interfaces.Presenter.ICMSamochody samochodyP;
+
+        public VCentralaSamochody(Interfaces.Presenter.ICMSamochody samochodyP)
+        {
+            this.samochodyP = samochodyP;
+        }
 
         public void setCentralaSamochody(CentralaSamochody centralaSamochody)
         {

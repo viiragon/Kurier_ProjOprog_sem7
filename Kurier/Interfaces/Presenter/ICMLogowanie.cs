@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Kurier.Interfaces.Presenter
 {
-    public abstract class ICMStatystyka
+    public interface ICMLogowanie
     {
-        public abstract void wybranoWylogujZCentrali();
-        public abstract void wybranoZalogujDoCentrali(Models.DTO.Uzytkownik.DaneAuthUzytkownika dane);
+        void wybranoWylogujZCentrali();
+        void wybranoZalogujDoCentrali(Models.DTO.Uzytkownik.DaneAuthUzytkownika dane);
     }
 }

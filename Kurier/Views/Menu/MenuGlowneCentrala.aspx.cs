@@ -10,10 +10,12 @@ namespace Kurier.Views.Menu
     public partial class MenuGlowneCentrala : System.Web.UI.Page
     {
         private static VMenuGlowne controller;
+        private static Models.DTO.Uzytkownik.DaneUzytkownika dane;
 
-        public static void wyswietlOkno(VMenuGlowne caller)
+        public static void wyswietlOkno(VMenuGlowne caller, Models.DTO.Uzytkownik.DaneUzytkownika daneArg)
         {
             controller = caller;
+            dane = daneArg;
             Pages.loadPage("/Views/Menu/MenuGlowneCentrala.aspx");
         }
 
@@ -23,6 +25,31 @@ namespace Kurier.Views.Menu
             if (controller != null) {
                 controller.setMenuGlowneCentrala(this);
             }
+            if (dane != null)
+            {
+                lUser.Text = dane.Imie + " " + dane.Nazwisko;
+            }
+        }
+
+        protected void onClickBtWyloguj(object sender, EventArgs e)
+        {
+            controller.wybranoWyloguj();
+        }
+        protected void onClickBtListaKurierow(object sender, EventArgs e)
+        {
+            controller.wybranoPokazListeKurierow();
+        }
+        protected void onClickBtListaPaczek(object sender, EventArgs e)
+        {
+            controller.wybranoPokazListePaczek();
+        }
+        protected void onClickBtListaSamochodow(object sender, EventArgs e)
+        {
+            controller.wybranoPokazListeSamochodow();
+        }
+        protected void onClickBtNajczestsiKlienci(object sender, EventArgs e)
+        {
+            controller.wybranoPokazNajczeszychKlientow();
         }
     }
 }

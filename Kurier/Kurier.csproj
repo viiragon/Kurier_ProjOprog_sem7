@@ -113,9 +113,13 @@
   <ItemGroup>
     <Compile Include="Interfaces\Presenter\ICMKurierzy.cs" />
     <Compile Include="Interfaces\Presenter\ICMSamochody.cs" />
+    <Compile Include="Interfaces\Presenter\ICMPaczki.cs" />
     <Compile Include="Interfaces\Presenter\ICMStatystyka.cs" />
     <Compile Include="Interfaces\Presenter\ICMLogowanie.cs" />
     <Compile Include="Interfaces\Model\IMStatystyka.cs" />
+    <Compile Include="Interfaces\Presenter\IPKlient.cs" />
+    <Compile Include="Interfaces\Presenter\IPKurier.cs" />
+    <Compile Include="Interfaces\View\IVKlient.cs" />
     <Compile Include="Migrations\201611162126157_migration3.cs" />
     <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
@@ -159,6 +163,7 @@
     <Compile Include="Interfaces\View\IVCentralaSamochody.cs" />
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
+    <Compile Include="Presenters\Atrapa.cs" />
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,9 +219,7 @@
       <DependentUpon>201611162126157_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

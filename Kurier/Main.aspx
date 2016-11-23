@@ -8,10 +8,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:Button Text="CENTRALA" OnClick="onClickBtCentrala" runat="server"/>
-        <asp:Button Text="CENTRALA_SAMOCHODY" OnClick="onClickBtCentralaSamochody" runat="server"/>
-    </div>
+        <div>
+            <p>
+                <asp:Button Text="CENTRALA" OnClick="onClickBtCentrala" runat="server" />
+            </p>
+            <p>
+                <asp:Button Text="KURIER" OnClick="onClickBtKurier" runat="server" />
+            </p>
+            <p>
+                <asp:Button Text="NADAWCA" OnClick="onClickBtNadawca" runat="server" />
+            </p>
+        </div>
     </form>
 </body>
 </html>

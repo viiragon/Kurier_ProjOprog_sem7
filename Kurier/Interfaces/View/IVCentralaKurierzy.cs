@@ -8,12 +8,16 @@ using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Interfaces.View
 {
-    interface IVCentralaKurierzy
+    public abstract class IVCentralaKurierzy
     {
-        void wyswietlFormularzDodawaniaKuriera();
-        void wyswietlFormularzEdycjiKuriera(DaneKuriera kurier);
-        void wyswietlOknoListyKurierow(DaneKuriera[] kurierzy);
-        void wyswietlOknoPrzypisywaniaKurieraDoPaczki(DaneKuriera[] kurierzy);
-        void wyswietlOknoPrzypisywaniaKurieraDoSamochodu(DaneKuriera[] kurierzy);
+        public static IVCentralaKurierzy createInstance(Presenter.ICMKurierzy kurierzyP)
+        {
+            throw new NotImplementedException();
+        }
+        public abstract void wyswietlFormularzDodawaniaKuriera();
+        public abstract void wyswietlFormularzEdycjiKuriera(DaneKuriera kurier);
+        public abstract void wyswietlOknoListyKurierow(DaneKuriera[] kurierzy);
+        public abstract void wyswietlOknoPrzypisywaniaKurieraDoPaczki(DaneKuriera[] kurierzy);
+        public abstract void wyswietlOknoPrzypisywaniaKurieraDoSamochodu(DaneKuriera[] kurierzy);
     }
 }

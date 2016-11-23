@@ -37,12 +37,17 @@ namespace Kurier
 
         protected void onClickBtCentrala(object sender, EventArgs e)
         {
-            Interfaces.View.IVCentralaLogowanie.createInstance().wyswietlFormularzLogowania();
+            Presenters.Atrapa.LOL_TO_JA_XD.startCentrala();
         }
 
-        protected void onClickBtCentralaSamochody(object sender, EventArgs e)
+        protected void onClickBtKurier(object sender, EventArgs e)
         {
-            Interfaces.View.IVCentralaSamochody.createInstance().wyswietlOknoDodawaniaSamochodu();
+            Presenters.Atrapa.LOL_TO_JA_XD.startKurier();
+        }
+
+        protected void onClickBtNadawca(object sender, EventArgs e)
+        {
+            Presenters.Atrapa.LOL_TO_JA_XD.startNadawca();
         }
     }
 }
