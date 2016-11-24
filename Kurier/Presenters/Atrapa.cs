@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Kurier.Interfaces.Presenter;
-<<<<<<< c47f18b4a4f5a1e2d8a076586877782d3e75f0de
 using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Uzytkownik;
-=======
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Paczka;
->>>>>>> Dodanie widoku listy paczek i szczegółów paczek
 
 namespace Kurier.Presenters
 {
@@ -234,9 +231,6 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-
-<<<<<<< c47f18b4a4f5a1e2d8a076586877782d3e75f0de
-
         public void wybranoLogowanieJakoKlient()
         {
             throw new NotImplementedException();
@@ -337,8 +331,6 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-
-=======
         public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera1 = new Models.DTO.Uzytkownik.DaneKuriera()
         {
             Adres = new Adres()
@@ -399,6 +391,5 @@ namespace Kurier.Presenters
             PoczatekObslugi = new DateTime(1990, 10, 10),
             KoniecObslugi = new DateTime(1990, 10, 12)
         };
->>>>>>> Dodanie widoku listy paczek i szczegółów paczek
     }
 }
