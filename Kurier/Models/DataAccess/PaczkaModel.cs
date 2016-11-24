@@ -12,43 +12,45 @@ namespace Kurier.Models.DataAccess
 {
   public class PaczkaModel : IMPaczki
   {
+
+    private ApplicationContext _context;
+
+    public PaczkaModel()
+    {
+      _context = new ApplicationContext();
+    }
+
+    public PaczkaModel(ApplicationContext context)
+    {
+      _context = context;
+    }
+
     public void DodajPaczke(DanePaczki paczka)
     {
-      using (var db = new ApplicationContext())
-      {
-        db.Paczki.Add(paczka);
-        db.SaveChanges();
-      }
+      _context.Paczki.Add(paczka);
+      _context.SaveChanges();
     }
 
     public List<DanePaczki> PobierzListePaczek()
     {
-      using (var db = new ApplicationContext())
-      {
-        return db.Paczki.ToList();
-      }
+      return _context.Paczki.ToList();
     }
 
     public DanePaczki PobierzPaczke(int id)
     {
-      using (var db = new ApplicationContext())
-      {
-        return db.Paczki.Find(id);
-      }
+      return _context.Paczki.FirstOrDefault(p=>p.Id==id);
     }
 
     public void PowiazKurieraIPaczke(int idPaczki, int idKuriera)
     {
-      DaneKuriera kurier = new KurierzyModel().PobierzKuriera(idKuriera);
+      DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
 
-      using (var db = new ApplicationContext())
-      {
-        DanePaczki paczka = db.Paczki.Find(idPaczki);
-        if (paczka != null)
-          paczka.Status.Kurier = kurier;
+      DanePaczki paczka = _context.Paczki.FirstOrDefault(p=>p.Id==idPaczki);
+      if (paczka != null)
+        paczka.Status.Kurier = kurier;
 
-        db.SaveChanges();
-      }
+      _context.SaveChanges();
+
     }
 
     public bool WalidujDanePaczki(DanePaczki paczka)
@@ -56,17 +58,16 @@ namespace Kurier.Models.DataAccess
       throw new NotImplementedException();
     }
 
-    public void ZmienStatusPaczki(Status status,int idPaczki)
+    public void ZmienStatusPaczki(Status status, int idPaczki)
     {
-      using (var db = new ApplicationContext())
+      DanePaczki paczka = _context.Paczki.FirstOrDefault(p=>p.Id==idPaczki);
+      if (paczka != null)
       {
-        DanePaczki paczka = db.Paczki.Find(idPaczki);
-        if (paczka != null)
-        {
-          paczka.Historia.Add(paczka.Status);
-          paczka.Status = status;
-          db.SaveChanges();
-        }
+        if(paczka.Historia==null) 
+          paczka.Historia = new List<Status>();
+        paczka.Historia.Add(paczka.Status);
+        paczka.Status = status;
+        _context.SaveChanges();
       }
     }
   }
