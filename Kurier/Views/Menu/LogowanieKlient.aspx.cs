@@ -65,13 +65,9 @@ namespace Kurier.Views.Menu
             }
         }
 
-        protected void onClickBtHack(object sender, EventArgs e)
+        protected void onClickBtNoLogin(object sender, EventArgs e)
         {
-            controller.wybranoZaloguj("eadam", "natak139m");
-        }
-        protected void onClickBtNadajBezLogowania(object sender, EventArgs e)
-        {
-            controller.wyswietlFormularzNadaniaPaczkiBezLogowania();
+            controller.wybranoNadajBezLogowania();
         }
     }
 }

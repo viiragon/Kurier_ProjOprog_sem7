@@ -23,10 +23,7 @@
                 <asp:Button Text="Zaloguj" OnClick="onClickBtLogin" runat="server"/>
             </p>
             <p>
-                <asp:Button Text="Hakuj System" OnClick="onClickBtHack" runat="server"/>
-            </p>
-            <p>
-                <asp:Button Text="Nadaj bez logowania" OnClick="onClickBtNadajBezLogowania" runat="server"/>
+                <asp:Button Text="Nadaj paczkę bez logowania" OnClick="onClickBtNoLogin" runat="server"/>
             </p>
         </div>
     </form>

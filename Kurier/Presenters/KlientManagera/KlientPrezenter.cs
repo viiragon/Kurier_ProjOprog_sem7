@@ -39,6 +39,11 @@ namespace Kurier.Presenters.KlientManager
             throw new NotImplementedException();
         }
 
+        public void wybranoNadaniePaczkiBezLogowania()
+        {
+            throw new NotImplementedException();
+        }
+
         public void wybranoRejestracjaJakoKlient()
         {
             throw new NotImplementedException();
@@ -63,7 +68,7 @@ namespace Kurier.Presenters.KlientManager
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
                 paczki = mPaczka.PobierzListePaczek().ToArray();
-                ivKlient.wyswietlMenuGlowneKlienta(paczki);
+                ivKlient.wyswietlMenuGlowneKlienta(user, paczki);
             }
             else
             {

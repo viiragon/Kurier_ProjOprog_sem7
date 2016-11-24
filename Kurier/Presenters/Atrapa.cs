@@ -66,7 +66,6 @@ namespace Kurier.Presenters
 
         public void wybranoZalogujDoCentrali(Models.DTO.Uzytkownik.DaneAuthUzytkownika dane)
         {
-            Random r = new Random();
             if (dane.Login.Equals("corzel") && dane.Haslo.Equals("natak139l"))
             {
                 Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
@@ -218,6 +217,8 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
+
+
         public void wybranoLogowanieJakoKlient()
         {
             throw new NotImplementedException();
@@ -225,7 +226,7 @@ namespace Kurier.Presenters
 
         public void wybranoNadaniePaczki()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzNadaniaPaczki();
         }
 
         public void wybranoRejestracjaJakoKlient()
@@ -235,23 +236,58 @@ namespace Kurier.Presenters
 
         public void wybranoWylogujKlienta()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzLogowaniaKlienta();
         }
 
         public void wybranoZalogujMnieJakoKlient(DaneUzytkownika dane)
         {
-            throw new NotImplementedException();
+            if (dane.Login.Equals("eadam") && dane.Haslo.Equals("natak139k"))
+            {
+                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
+                user.Imie = "Ewa";
+                user.Nazwisko = "Adamska";
+                user.Id = 0;
+                user.Telefon = 0700880;
+                user.Uprawnienia = 0;
+                user.Login = dane.Login;
+                user.Haslo = dane.Haslo;
+                ivKlient.wyswietlMenuGlowneKlienta(user, null);
+            }
+            else if (dane.Login.Equals("wkruk") && dane.Haslo.Equals("natak139k"))
+            {
+                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
+                user.Imie = "Wojciech";
+                user.Nazwisko = "Kruk";
+                user.Id = 0;
+                user.Telefon = 0700880;
+                user.Uprawnienia = 0;
+                user.Login = dane.Login;
+                user.Haslo = dane.Haslo;
+                ivKlient.wyswietlMenuGlowneKlienta(user, null);
+            }
+            else
+            {
+                ivKlient.wyswietlKomunikatOBlednychDanychLogowania();
+            }
         }
 
         public void wybranoZapiszDaneNadanejPaczki(DanePaczki paczka)
         {
-            throw new NotImplementedException();
+            //A PO Co?
+            ivKlient.wyswietlKomunikatOPoprawnymNadaniuPaczki();
         }
 
         public void wybranoZarejestrujMnieJakoKlient(DaneKlienta dane)
         {
             throw new NotImplementedException();
         }
+
+        public void wybranoNadaniePaczkiBezLogowania()
+        {
+            ivKlient.wyswietlFormularzNadaniaPaczkiBezLogowania();
+        }
+
+
 
         public void wybranoPokazDateKolejnegoPrzegladu()
         {
@@ -282,5 +318,7 @@ namespace Kurier.Presenters
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

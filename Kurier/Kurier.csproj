@@ -101,11 +101,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Menu\LogowanieKlient.aspx" />
-    <Content Include="Views\Menu\LogowanieKurier.aspx" />
     <Content Include="Views\Menu\CentralaSamochody.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
+    <Content Include="Views\Menu\LogowanieKlient.aspx" />
+    <Content Include="Views\Menu\LogowanieKurier.aspx" />
+    <Content Include="Views\Menu\MenuGlowneNadawcy.aspx" />
     <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
+    <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Web.config">
@@ -171,46 +173,32 @@
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
     <Compile Include="Presenters\Atrapa.cs" />
-    <Compile Include="Presenters\CentralaManager\KurierzyCM\Kurier.cs" />
-    <Compile Include="Presenters\CentralaManager\KurierzyCM\KurierzyPrezenter.cs" />
-    <Compile Include="Presenters\CentralaManager\KurierzyCM\ListaKurierow.cs" />
-    <Compile Include="Presenters\CentralaManager\Logowanie\Logowanie.cs" />
-    <Compile Include="Presenters\CentralaManager\Logowanie\LogowaniePrezenter.cs" />
-    <Compile Include="Presenters\CentralaManager\PaczkiCM\Kurier.cs" />
-    <Compile Include="Presenters\CentralaManager\PaczkiCM\ListaPaczek.cs" />
-    <Compile Include="Presenters\CentralaManager\PaczkiCM\Paczka.cs" />
-    <Compile Include="Presenters\CentralaManager\PaczkiCM\PaczkiPrezenter.cs" />
-    <Compile Include="Presenters\CentralaManager\SamochodyCM\Kurier.cs" />
-    <Compile Include="Presenters\CentralaManager\SamochodyCM\ListaSamochodow.cs" />
-    <Compile Include="Presenters\CentralaManager\SamochodyCM\Samochod.cs" />
-    <Compile Include="Presenters\CentralaManager\SamochodyCM\SamochodyPrezenter.cs" />
-    <Compile Include="Presenters\CentralaManager\SamochodyCM\Serwis.cs" />
-    <Compile Include="Presenters\CentralaManager\StatystykiCM\Klient.cs" />
-    <Compile Include="Presenters\CentralaManager\StatystykiCM\Kurier.cs" />
-    <Compile Include="Presenters\CentralaManager\StatystykiCM\Paczka.cs" />
-    <Compile Include="Presenters\CentralaManager\StatystykiCM\StatystykiPrezenter.cs" />
-    <Compile Include="Presenters\KlientManager\Administracja.cs" />
-    <Compile Include="Presenters\KlientManager\KlientPrezenter.cs" />
-    <Compile Include="Presenters\KlientManager\Paczka.cs" />
-    <Compile Include="Presenters\KurierManager\Administracja.cs" />
-    <Compile Include="Presenters\KurierManager\KurierPrezenter.cs" />
-    <Compile Include="Presenters\KurierManager\ListaZlecen.cs" />
-    <Compile Include="Presenters\KurierManager\Paczka.cs" />
-    <Compile Include="Presenters\KurierManager\Samochod.cs" />
-    <Compile Include="Views\Menu\LogowanieKlient.aspx.cs">
-      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Menu\LogowanieKlient.aspx.designer.cs">
-      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Menu\LogowanieKurier.aspx.cs">
-      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Menu\LogowanieKurier.aspx.designer.cs">
-      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\KurierzyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\KurierzyCM\ListaKurierow.cs" />
+    <Compile Include="Presenters\CentralaManagera\Logowanie\Logowanie.cs" />
+    <Compile Include="Presenters\CentralaManagera\Logowanie\LogowaniePrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\ListaPaczek.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManagera\PaczkiCM\PaczkiPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\ListaSamochodow.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Samochod.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\SamochodyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManagera\SamochodyCM\Serwis.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Klient.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManagera\StatystykiCM\StatystykiPrezenter.cs" />
+    <Compile Include="Presenters\KlientManagera\Administracja.cs" />
+    <Compile Include="Presenters\KlientManagera\KlientPrezenter.cs" />
+    <Compile Include="Presenters\KlientManagera\Paczka.cs" />
+    <Compile Include="Presenters\KurierManagera\Administracja.cs" />
+    <Compile Include="Presenters\KurierManagera\KurierPrezenter.cs" />
+    <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
+    <Compile Include="Presenters\KurierManagera\Paczka.cs" />
+    <Compile Include="Presenters\KurierManagera\Samochod.cs" />
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,12 +213,40 @@
     <Compile Include="Views\Menu\LogowanieCentrali.aspx.designer.cs">
       <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\LogowanieKlient.aspx.cs">
+      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKlient.aspx.designer.cs">
+      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKurier.aspx.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKurier.aspx.designer.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneNadawcy.aspx.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneNadawcy.aspx.designer.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.cs">
       <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.designer.cs">
       <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\NadaniePaczki.aspx.cs">
+      <DependentUpon>NadaniePaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\NadaniePaczki.aspx.designer.cs">
+      <DependentUpon>NadaniePaczki.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>

@@ -16,7 +16,8 @@ namespace Kurier.Interfaces.View
         public abstract void wyswietlFormularzNadaniaPaczki();
         public abstract void wyswietlFormularzNadaniaPaczkiBezLogowania();
         public abstract void wyswietlKomunikatOBlednychDanychLogowania();
-        public abstract void wyswietlMenuGlowneKlienta(Models.DTO.Paczka.DanePaczki[] paczki);
+        public abstract void wyswietlKomunikatOPoprawnymNadaniuPaczki();
+        public abstract void wyswietlMenuGlowneKlienta(Models.DTO.Uzytkownik.DaneUzytkownika klient, Models.DTO.Paczka.DanePaczki[] paczki);
         public abstract void wyswietlOknoRejestracjiKlienta();
     }
 }
