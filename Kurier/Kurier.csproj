@@ -101,6 +101,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Menu\CentralaPaczki.aspx" />
     <Content Include="Views\Menu\CentralaSamochody.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
     <Content Include="Views\Menu\LogowanieKlient.aspx" />
@@ -110,6 +111,7 @@
     <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="Views\Menu\OknoSzczegolowPaczki.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -173,6 +175,7 @@
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
     <Compile Include="Presenters\Atrapa.cs" />
+<<<<<<< c47f18b4a4f5a1e2d8a076586877782d3e75f0de
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\Kurier.cs" />
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\KurierzyPrezenter.cs" />
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\ListaKurierow.cs" />
@@ -199,6 +202,15 @@
     <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
+=======
+    <Compile Include="Views\Menu\CentralaPaczki.aspx.cs">
+      <DependentUpon>CentralaPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentralaPaczki.aspx.designer.cs">
+      <DependentUpon>CentralaPaczki.aspx</DependentUpon>
+    </Compile>
+>>>>>>> Dodanie widoku listy paczek i szczegółów paczek
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +267,14 @@
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\VCentralaPaczki.cs" />
     <Compile Include="Views\Menu\VCentralaSamochody.cs" />
     <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
     <Compile Include="Views\Menu\VKlient.cs" />
