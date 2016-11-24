@@ -175,7 +175,6 @@
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
     <Compile Include="Presenters\Atrapa.cs" />
-<<<<<<< c47f18b4a4f5a1e2d8a076586877782d3e75f0de
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\Kurier.cs" />
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\KurierzyPrezenter.cs" />
     <Compile Include="Presenters\CentralaManagera\KurierzyCM\ListaKurierow.cs" />
@@ -202,7 +201,6 @@
     <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
-=======
     <Compile Include="Views\Menu\CentralaPaczki.aspx.cs">
       <DependentUpon>CentralaPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,7 +208,6 @@
     <Compile Include="Views\Menu\CentralaPaczki.aspx.designer.cs">
       <DependentUpon>CentralaPaczki.aspx</DependentUpon>
     </Compile>
->>>>>>> Dodanie widoku listy paczek i szczegółów paczek
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -283,7 +280,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
