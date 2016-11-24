@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Kurier.Models.DTO.Paczka
 {
@@ -11,5 +12,40 @@ namespace Kurier.Models.DTO.Paczka
     public DateTime KoniecObslugi { get; set; }
     public List<Status> Historia { get; set; }
     public Status Status { get; set; }
+
+    public override bool Equals(object obj)
+    {
+      DanePaczki danePaczkiObj = obj as DanePaczki;
+      if (danePaczkiObj != null)
+      {
+        return Id == danePaczkiObj.Id
+               && Adres == danePaczkiObj.Adres
+               && PoczatekObslugi == danePaczkiObj.PoczatekObslugi
+               && KoniecObslugi == danePaczkiObj.KoniecObslugi
+               && Status == danePaczkiObj.Status
+               ;
+      }
+      else
+        return false;
+    }
+
+    protected bool Equals(DanePaczki other)
+    {
+      return Id == other.Id && Equals(Adres, other.Adres) && PoczatekObslugi.Equals(other.PoczatekObslugi) && KoniecObslugi.Equals(other.KoniecObslugi) && Equals(Historia, other.Historia) && Equals(Status, other.Status);
+    }
+
+    public override int GetHashCode()
+    {
+      unchecked
+      {
+        var hashCode = Id;
+        hashCode = (hashCode*397) ^ (Adres != null ? Adres.GetHashCode() : 0);
+        hashCode = (hashCode*397) ^ PoczatekObslugi.GetHashCode();
+        hashCode = (hashCode*397) ^ KoniecObslugi.GetHashCode();
+        hashCode = (hashCode*397) ^ (Historia != null ? Historia.GetHashCode() : 0);
+        hashCode = (hashCode*397) ^ (Status != null ? Status.GetHashCode() : 0);
+        return hashCode;
+      }
+    }
   }
 }

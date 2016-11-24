@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using Castle.Components.DictionaryAdapter;
 using Kurier.Models.Context;
@@ -34,7 +33,7 @@ namespace KurierTest.Models
         NumerPracowanika = 100
       };
 
-      var context = PobierzContextKurierow(data);
+      var context = MockMainteiner.PobierzContextKurierow(data);
 
       new KurierzyModel(context).DodajKuriera(daneKuriera);
 
@@ -69,7 +68,7 @@ namespace KurierTest.Models
         Id = 10
       };
       var data = new List<DaneKuriera>() { daneKuriera };
-      var context = PobierzContextKurierow(data);
+      var context = MockMainteiner.PobierzContextKurierow(data);
 
       DaneKuriera pobraneDaneKuriera = new KurierzyModel(context).PobierzKuriera(10);
       Assert.AreEqual(pobraneDaneKuriera.NumerPracowanika, 100);
@@ -100,7 +99,7 @@ namespace KurierTest.Models
         Id = 10
       };
       var data = new List<DaneKuriera>() { daneKuriera };
-      var context = PobierzContextKurierow(data);
+      var context = MockMainteiner.PobierzContextKurierow(data);
 
       DaneKuriera pobraneDaneKuriera = new KurierzyModel(context).PobierzKuriera(101);
       Assert.IsNull(pobraneDaneKuriera);
@@ -135,7 +134,7 @@ namespace KurierTest.Models
       };
 
       var data = new List<DaneKuriera>() { daneKuriera1, daneKuriera2 };
-      List<DaneKuriera> list = new KurierzyModel(PobierzContextKurierow(data)).PobierzListeKurierow();
+      List<DaneKuriera> list = new KurierzyModel(MockMainteiner.PobierzContextKurierow(data)).PobierzListeKurierow();
 
       Assert.AreEqual(2, list.Count);
       Assert.AreEqual(list[0].Imie, daneKuriera1.Imie);
@@ -158,7 +157,7 @@ namespace KurierTest.Models
     public void PobierzPustaListeKurierowTest()
     {
       var data = new List<DaneKuriera>();
-      List<DaneKuriera> list = new KurierzyModel(PobierzContextKurierow(data)).PobierzListeKurierow();
+      List<DaneKuriera> list = new KurierzyModel(MockMainteiner.PobierzContextKurierow(data)).PobierzListeKurierow();
       Assert.AreEqual(0, list.Count);
     }
 
@@ -208,7 +207,7 @@ namespace KurierTest.Models
         KoniecObslugi = new DateTime(1990, 10, 12)
       };
 
-      var context = PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 },
+      var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 },
         paczki: new List<DanePaczki>() { paczka1, paczka2 });
       List<DanePaczki> paczki = (new KurierzyModel(context).PobierzListePaczekKuriera(3));
       Assert.AreEqual(1, paczki.Count);
@@ -269,7 +268,7 @@ namespace KurierTest.Models
         KoniecObslugi = new DateTime(1990, 10, 12)
       };
 
-      var context = PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 },
+      var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 },
         paczki: new List<DanePaczki>() { paczka1, paczka2 });
       List<DanePaczki> paczki = (new KurierzyModel(context).PobierzListePaczekKuriera(3));
       Assert.AreEqual(0, paczki.Count);
@@ -299,7 +298,7 @@ namespace KurierTest.Models
         NumRejestracyjny = "WTS9231",
         Stan = "sprawny"
       };
-      var context = PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 }, samochody: new List<DaneSamochodu>() { samochod });
+      var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 }, samochody: new List<DaneSamochodu>() { samochod });
       DaneSamochodu pobranySamochod = new KurierzyModel(context).PobierzSamochodKuriera(3);
       Assert.AreEqual(samochod.Id, pobranySamochod.Id);
       Assert.AreEqual(samochod.NumRejestracyjny, pobranySamochod.NumRejestracyjny);
@@ -329,40 +328,13 @@ namespace KurierTest.Models
         NumRejestracyjny = "WTS9231",
         Stan = "sprawny"
       };
-      var context = PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 }, samochody: new List<DaneSamochodu>() { samochod });
+      var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 }, samochody: new List<DaneSamochodu>() { samochod });
       DaneSamochodu pobranySamochod = new KurierzyModel(context).PobierzSamochodKuriera(3);
       Assert.IsNull(pobranySamochod);
     }
-    private static ApplicationContext PobierzContextKurierow(List<DaneKuriera> kurierzy, List<DaneSamochodu> samochody = null, List<DanePaczki> paczki = null)
-    {
-      var mockDbSet = CreateDbSetMock(kurierzy).Object;
-      Mock<ApplicationContext> userContext = new Mock<ApplicationContext>();
-      userContext.Setup(p => p.Kurierzy).Returns(mockDbSet);
-      if (samochody != null)
-      {
-        var mockDbSetSamochodow = CreateDbSetMock(samochody).Object;
-        userContext.Setup(p => p.Samochody).Returns(mockDbSetSamochodow);
-      }
-      if (paczki != null)
-      {
-        var mockDbSetPaczek = CreateDbSetMock(paczki).Object;
-        userContext.Setup(p => p.Paczki).Returns(mockDbSetPaczek);
-      }
-      return userContext.Object;
-    }
 
-    private static Mock<DbSet<T>> CreateDbSetMock<T>(List<T> elements) where T : class
-    {
-      var elementsAsQueryable = elements.AsQueryable();
-      var dbSetMock = new Mock<DbSet<T>>();
 
-      dbSetMock.As<IQueryable<T>>().Setup(m => m.Provider).Returns(elementsAsQueryable.Provider);
-      dbSetMock.As<IQueryable<T>>().Setup(m => m.Expression).Returns(elementsAsQueryable.Expression);
-      dbSetMock.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(elementsAsQueryable.ElementType);
-      dbSetMock.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(elementsAsQueryable.GetEnumerator());
-      dbSetMock.Setup(m => m.Add(It.IsAny<T>())).Callback<T>(elements.Add);
-      ;
-      return dbSetMock;
-    }
+
+
   }
 }
