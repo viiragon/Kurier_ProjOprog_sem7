@@ -12,22 +12,26 @@ namespace Kurier.Models.DataAccess
   {
     public void ZalogujDoCentrali(DaneAuthUzytkownika dane)
     {
-      throw new NotImplementedException();
+      //Todo zaimplementować autoryzację
+      //throw new NotImplementedException();
     }
 
     public void ZalogujJakoKlient(DaneAuthKlienta dane)
     {
-      throw new NotImplementedException();
+      //Todo zaimplementować autoryzację
+      //throw new NotImplementedException();
     }
 
     public void ZalogujJakoKurier(DaneAuthKuriera dane)
     {
-      throw new NotImplementedException();
+      //Todo zaimplementować autoryzację
+      //throw new NotImplementedException();
     }
 
     public void ZarejestrujJakoKlient(DaneKlienta dane)
     {
-      throw new NotImplementedException();
+      //Todo zaimplementować autoryzację
+      //throw new NotImplementedException();
     }
   }
 }

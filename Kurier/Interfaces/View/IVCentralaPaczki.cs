@@ -11,7 +11,7 @@ namespace Kurier.Interfaces.View
     {
         public static IVCentralaPaczki createInstance(Presenter.ICMPaczki paczkiP)
         {
-            throw new NotImplementedException();
+            return new Views.Menu.VCentralaPaczki(paczkiP);
         }
         public abstract void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
         public abstract void wyswietlOknoListyPaczek(DanePaczki[] paczki);

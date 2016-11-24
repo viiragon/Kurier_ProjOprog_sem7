@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Models.DTO.Paczka
 {
@@ -8,6 +9,8 @@ namespace Kurier.Models.DTO.Paczka
   {
     public int Id { get; set; }
     public Adres Adres { get; set; }
+    public DaneUzytkownika Adresat { get; set; }
+    public DaneUzytkownika Nadawca { get; set; }
     public DateTime PoczatekObslugi { get; set; }
     public DateTime KoniecObslugi { get; set; }
     public List<Status> Historia { get; set; }
@@ -19,6 +22,8 @@ namespace Kurier.Models.DTO.Paczka
       if (danePaczkiObj != null)
       {
         return Id == danePaczkiObj.Id
+               && Adresat == danePaczkiObj.Adresat
+               && Nadawca == danePaczkiObj.Nadawca
                && Adres == danePaczkiObj.Adres
                && PoczatekObslugi == danePaczkiObj.PoczatekObslugi
                && KoniecObslugi == danePaczkiObj.KoniecObslugi
@@ -31,7 +36,7 @@ namespace Kurier.Models.DTO.Paczka
 
     protected bool Equals(DanePaczki other)
     {
-      return Id == other.Id && Equals(Adres, other.Adres) && PoczatekObslugi.Equals(other.PoczatekObslugi) && KoniecObslugi.Equals(other.KoniecObslugi) && Equals(Historia, other.Historia) && Equals(Status, other.Status);
+      return Id == other.Id && Equals(Nadawca, other.Nadawca) && Equals(Adresat, other.Adresat) && Equals(Adres, other.Adres) && PoczatekObslugi.Equals(other.PoczatekObslugi) && KoniecObslugi.Equals(other.KoniecObslugi) && Equals(Historia, other.Historia) && Equals(Status, other.Status);
     }
 
     public override int GetHashCode()
@@ -39,11 +44,11 @@ namespace Kurier.Models.DTO.Paczka
       unchecked
       {
         var hashCode = Id;
-        hashCode = (hashCode*397) ^ (Adres != null ? Adres.GetHashCode() : 0);
-        hashCode = (hashCode*397) ^ PoczatekObslugi.GetHashCode();
-        hashCode = (hashCode*397) ^ KoniecObslugi.GetHashCode();
-        hashCode = (hashCode*397) ^ (Historia != null ? Historia.GetHashCode() : 0);
-        hashCode = (hashCode*397) ^ (Status != null ? Status.GetHashCode() : 0);
+        hashCode = (hashCode * 397) ^ (Adres != null ? Adres.GetHashCode() : 0);
+        hashCode = (hashCode * 397) ^ PoczatekObslugi.GetHashCode();
+        hashCode = (hashCode * 397) ^ KoniecObslugi.GetHashCode();
+        hashCode = (hashCode * 397) ^ (Historia != null ? Historia.GetHashCode() : 0);
+        hashCode = (hashCode * 397) ^ (Status != null ? Status.GetHashCode() : 0);
         return hashCode;
       }
     }

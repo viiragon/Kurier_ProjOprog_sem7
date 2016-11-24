@@ -101,6 +101,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Menu\CentralaPaczki.aspx" />
     <Content Include="Views\Menu\CentralaSamochody.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
     <Content Include="Views\Menu\LogowanieKlient.aspx" />
@@ -110,6 +111,7 @@
     <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="Views\Menu\OknoSzczegolowPaczki.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -131,6 +133,10 @@
     <Compile Include="Migrations\201611231857200_migracja4.cs" />
     <Compile Include="Migrations\201611231857200_migracja4.Designer.cs">
       <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241459161_uaktualnienieDanychPaczki.cs" />
+    <Compile Include="Migrations\201611241459161_uaktualnienieDanychPaczki.Designer.cs">
+      <DependentUpon>201611241459161_uaktualnienieDanychPaczki.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
@@ -199,6 +205,13 @@
     <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
+    <Compile Include="Views\Menu\CentralaPaczki.aspx.cs">
+      <DependentUpon>CentralaPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentralaPaczki.aspx.designer.cs">
+      <DependentUpon>CentralaPaczki.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
       <DependentUpon>CentralaSamochody.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +268,14 @@
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\VCentralaPaczki.cs" />
     <Compile Include="Views\Menu\VCentralaSamochody.cs" />
     <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
     <Compile Include="Views\Menu\VKlient.cs" />
@@ -284,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611231857200_migracja4.resx">
       <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241459161_uaktualnienieDanychPaczki.resx">
+      <DependentUpon>201611241459161_uaktualnienieDanychPaczki.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
