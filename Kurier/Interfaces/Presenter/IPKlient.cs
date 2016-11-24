@@ -10,6 +10,7 @@ namespace Kurier.Interfaces.Presenter
     {
         void wybranoLogowanieJakoKlient();
         void wybranoNadaniePaczki();
+        void wybranoNadaniePaczkiBezLogowania();
         void wybranoRejestracjaJakoKlient();
         void wybranoWylogujKlienta();
         void wybranoZalogujMnieJakoKlient(Models.DTO.Uzytkownik.DaneUzytkownika dane);

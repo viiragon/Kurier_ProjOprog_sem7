@@ -10,6 +10,8 @@ namespace Kurier.Views.Menu
     public class VKlient : Interfaces.View.IVKlient
     {
         private LogowanieKlient logowanie;
+        private NadaniePaczki nadanie;
+        private MenuGlowneNadawcy menu;
         private Interfaces.Presenter.IPKlient presenter;
 
         public VKlient(Interfaces.Presenter.IPKlient presenter)
@@ -22,12 +24,45 @@ namespace Kurier.Views.Menu
             this.logowanie = logowanie;
         }
 
+        public void setNadawaniePaczki(NadaniePaczki nadanie)
+        {
+            this.nadanie = nadanie;
+        }
+
+        public void setMenuGlowne(MenuGlowneNadawcy menu)
+        {
+            this.menu = menu;
+        }
+
         public void wybranoZaloguj(string login, string password)
         {
             Models.DTO.Uzytkownik.DaneUzytkownika dto = new Models.DTO.Uzytkownik.DaneUzytkownika();
             dto.Login = login;
             dto.Haslo = password;
             presenter.wybranoZalogujMnieJakoKlient(dto);
+        }
+
+        public void wybranoWyloguj()
+        {
+            presenter.wybranoWylogujKlienta();
+        }
+
+        public void wybranoNadajBezLogowania()
+        {
+            presenter.wybranoNadaniePaczkiBezLogowania();
+        }
+
+        public void wybranoNadaj()
+        {
+            presenter.wybranoNadaniePaczki();
+        }
+
+        public void wybranoZapiszNadanaPaczke(string adresat, string adresAdresata, string nadawca, string adresNadawcy)
+        {
+            DanePaczki paczka = new DanePaczki();
+            paczka.Adres = new Models.DTO.Adres();
+            paczka.Adres.Ulica = adresAdresata;
+            presenter.wybranoZapiszDaneNadanejPaczki(paczka);
         }
 
         public override void wyswietlFormularzLogowaniaKlienta()
@@ -37,27 +72,32 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlFormularzNadaniaPaczki()
         {
-            throw new NotImplementedException();
+            NadaniePaczki.wyswietlOkno(this, true);
         }
 
         public override void wyswietlFormularzNadaniaPaczkiBezLogowania()
         {
-            throw new NotImplementedException();
+            NadaniePaczki.wyswietlOkno(this, false);
         }
 
         public override void wyswietlKomunikatOBlednychDanychLogowania()
         {
-            throw new NotImplementedException();
-        }
-
-        public override void wyswietlMenuGlowneKlienta(DanePaczki[] paczki)
-        {
-            throw new NotImplementedException();
+            logowanie.wyswietlBladNiepoprawneDane();
         }
 
         public override void wyswietlOknoRejestracjiKlienta()
         {
             throw new NotImplementedException();
+        }
+
+        public override void wyswietlKomunikatOPoprawnymNadaniuPaczki()
+        {
+            nadanie.wyswietlKomunikatONadaniuPaczki();
+        }
+
+        public override void wyswietlMenuGlowneKlienta(Models.DTO.Uzytkownik.DaneUzytkownika klient, DanePaczki[] paczki)
+        {
+            MenuGlowneNadawcy.wyswietlOkno(this, klient);
         }
     }
 }

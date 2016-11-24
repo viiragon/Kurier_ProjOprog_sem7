@@ -103,7 +103,11 @@
   <ItemGroup>
     <Content Include="Views\Menu\CentralaSamochody.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
+    <Content Include="Views\Menu\LogowanieKlient.aspx" />
+    <Content Include="Views\Menu\LogowanieKurier.aspx" />
+    <Content Include="Views\Menu\MenuGlowneNadawcy.aspx" />
     <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
+    <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Web.config">
@@ -209,12 +213,40 @@
     <Compile Include="Views\Menu\LogowanieCentrali.aspx.designer.cs">
       <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\LogowanieKlient.aspx.cs">
+      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKlient.aspx.designer.cs">
+      <DependentUpon>LogowanieKlient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKurier.aspx.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\LogowanieKurier.aspx.designer.cs">
+      <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneNadawcy.aspx.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\MenuGlowneNadawcy.aspx.designer.cs">
+      <DependentUpon>MenuGlowneNadawcy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.cs">
       <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\MenuGlowneCentrala.aspx.designer.cs">
       <DependentUpon>MenuGlowneCentrala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\NadaniePaczki.aspx.cs">
+      <DependentUpon>NadaniePaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\NadaniePaczki.aspx.designer.cs">
+      <DependentUpon>NadaniePaczki.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
@@ -225,10 +257,13 @@
     </Compile>
     <Compile Include="Views\Menu\VCentralaSamochody.cs" />
     <Compile Include="Views\Menu\VCentralaStatystyka.cs" />
+    <Compile Include="Views\Menu\VKlient.cs" />
+    <Compile Include="Views\Menu\VKurier.cs" />
     <Compile Include="Views\Menu\VMenuGlowne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
