@@ -7,5 +7,29 @@ namespace Kurier.Presenters.KlientManager
 {
     public class Administracja
     {
+        void potwierdzLogowanie()
+        {
+
+        }
+
+        void potwierdzRejestracje()
+        {
+
+        }
+
+        void wyloguj()
+        {
+
+        }
+
+        void zalogujJakoKlient()
+        {
+
+        }
+
+        void zarejestrujJakoKlient()
+        {
+
+        }
     }
 }

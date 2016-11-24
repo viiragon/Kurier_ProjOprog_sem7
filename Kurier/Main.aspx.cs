@@ -47,7 +47,8 @@ namespace Kurier
 
         protected void onClickBtNadawca(object sender, EventArgs e)
         {
-            Presenters.Atrapa.LOL_TO_JA_XD.startNadawca();
+            //Presenters.Atrapa.LOL_TO_JA_XD.startNadawca();
+            Presenters.KlientManager.KlientPrezenter.klientPrezenter.startNadawca();
         }
     }
 }
