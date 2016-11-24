@@ -25,6 +25,9 @@
             <p>
                 <asp:Button Text="Hakuj System" OnClick="onClickBtHack" runat="server"/>
             </p>
+            <p>
+                <asp:Button Text="Nadaj bez logowania" OnClick="onClickBtNadajBezLogowania" runat="server"/>
+            </p>
         </div>
     </form>
 </body>

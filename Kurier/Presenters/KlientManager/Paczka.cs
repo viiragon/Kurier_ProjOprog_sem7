@@ -7,5 +7,14 @@ namespace Kurier.Presenters.KlientManager
 {
     public class Paczka
     {
+        void nadaj()
+        {
+            
+        }
+
+        void zapszDane()
+        {
+
+        }
     }
 }

@@ -69,5 +69,9 @@ namespace Kurier.Views.Menu
         {
             controller.wybranoZaloguj("eadam", "natak139m");
         }
+        protected void onClickBtNadajBezLogowania(object sender, EventArgs e)
+        {
+            controller.wyswietlFormularzNadaniaPaczkiBezLogowania();
+        }
     }
 }

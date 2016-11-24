@@ -7,6 +7,7 @@ using Kurier.Models.Context;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Uzytkownik;
+using System.Text.RegularExpressions;
 
 namespace Kurier.Models.DataAccess
 {
@@ -55,7 +56,16 @@ namespace Kurier.Models.DataAccess
 
     public bool WalidujDanePaczki(DanePaczki paczka)
     {
-      throw new NotImplementedException();
+            bool poprawneDane = true;
+            if (!Regex.IsMatch(paczka.Adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$"))
+                return false;
+            if (!Regex.IsMatch(paczka.Adres.Miasto, @"^[A-Z][a-z]{2,}$"))
+                return false;
+            if (paczka.Adres.Ulica.Length == 0)
+                return false;
+            if (paczka.Adres.NumerMieszkania.Length == 0)
+                return false;
+            return poprawneDane;
     }
 
     public void ZmienStatusPaczki(Status status, int idPaczki)

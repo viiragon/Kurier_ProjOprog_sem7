@@ -171,6 +171,32 @@
     <Compile Include="Interfaces\View\IVCentralaStatystyka.cs" />
     <Compile Include="Interfaces\View\IVKurier.cs" />
     <Compile Include="Presenters\Atrapa.cs" />
+    <Compile Include="Presenters\CentralaManager\KurierzyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManager\KurierzyCM\KurierzyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManager\KurierzyCM\ListaKurierow.cs" />
+    <Compile Include="Presenters\CentralaManager\Logowanie\Logowanie.cs" />
+    <Compile Include="Presenters\CentralaManager\Logowanie\LogowaniePrezenter.cs" />
+    <Compile Include="Presenters\CentralaManager\PaczkiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManager\PaczkiCM\ListaPaczek.cs" />
+    <Compile Include="Presenters\CentralaManager\PaczkiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManager\PaczkiCM\PaczkiPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManager\SamochodyCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManager\SamochodyCM\ListaSamochodow.cs" />
+    <Compile Include="Presenters\CentralaManager\SamochodyCM\Samochod.cs" />
+    <Compile Include="Presenters\CentralaManager\SamochodyCM\SamochodyPrezenter.cs" />
+    <Compile Include="Presenters\CentralaManager\SamochodyCM\Serwis.cs" />
+    <Compile Include="Presenters\CentralaManager\StatystykiCM\Klient.cs" />
+    <Compile Include="Presenters\CentralaManager\StatystykiCM\Kurier.cs" />
+    <Compile Include="Presenters\CentralaManager\StatystykiCM\Paczka.cs" />
+    <Compile Include="Presenters\CentralaManager\StatystykiCM\StatystykiPrezenter.cs" />
+    <Compile Include="Presenters\KlientManager\Administracja.cs" />
+    <Compile Include="Presenters\KlientManager\KlientPrezenter.cs" />
+    <Compile Include="Presenters\KlientManager\Paczka.cs" />
+    <Compile Include="Presenters\KurierManager\Administracja.cs" />
+    <Compile Include="Presenters\KurierManager\KurierPrezenter.cs" />
+    <Compile Include="Presenters\KurierManager\ListaZlecen.cs" />
+    <Compile Include="Presenters\KurierManager\Paczka.cs" />
+    <Compile Include="Presenters\KurierManager\Samochod.cs" />
     <Compile Include="Views\Menu\LogowanieKlient.aspx.cs">
       <DependentUpon>LogowanieKlient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
