@@ -36,17 +36,17 @@ namespace Kurier.Presenters.KlientManager
 
         public void wybranoNadaniePaczki()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzNadaniaPaczki();
         }
 
         public void wybranoNadaniePaczkiBezLogowania()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzNadaniaPaczkiBezLogowania();
         }
 
         public void wybranoRejestracjaJakoKlient()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlOknoRejestracjiKlienta();
         }
 
         public void wybranoWylogujKlienta()
@@ -78,7 +78,12 @@ namespace Kurier.Presenters.KlientManager
 
         public void wybranoZapiszDaneNadanejPaczki(DanePaczki paczka)
         {
-            throw new NotImplementedException();
+            bool czyPoprawneDane = mPaczka.WalidujDanePaczki(paczka);
+            if (czyPoprawneDane)
+            {
+                mPaczka.DodajPaczke(paczka);
+                ivKlient.wyswietlKomunikatOPoprawnymNadaniuPaczki();
+            }
         }
 
         public void wybranoZarejestrujMnieJakoKlient(DaneKlienta dane)
