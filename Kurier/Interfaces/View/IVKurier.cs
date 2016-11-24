@@ -13,7 +13,7 @@ namespace Kurier.Interfaces.View
     {
         public static IVKurier createInstance(Presenter.IPKurier kurierP)
         {
-            throw new NotImplementedException();
+            return new Views.Menu.VKurier(kurierP);
         }
         public abstract void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
         public abstract void wyswietlFormularzLogowaniaJakoKurier();
