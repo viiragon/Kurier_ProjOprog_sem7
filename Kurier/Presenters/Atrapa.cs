@@ -73,7 +73,7 @@ namespace Kurier.Presenters
                 Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
                 user.Imie = "Cichosław";
                 user.Nazwisko = "Orzeł";
-                user.Id = 0;
+                user.UserId= 0;
                 user.Telefon = 0700880;
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
@@ -255,27 +255,31 @@ namespace Kurier.Presenters
         {
             if (dane.Login.Equals("eadam") && dane.Haslo.Equals("natak139k"))
             {
-                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
-                user.Imie = "Ewa";
-                user.Nazwisko = "Adamska";
-                user.Id = 0;
-                user.Telefon = 0700880;
-                user.Uprawnienia = 0;
-                user.Login = dane.Login;
-                user.Haslo = dane.Haslo;
-                ivKlient.wyswietlMenuGlowneKlienta(user, null);
+              Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
+              {
+                Imie = "Ewa",
+                Nazwisko = "Adamska",
+                UserId = 0,
+                Telefon = 0700880,
+                Uprawnienia = 0,
+                Login = dane.Login,
+                Haslo = dane.Haslo
+              };
+              ivKlient.wyswietlMenuGlowneKlienta(user, null);
             }
             else if (dane.Login.Equals("wkruk") && dane.Haslo.Equals("natak139k"))
             {
-                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
-                user.Imie = "Wojciech";
-                user.Nazwisko = "Kruk";
-                user.Id = 0;
-                user.Telefon = 0700880;
-                user.Uprawnienia = 0;
-                user.Login = dane.Login;
-                user.Haslo = dane.Haslo;
-                ivKlient.wyswietlMenuGlowneKlienta(user, null);
+              Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
+              {
+                Imie = "Wojciech",
+                Nazwisko = "Kruk",
+                UserId = 0,
+                Telefon = 0700880,
+                Uprawnienia = 0,
+                Login = dane.Login,
+                Haslo = dane.Haslo
+              };
+              ivKlient.wyswietlMenuGlowneKlienta(user, null);
             }
             else
             {
@@ -342,7 +346,7 @@ namespace Kurier.Presenters
             },
             Nazwisko = "Kowalski",
             Imie = "Maciej",
-            Id = 1
+            UserId =  1
         };
 
         public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera2 = new Models.DTO.Uzytkownik.DaneKuriera()
@@ -356,7 +360,7 @@ namespace Kurier.Presenters
             },
             Nazwisko = "Kowalski",
             Imie = "Maciej",
-            Id = 3
+            UserId = 3
         };
 
         DanePaczki paczka1 = new DanePaczki()

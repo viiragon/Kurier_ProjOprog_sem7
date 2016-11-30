@@ -39,14 +39,14 @@ namespace Kurier.Models.DataAccess
 
     public DanePaczki PobierzPaczke(int id)
     {
-      return _context.Paczki.FirstOrDefault(p=>p.Id==id);
+      return _context.Paczki.FirstOrDefault(p => p.Id == id);
     }
 
     public void PowiazKurieraIPaczke(int idPaczki, int idKuriera)
     {
       DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
 
-      DanePaczki paczka = _context.Paczki.FirstOrDefault(p=>p.Id==idPaczki);
+      DanePaczki paczka = _context.Paczki.FirstOrDefault(p => p.Id == idPaczki);
       if (paczka != null)
         paczka.Status.Kurier = kurier;
 
@@ -56,24 +56,18 @@ namespace Kurier.Models.DataAccess
 
     public bool WalidujDanePaczki(DanePaczki paczka)
     {
-            bool poprawneDane = true;
-            if (!Regex.IsMatch(paczka.Adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$"))
-                return false;
-            if (!Regex.IsMatch(paczka.Adres.Miasto, @"^[A-Z][a-z]{2,}$"))
-                return false;
-            if (paczka.Adres.Ulica.Length == 0)
-                return false;
-            if (paczka.Adres.NumerMieszkania.Length == 0)
-                return false;
-            return poprawneDane;
+      return Regex.IsMatch(paczka.Adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$")
+             && Regex.IsMatch(paczka.Adres.Miasto, @"^[A-Z][a-z]{2,}$")
+             && paczka.Adres.Ulica.Length > 0
+             && paczka.Adres.NumerMieszkania.Length > 0;
     }
 
     public void ZmienStatusPaczki(Status status, int idPaczki)
     {
-      DanePaczki paczka = _context.Paczki.FirstOrDefault(p=>p.Id==idPaczki);
+      DanePaczki paczka = _context.Paczki.FirstOrDefault(p => p.Id == idPaczki);
       if (paczka != null)
       {
-        if(paczka.Historia==null) 
+        if (paczka.Historia == null)
           paczka.Historia = new List<Status>();
         paczka.Historia.Add(paczka.Status);
         paczka.Status = status;

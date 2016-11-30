@@ -86,10 +86,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Kurier.mdf" />
-    <Content Include="App_Data\Kurier_log.ldf">
-      <DependentUpon>Kurier.mdf</DependentUpon>
-    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -126,18 +122,15 @@
     <Compile Include="Interfaces\Presenter\IPKlient.cs" />
     <Compile Include="Interfaces\Presenter\IPKurier.cs" />
     <Compile Include="Interfaces\View\IVKlient.cs" />
-    <Compile Include="Migrations\201611162126157_migration3.cs" />
-    <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
-      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
+    <Compile Include="Migrations\201611302051166_init.cs" />
+    <Compile Include="Migrations\201611302051166_init.Designer.cs">
+      <DependentUpon>201611302051166_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611231857200_migracja4.cs" />
-    <Compile Include="Migrations\201611231857200_migracja4.Designer.cs">
-      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    <Compile Include="Migrations\201611302053087_init2.cs" />
+    <Compile Include="Migrations\201611302053087_init2.Designer.cs">
+      <DependentUpon>201611302053087_init2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611241459161_uaktualnienieDanychPaczki.cs" />
-    <Compile Include="Migrations\201611241459161_uaktualnienieDanychPaczki.Designer.cs">
-      <DependentUpon>201611241459161_uaktualnienieDanychPaczki.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
@@ -145,15 +138,6 @@
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthUzytkownika.cs" />
     <Compile Include="Interfaces\Model\IMPaczki.cs" />
     <Compile Include="Interfaces\Model\IMUzytkownicy.cs" />
-    <Compile Include="Migrations\201611152239291_Initial.cs" />
-    <Compile Include="Migrations\201611152239291_Initial.Designer.cs">
-      <DependentUpon>201611152239291_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611152253243_Dodanie kuriera do statusu.cs" />
-    <Compile Include="Migrations\201611152253243_Dodanie kuriera do statusu.Designer.cs">
-      <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\ApplicationContext.cs" />
     <Compile Include="Interfaces\Model\IMSamochody.cs" />
     <Compile Include="Interfaces\Model\IMKurierzy.cs" />
@@ -294,23 +278,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611152239291_Initial.resx">
-      <DependentUpon>201611152239291_Initial.cs</DependentUpon>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611302051166_init.resx">
+      <DependentUpon>201611302051166_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611152253243_Dodanie kuriera do statusu.resx">
-      <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611162126157_migration3.resx">
-      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611231857200_migracja4.resx">
-      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611241459161_uaktualnienieDanychPaczki.resx">
-      <DependentUpon>201611241459161_uaktualnienieDanychPaczki.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611302053087_init2.resx">
+      <DependentUpon>201611302053087_init2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

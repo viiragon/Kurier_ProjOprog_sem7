@@ -62,7 +62,7 @@ namespace Kurier.Presenters.KlientManager
                 Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
                 user.Imie = "Ewa";
                 user.Nazwisko = "Adamska";
-                user.Id = 0;
+                user.UserId= 0;
                 user.Telefon = 0700880;
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;

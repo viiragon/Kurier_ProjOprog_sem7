@@ -9,7 +9,6 @@ namespace Kurier.Migrations
     {
         public Configuration()
         {
-      
             AutomaticMigrationsEnabled = false;
         }
 

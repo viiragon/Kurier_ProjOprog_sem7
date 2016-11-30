@@ -78,7 +78,7 @@ namespace Kurier.Models.DataAccess
       };
       context.Kurierzy.AddRange(new[] { daneKuriera1, daneKuriera2 });
       context.Klienci.AddRange(new[] { klient1, klient2 });
-      context.Uzytkownicy.Add(centrala);
+      context.Users.Add(centrala);
       context.SaveChanges();
 
 

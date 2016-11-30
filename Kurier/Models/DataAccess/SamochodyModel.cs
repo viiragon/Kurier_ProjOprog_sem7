@@ -39,13 +39,14 @@ namespace Kurier.Models.DataAccess
 
     public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
     {
-      DaneKuriera kurier = new KurierzyModel().PobierzKuriera(idKuriera);
 
       using (var db = new ApplicationContext())
       {
+        DaneKuriera kurier=db.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
         DaneSamochodu samochod = db.Samochody.Find(idSamochodu);
+
         if (samochod != null)
-          samochod.Kurier = kurier;
+          kurier.Samochod= samochod;
 
         db.SaveChanges();
       }
