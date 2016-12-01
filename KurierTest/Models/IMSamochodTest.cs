@@ -25,7 +25,7 @@ namespace KurierTest.Models
             };
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { });
 
-            new SamochodyModel().DodajSamochod(samochod);
+            new SamochodyModel(context).DodajSamochod(samochod);
             DaneSamochodu pobranySamochod = context.Samochody.FirstOrDefault(p => p.Id == samochod.Id);
             Assert.AreEqual(pobranySamochod, samochod);
         }
@@ -50,7 +50,7 @@ namespace KurierTest.Models
             };
 
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1, samochod2 });
-            var list = new SamochodyModel().PobierzListeSamochodow();
+            var list = new SamochodyModel(context).PobierzListeSamochodow();
 
             Assert.AreEqual(list[0], samochod1);
             Assert.AreEqual(list[1], samochod2);
@@ -77,7 +77,7 @@ namespace KurierTest.Models
             };
 
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1, samochod2 });
-            DaneSamochodu pobranySamochod = new SamochodyModel().PobierzSamochod(samochod2.Id);
+            DaneSamochodu pobranySamochod = new SamochodyModel(context).PobierzSamochod(samochod2.Id);
 
             Assert.AreEqual(samochod2, pobranySamochod);
 
@@ -109,7 +109,7 @@ namespace KurierTest.Models
             };
 
             var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 });
-            new SamochodyModel().PowiazKurieraISamochod(samochod1.Id, daneKuriera1.UserId);
+            new SamochodyModel(context).PowiazKurieraISamochod(samochod1.Id, daneKuriera1.UserId);
             var samochodKuriera = context.Kurierzy.FirstOrDefault(p => p.UserId == daneKuriera1.UserId).Samochod;
 
             Assert.IsNotNull(samochodKuriera);
@@ -129,7 +129,7 @@ namespace KurierTest.Models
             };
 
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1 });
-            new SamochodyModel().UsunSamochod(samochod1.Id);
+            new SamochodyModel(context).UsunSamochod(samochod1.Id);
             Assert.IsNull(context.Samochody.FirstOrDefault(p => p.Id == samochod1.Id));
         }
 
