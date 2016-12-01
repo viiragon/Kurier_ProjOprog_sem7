@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CentralaSamochody.aspx.cs" Inherits="Kurier.Views.Menu.CentralaSamochody" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoDodawaniaSamochodu.aspx.cs" Inherits="CentralaSamochody" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,16 @@
         <h1>CENTRALA SAMOCHODY</h1>
         <h3>Dodaj nowy samochód</h3>
         <p>
+            Marka: <asp:TextBox runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Model: <asp:TextBox runat="server"></asp:TextBox>
+        </p>
+        <p>
             Nr rejestracyjny: <asp:TextBox runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Data kontroli: <asp:TextBox runat="server"></asp:TextBox>
         </p>
         <p>
             Stan: <asp:TextBox runat="server"></asp:TextBox>
@@ -21,7 +30,7 @@
             Kurier: <asp:TextBox runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Button Text="Dodaj nowy samochód" OnClick="onClickBtAddCar" runat="server"/>
+            <asp:Button Text="Zapisz" OnClick="onClickBtAddCar" runat="server"/>
         </p>
     </div>
     </form>

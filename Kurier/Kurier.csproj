@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Menu\CentralaPaczki.aspx" />
-    <Content Include="Views\Menu\CentralaSamochody.aspx" />
+    <Content Include="Views\Menu\OknoDodawaniaSamochodu.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
     <Content Include="Views\Menu\LogowanieKlient.aspx" />
     <Content Include="Views\Menu\LogowanieKurier.aspx" />
@@ -107,7 +107,10 @@
     <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="Views\Menu\OknoEdycjiSamochodu.aspx" />
+    <Content Include="Views\Menu\OknoListySamochodow.aspx" />
     <Content Include="Views\Menu\OknoSzczegolowPaczki.aspx" />
+    <Content Include="Views\Menu\OknoSzczegolowSamochodu.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -196,12 +199,12 @@
     <Compile Include="Views\Menu\CentralaPaczki.aspx.designer.cs">
       <DependentUpon>CentralaPaczki.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
-      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+    <Compile Include="Views\Menu\OknoDodawaniaSamochodu.aspx.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Menu\CentralaSamochody.aspx.designer.cs">
-      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+    <Compile Include="Views\Menu\OknoDodawaniaSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\LogowanieCentrali.aspx.cs">
       <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
@@ -252,12 +255,33 @@
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\OknoEdycjiSamochodu.aspx.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoEdycjiSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoListySamochodow.aspx.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoListySamochodow.aspx.designer.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.designer.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowSamochodu.aspx.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\VCentralaPaczki.cs" />
     <Compile Include="Views\Menu\VCentralaSamochody.cs" />

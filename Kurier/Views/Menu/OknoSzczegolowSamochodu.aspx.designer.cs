@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kurier.Views.Menu {
-    
-    
-    public partial class CentralaSamochody {
-        
+namespace Kurier.Views.Menu
+{
+
+
+    public partial class OknoSzczegolowSamochodu
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>

@@ -21,9 +21,6 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Ku
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.migration3.resources
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
-C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.Initial.resources
-C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.Dodaniekurieradostatusu.resources
-C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.migration3.resources
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Kurier.dll.config
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Kurier.dll
@@ -62,3 +59,5 @@ D:\_git\Kurier\obj\Debug\Kurier.pdb
 D:\_git\Kurier\obj\Debug\Kurier.Migrations.init.resources
 D:\_git\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 D:\_git\Kurier\obj\Debug\Kurier.Migrations.init2.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init2.resources
