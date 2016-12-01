@@ -95,6 +95,7 @@
     <Compile Include="Models\MockMainteiner.cs" />
     <Compile Include="Models\IMPaczkaTest.cs" />
     <Compile Include="Models\IMSamochodTest.cs" />
+    <Compile Include="Models\IMStatystykaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\IMKurierTest.cs" />
   </ItemGroup>
