@@ -61,3 +61,17 @@ D:\_git\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 D:\_git\Kurier\obj\Debug\Kurier.Migrations.init2.resources
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init.resources
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init2.resources
+D:\_git\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+D:\_git\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\_git\Kurier\bin\Microsoft.Owin.dll
+D:\_git\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+D:\_git\Kurier\bin\Microsoft.Owin.Security.dll
+D:\_git\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+D:\_git\Kurier\bin\Newtonsoft.Json.dll
+D:\_git\Kurier\bin\Owin.dll
+D:\_git\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\_git\Kurier\bin\Microsoft.Owin.xml
+D:\_git\Kurier\bin\Microsoft.Owin.Security.xml
+D:\_git\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+D:\_git\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+D:\_git\Kurier\bin\Newtonsoft.Json.xml
