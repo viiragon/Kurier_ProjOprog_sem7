@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using Kurier.Models.DTO.Uzytkownik;
 
@@ -11,8 +12,8 @@ namespace Kurier.Models.DTO.Paczka
     public Adres Adres { get; set; }
     public DaneUzytkownika Adresat { get; set; }
     public DaneUzytkownika Nadawca { get; set; }
-    public DateTime PoczatekObslugi { get; set; }
-    public DateTime KoniecObslugi { get; set; }
+    public DateTime? PoczatekObslugi { get; set; }
+    public DateTime? KoniecObslugi { get; set; }
     public List<Status> Historia { get; set; }
     public Status Status { get; set; }
 

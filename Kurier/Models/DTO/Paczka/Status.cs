@@ -3,7 +3,7 @@ using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Models.DTO.Paczka
 {
-  public class Status
+  public class Status :ICloneable
   {
     public int Id { get; set; }
     public int KodStatusu { get; set; }
@@ -25,6 +25,16 @@ namespace Kurier.Models.DTO.Paczka
         hashCode = (hashCode*397) ^ (Kurier != null ? Kurier.GetHashCode() : 0);
         return hashCode;
       }
+    }
+
+    public object Clone()
+    {
+      return new Status()
+      {
+        Kurier = Kurier,
+        Czas = Czas,
+        KodStatusu =  KodStatusu
+      };
     }
   }
 }

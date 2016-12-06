@@ -56,10 +56,16 @@ namespace Kurier.Models.DataAccess
 
     public bool WalidujDanePaczki(DanePaczki paczka)
     {
-      return Regex.IsMatch(paczka.Adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$")
-             && Regex.IsMatch(paczka.Adres.Miasto, @"^[A-Z][a-z]{2,}$")
-             && paczka.Adres.Ulica.Length > 0
-             && paczka.Adres.NumerMieszkania.Length > 0;
+      return WalidujAdres(paczka.Adresat.Adres)
+        && WalidujAdres(paczka.Nadawca.Adres);
+    }
+
+    private bool WalidujAdres(Adres adres)
+    {
+      return Regex.IsMatch(adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$")
+         && Regex.IsMatch(adres.Miasto, @"^[A-Z][a-z]{2,}$")
+         && adres.Ulica.Length > 0
+         && adres.NumerMieszkania.Length > 0;
     }
 
     public void ZmienStatusPaczki(Status status, int idPaczki)
