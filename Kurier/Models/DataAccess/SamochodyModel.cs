@@ -10,62 +10,57 @@ using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Models.DataAccess
 {
-  public class SamochodyModel : IMSamochody
-  {
-    public void DodajSamochod(DaneSamochodu samochod)
+    public class SamochodyModel : IMSamochody
     {
-      using (var db = new ApplicationContext())
-      {
-        db.Samochody.Add(samochod);
-        db.SaveChanges();
-      }
+        private ApplicationContext _context;
+
+        public SamochodyModel()
+        {
+            _context = new ApplicationContext();
+        }
+
+        public SamochodyModel(ApplicationContext context)
+        {
+            _context = context;
+        }
+        public void DodajSamochod(DaneSamochodu samochod)
+        {
+            _context.Samochody.Add(samochod);
+            _context.SaveChanges();
+        }
+
+        public List<DaneSamochodu> PobierzListeSamochodow()
+        {
+            return _context.Samochody.ToList();
+        }
+
+        public DaneSamochodu PobierzSamochod(int id)
+        {
+            return _context.Samochody.Find(id);
+        }
+
+        public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
+        {
+            DaneKuriera kurier = _context.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
+            DaneSamochodu samochod = _context.Samochody.Find(idSamochodu);
+
+            if (samochod != null)
+                kurier.Samochod = samochod;
+
+            _context.SaveChanges();
+
+        }
+
+        public void UsunSamochod(int id)
+        {
+            var samochod = _context.Samochody.Find(id);
+            _context.Samochody.Remove(samochod);
+            _context.SaveChanges();
+        }
+
+        public bool WalidujDaneSamochodu(DaneSamochodu samochod)
+        {
+            throw new NotImplementedException();
+        }
     }
-
-    public List<DaneSamochodu> PobierzListeSamochodow()
-    {
-      using (var db = new ApplicationContext())
-      {
-        return db.Samochody.ToList();
-      }
-    }
-
-    public DaneSamochodu PobierzSamochod(int id)
-    {
-      using (var db = new ApplicationContext())
-      {
-        return db.Samochody.Find(id);
-      }
-    }
-
-    public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
-    {
-
-      using (var db = new ApplicationContext())
-      {
-        DaneKuriera kurier=db.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
-        DaneSamochodu samochod = db.Samochody.Find(idSamochodu);
-
-        if (samochod != null)
-          kurier.Samochod= samochod;
-
-        db.SaveChanges();
-      }
-
-    }
-
-    public void UsunSamochod(int id)
-    {
-      using (var db = new ApplicationContext())
-      {
-        var samochod = db.Samochody.Find(id);
-        db.Samochody.Remove(samochod);
-        db.SaveChanges();
-      }
-    }
-
-    public bool WalidujDaneSamochodu(DaneSamochodu samochod)
-    {
-      throw new NotImplementedException();
-    }
-  }
 }
