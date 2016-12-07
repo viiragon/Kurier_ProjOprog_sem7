@@ -1,0 +1,45 @@
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.Initial.resources
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.Dodaniekurieradostatusu.resources
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll.config
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.migration3.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.Initial.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.Dodaniekurieradostatusu.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.migration3.resources
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Kurier.dll.config
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Kurier.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Kurier.pdb
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Antlr3.Runtime.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\EntityFramework.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\EntityFramework.SqlServer.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\System.Web.Razor.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Antlr3.Runtime.pdb
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\EntityFramework.xml
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\EntityFramework.SqlServer.xml
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\bin\System.Web.Razor.xml
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.dll
+C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.migracja4.resources
