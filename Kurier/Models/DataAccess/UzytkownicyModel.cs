@@ -49,7 +49,7 @@ namespace Kurier.Models.DataAccess
  
     }
 
-    public bool IstniejeUzytkownikONazwie(string username)
+    public bool CzyIstniejeUzytkonik(string username)
     {
       using (var db = new ApplicationContext())
       {
