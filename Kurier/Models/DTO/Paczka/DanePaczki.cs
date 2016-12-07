@@ -9,6 +9,7 @@ namespace Kurier.Models.DTO.Paczka
   public class DanePaczki
   {
     public int Id { get; set; }
+    public string IdPaczki { get; set; }
     public Adres Adres { get; set; }
     public DaneUzytkownika Adresat { get; set; }
     public DaneUzytkownika Nadawca { get; set; }
