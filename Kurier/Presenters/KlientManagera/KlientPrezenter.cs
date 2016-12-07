@@ -81,6 +81,8 @@ namespace Kurier.Presenters.KlientManager
             bool czyPoprawneDane = mPaczka.WalidujDanePaczki(paczka);
             if (czyPoprawneDane)
             {
+                paczka.PoczatekObslugi = DateTime.Now;
+                paczka.KoniecObslugi = DateTime.Now.AddDays(1);
                 mPaczka.DodajPaczke(paczka);
                 ivKlient.wyswietlKomunikatOPoprawnymNadaniuPaczki();
             }
