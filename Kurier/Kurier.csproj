@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.Designer.cs">
       <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.cs" />
+    <Compile Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.Designer.cs">
+      <DependentUpon>201612072203077_dodanie zewnetrzengo id dla paczki.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.resx">
       <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.resx">
+      <DependentUpon>201612072203077_dodanie zewnetrzengo id dla paczki.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
