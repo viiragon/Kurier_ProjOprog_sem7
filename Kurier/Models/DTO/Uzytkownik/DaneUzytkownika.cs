@@ -2,7 +2,6 @@
 {
   public class DaneUzytkownika : DaneAuth
   {
-    public int Id { get; set; }
     public string Imie { get; set; }
     public string Nazwisko { get; set; }
     public Adres Adres { get; set; }
@@ -19,7 +18,7 @@
     {
       unchecked
       {
-        var hashCode = Id;
+        var hashCode = UserId;
         hashCode = (hashCode*397) ^ (Imie != null ? Imie.GetHashCode() : 0);
         hashCode = (hashCode*397) ^ (Nazwisko != null ? Nazwisko.GetHashCode() : 0);
         hashCode = (hashCode*397) ^ (Adres != null ? Adres.GetHashCode() : 0);

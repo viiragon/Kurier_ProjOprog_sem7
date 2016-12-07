@@ -54,7 +54,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       DanePaczki paczka1 = new DanePaczki()
@@ -146,7 +146,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       DanePaczki paczka1 = new DanePaczki()
@@ -194,7 +194,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       DanePaczki paczka1 = new DanePaczki()
@@ -213,7 +213,7 @@ namespace KurierTest.Models
       };
       var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() {daneKuriera1},
         paczki: new List<DanePaczki>() {paczka1});
-      new  PaczkaModel(context).PowiazKurieraIPaczke(paczka1.Id,daneKuriera1.Id);
+      new  PaczkaModel(context).PowiazKurieraIPaczke(paczka1.Id,daneKuriera1.UserId);
       var powiazanaPaczka = context.Paczki.FirstOrDefault(p => p.Id == paczka1.Id);
       Assert.IsNotNull(powiazanaPaczka);
       Assert.AreEqual(powiazanaPaczka.Status.Kurier,daneKuriera1);

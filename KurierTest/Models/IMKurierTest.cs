@@ -10,6 +10,7 @@ using Kurier.Models.DTO.Samochod;
 using Kurier.Models.DTO.Uzytkownik;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+
 namespace KurierTest.Models
 {
   [TestClass]
@@ -65,7 +66,7 @@ namespace KurierTest.Models
         Nazwisko = "Mirosławski",
         Imie = "Stanisław",
         NumerPracowanika = 100,
-        Id = 10
+        UserId = 10
       };
       var data = new List<DaneKuriera>() { daneKuriera };
       var context = MockMainteiner.PobierzContextKurierow(data);
@@ -78,7 +79,7 @@ namespace KurierTest.Models
       Assert.AreEqual(pobraneDaneKuriera.Adres.Miasto, "Sierpc");
       Assert.AreEqual(pobraneDaneKuriera.Adres.NumerMieszkania, "2");
       Assert.AreEqual(pobraneDaneKuriera.Adres.Ulica, "Poniatowskiego");
-      Assert.AreEqual(pobraneDaneKuriera.Id, 10);
+      Assert.AreEqual(pobraneDaneKuriera.UserId, 10);
 
     }
     [TestMethod]
@@ -96,7 +97,7 @@ namespace KurierTest.Models
         Nazwisko = "Mirosławski",
         Imie = "Stanisław",
         NumerPracowanika = 100,
-        Id = 10
+        UserId = 10
       };
       var data = new List<DaneKuriera>() { daneKuriera };
       var context = MockMainteiner.PobierzContextKurierow(data);
@@ -175,7 +176,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       DanePaczki paczka1 = new DanePaczki()
@@ -236,7 +237,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       DanePaczki paczka1 = new DanePaczki()
@@ -277,6 +278,13 @@ namespace KurierTest.Models
     [TestMethod]
     public void PobierzSamochodKurieraTest()
     {
+
+      var samochod = new DaneSamochodu()
+      {
+        Id = 5,
+        NumRejestracyjny = "WTS9231",
+        Stan = "sprawny"
+      };
       DaneKuriera daneKuriera1 = new DaneKuriera()
       {
         Adres = new Adres()
@@ -288,22 +296,15 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3,
+        Samochod = samochod
       };
 
-      var samochod = new DaneSamochodu()
-      {
-        Id = 5,
-        Kurier = daneKuriera1,
-        NumRejestracyjny = "WTS9231",
-        Stan = "sprawny"
-      };
       var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 }, samochody: new List<DaneSamochodu>() { samochod });
       DaneSamochodu pobranySamochod = new KurierzyModel(context).PobierzSamochodKuriera(3);
       Assert.AreEqual(samochod.Id, pobranySamochod.Id);
       Assert.AreEqual(samochod.NumRejestracyjny, pobranySamochod.NumRejestracyjny);
       Assert.AreEqual(samochod.Stan, pobranySamochod.Stan);
-      Assert.AreEqual(samochod.Kurier.Id, pobranySamochod.Kurier.Id);
     }
     [TestMethod]
     public void PobierzSamochodKurieraBezSamochoduTest()
@@ -319,7 +320,7 @@ namespace KurierTest.Models
         },
         Nazwisko = "Kowalski",
         Imie = "Maciej",
-        Id = 3
+        UserId = 3
       };
 
       var samochod = new DaneSamochodu()

@@ -34,7 +34,7 @@ namespace Kurier.Models.DataAccess
 
     public DaneKuriera PobierzKuriera(int id)
     {
-        return _context.Kurierzy.FirstOrDefault(p=>p.Id==id);
+        return _context.Kurierzy.FirstOrDefault(p=>p.UserId==id);
     }
 
     public List<DaneKuriera> PobierzListeKurierow()
@@ -44,12 +44,13 @@ namespace Kurier.Models.DataAccess
 
     public List<DanePaczki> PobierzListePaczekKuriera(int idKuriera)
     {
-        return _context.Paczki.Where(p=>p.Status!=null).Where(p=>p.Status.Kurier!=null).Where(p=>p.Status.Kurier.Id==idKuriera).ToList();
+        return _context.Paczki.Where(p=>p.Status!=null).Where(p=>p.Status.Kurier!=null).Where(p=>p.Status.Kurier.UserId==idKuriera).ToList();
     }
 
     public DaneSamochodu PobierzSamochodKuriera(int idKuriera)
     {
-        return _context.Samochody.Where(p=>p.Kurier!=null).FirstOrDefault(p=>p.Kurier.Id==idKuriera);
+      var firstOrDefault = _context.Kurierzy.FirstOrDefault(p=>p.UserId==idKuriera);
+      return firstOrDefault != null ? firstOrDefault.Samochod : null;
     }
 
     //TODO: zaimplementoiwać walidację

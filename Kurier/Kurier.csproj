@@ -62,8 +62,40 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -86,10 +118,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Kurier.mdf" />
-    <Content Include="App_Data\Kurier_log.ldf">
-      <DependentUpon>Kurier.mdf</DependentUpon>
-    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -102,7 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Menu\CentralaPaczki.aspx" />
-    <Content Include="Views\Menu\CentralaSamochody.aspx" />
+    <Content Include="Views\Menu\OknoDodawaniaSamochodu.aspx" />
     <Content Include="Views\Menu\LogowanieCentrali.aspx" />
     <Content Include="Views\Menu\LogowanieKlient.aspx" />
     <Content Include="Views\Menu\LogowanieKurier.aspx" />
@@ -111,7 +139,10 @@
     <Content Include="Views\Menu\NadaniePaczki.aspx" />
     <Content Include="Views\Menu\NajczestsiKlienci.aspx" />
     <Content Include="Main.aspx" />
+    <Content Include="Views\Menu\OknoEdycjiSamochodu.aspx" />
+    <Content Include="Views\Menu\OknoListySamochodow.aspx" />
     <Content Include="Views\Menu\OknoSzczegolowPaczki.aspx" />
+    <Content Include="Views\Menu\OknoSzczegolowSamochodu.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -126,14 +157,23 @@
     <Compile Include="Interfaces\Presenter\IPKlient.cs" />
     <Compile Include="Interfaces\Presenter\IPKurier.cs" />
     <Compile Include="Interfaces\View\IVKlient.cs" />
-    <Compile Include="Migrations\201611162126157_migration3.cs" />
-    <Compile Include="Migrations\201611162126157_migration3.Designer.cs">
-      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
+    <Compile Include="Migrations\201611302051166_init.cs" />
+    <Compile Include="Migrations\201611302051166_init.Designer.cs">
+      <DependentUpon>201611302051166_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611231857200_migracja4.cs" />
-    <Compile Include="Migrations\201611231857200_migracja4.Designer.cs">
-      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    <Compile Include="Migrations\201611302053087_init2.cs" />
+    <Compile Include="Migrations\201611302053087_init2.Designer.cs">
+      <DependentUpon>201611302053087_init2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612062227477_adres paczki.cs" />
+    <Compile Include="Migrations\201612062227477_adres paczki.Designer.cs">
+      <DependentUpon>201612062227477_adres paczki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.cs" />
+    <Compile Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.Designer.cs">
+      <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
@@ -141,15 +181,6 @@
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthUzytkownika.cs" />
     <Compile Include="Interfaces\Model\IMPaczki.cs" />
     <Compile Include="Interfaces\Model\IMUzytkownicy.cs" />
-    <Compile Include="Migrations\201611152239291_Initial.cs" />
-    <Compile Include="Migrations\201611152239291_Initial.Designer.cs">
-      <DependentUpon>201611152239291_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611152253243_Dodanie kuriera do statusu.cs" />
-    <Compile Include="Migrations\201611152253243_Dodanie kuriera do statusu.Designer.cs">
-      <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\ApplicationContext.cs" />
     <Compile Include="Interfaces\Model\IMSamochody.cs" />
     <Compile Include="Interfaces\Model\IMKurierzy.cs" />
@@ -201,6 +232,7 @@
     <Compile Include="Presenters\KurierManagera\ListaZlecen.cs" />
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Views\Menu\CentralaPaczki.aspx.cs">
       <DependentUpon>CentralaPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,12 +240,12 @@
     <Compile Include="Views\Menu\CentralaPaczki.aspx.designer.cs">
       <DependentUpon>CentralaPaczki.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Menu\CentralaSamochody.aspx.cs">
-      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+    <Compile Include="Views\Menu\OknoDodawaniaSamochodu.aspx.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Menu\CentralaSamochody.aspx.designer.cs">
-      <DependentUpon>CentralaSamochody.aspx</DependentUpon>
+    <Compile Include="Views\Menu\OknoDodawaniaSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\LogowanieCentrali.aspx.cs">
       <DependentUpon>LogowanieCentrali.aspx</DependentUpon>
@@ -264,12 +296,33 @@
     <Compile Include="Views\Menu\NajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>NajczestsiKlienci.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\OknoEdycjiSamochodu.aspx.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoEdycjiSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoEdycjiSamochodu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoListySamochodow.aspx.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoListySamochodow.aspx.designer.cs">
+      <DependentUpon>OknoListySamochodow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoSzczegolowPaczki.aspx.designer.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowSamochodu.aspx.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoSzczegolowSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\VCentralaPaczki.cs" />
     <Compile Include="Views\Menu\VCentralaSamochody.cs" />
@@ -290,23 +343,28 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611152239291_Initial.resx">
-      <DependentUpon>201611152239291_Initial.cs</DependentUpon>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611302051166_init.resx">
+      <DependentUpon>201611302051166_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611152253243_Dodanie kuriera do statusu.resx">
-      <DependentUpon>201611152253243_Dodanie kuriera do statusu.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611302053087_init2.resx">
+      <DependentUpon>201611302053087_init2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611162126157_migration3.resx">
-      <DependentUpon>201611162126157_migration3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612062227477_adres paczki.resx">
+      <DependentUpon>201612062227477_adres paczki.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611231857200_migracja4.resx">
-      <DependentUpon>201611231857200_migracja4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.resx">
+      <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

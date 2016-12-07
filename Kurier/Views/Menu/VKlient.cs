@@ -62,6 +62,9 @@ namespace Kurier.Views.Menu
             DanePaczki paczka = new DanePaczki();
             paczka.Adres = new Models.DTO.Adres();
             paczka.Adres.Ulica = adresAdresata;
+            paczka.Adres.KodPocztowy = "00-000";
+            paczka.Adres.Miasto = "Warszawa";
+            paczka.Adres.NumerMieszkania = "10";
             presenter.wybranoZapiszDaneNadanejPaczki(paczka);
         }
 

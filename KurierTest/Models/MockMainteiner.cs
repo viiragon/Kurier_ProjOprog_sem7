@@ -40,6 +40,14 @@ namespace KurierTest.Models
       return userContext.Object;
     }
 
+    public static ApplicationContext PobierzContextSamochodow(List<DaneSamochodu> samochody)
+    {
+        DbSet<DaneSamochodu> mockDbSet = StworzMockBazy(samochody).Object;
+        Mock<ApplicationContext> applicationContext = new Mock<ApplicationContext>();
+        applicationContext.Setup(p => p.Samochody).Returns(mockDbSet);
+        return applicationContext.Object;
+    }
+
     private static Mock<DbSet<T>> StworzMockBazy<T>(List<T> elements) where T : class
     {
       IQueryable<T> elementsAsQueryable = elements.AsQueryable();

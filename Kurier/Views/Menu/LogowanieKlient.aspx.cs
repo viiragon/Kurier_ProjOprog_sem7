@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using Kurier.Models.DataAccess;
+using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Views.Menu
 {
@@ -47,8 +49,11 @@ namespace Kurier.Views.Menu
         {
             lError.Text = "Błędne dane logowania";
         }
-
-        protected void onClickBtLogin(object sender, EventArgs e)
+    protected void SignIn(object sender, EventArgs e)
+    {
+      new UzytkownicyModel().ZalogujJakoKlient(new DaneAuthKlienta() { Login = tbLogin.Text, Haslo = tbPassword.Text });
+    }
+    protected void onClickBtLogin(object sender, EventArgs e)
         {
             lError.Text = "";
             if (tbLogin.Text.Length == 0 || tbPassword.Text.Length == 0)
