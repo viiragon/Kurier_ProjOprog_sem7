@@ -5,6 +5,7 @@ using System.Web;
 using Kurier.Interfaces.Presenter;
 using Kurier.Models.DTO.Samochod;
 using Kurier.Models.DataAccess;
+using Kurier.Models.DTO.Uzytkownik;
 
 namespace Kurier.Presenters.CentralaManager.SamochodyCM
 {
@@ -12,6 +13,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
     {
         private Interfaces.View.IVCentralaSamochody samochody;
         private SamochodyModel samochodyModel;
+        private KurierzyModel kurierzyModel;
         public SamochodyPrezenter()
         {
             samochody = Interfaces.View.IVCentralaSamochody.createInstance(this);
@@ -74,9 +76,19 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             wybranoPokazListeSamochodow();
         }
 
-        public void wybranoZapiszPowiazanieKurieraZSamochodem(int idKuriera)
+        public void wybranoZapiszPowiazanieKurieraZSamochodem(int idSamochodu, int idKuriera)
         {
-            throw new NotImplementedException();
+            DaneSamochodu dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
+            DaneKuriera dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
+
+            bool poprawneDaneSamochod = samochodyModel.WalidujDaneSamochodu(dSamochod);
+            bool poprawneDaneKurier = kurierzyModel.WalidujDaneKuriera(dKuriera);
+            if (poprawneDaneSamochod && poprawneDaneKurier)
+            {
+                samochodyModel.PowiazKurieraISamochod(idSamochodu, idKuriera);
+                //Dodac komunikat
+            }
+            //throw new NotImplementedException();    
         }
     }
 }

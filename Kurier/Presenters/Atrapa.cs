@@ -182,7 +182,7 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-        public void wybranoZapiszPowiazanieKurieraZSamochodem(int idKuriera)
+        public void wybranoZapiszPowiazanieKurieraZSamochodem(int idSamochodu, int idKuriera)
         {
             throw new NotImplementedException();
         }
