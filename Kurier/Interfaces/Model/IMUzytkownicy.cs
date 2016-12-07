@@ -14,5 +14,6 @@ namespace Kurier.Interfaces.Model
     void ZalogujJakoKlient(DaneAuthKlienta dane);
     void ZalogujJakoKurier(DaneAuthKuriera dane);
     void ZarejestrujJakoKlient(DaneKlienta dane);
+    bool IstniejeUzytkownikONazwie(string username);
   }
 }
