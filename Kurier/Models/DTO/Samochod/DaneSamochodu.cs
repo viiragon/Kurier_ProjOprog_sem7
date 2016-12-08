@@ -1,11 +1,15 @@
 ﻿using Kurier.Models.DTO.Uzytkownik;
+using System;
 
 namespace Kurier.Models.DTO.Samochod
 {
   public class DaneSamochodu
   {
     public string NumRejestracyjny { get; set; }
+    public string Marka { get; set; }
+    public string Model { get; set; }
     public string Stan { get; set; }
+    public DateTime DataKontroli { get; set; }
     public int Id { get; set; }
 
     protected bool Equals(DaneSamochodu other)
