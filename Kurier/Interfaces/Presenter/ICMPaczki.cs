@@ -11,7 +11,7 @@ namespace Kurier.Interfaces.Presenter
         void wybranoPokazListePaczek();
         void wybranoPokazSzczegolyPaczki(int id);
         void wybranoPrzypiszKurieraDoPaczki(int idPaczki);
-        void wybranoZapiszPowiazanieKurieraZPaczka(int idKuriera);
-        void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status);
+        void wybranoZapiszPowiazanieKurieraZPaczka(int idPaczki, int idKuriera);
+        void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status, int idPaczki);
     }
 }

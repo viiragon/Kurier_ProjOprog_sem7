@@ -18,6 +18,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
         {
             samochody = Interfaces.View.IVCentralaSamochody.createInstance(this);
             samochodyModel = new SamochodyModel();
+            kurierzyModel = new KurierzyModel();
         }
 
         public void wybranoAktualizujSzczegolySamochodu(int id)

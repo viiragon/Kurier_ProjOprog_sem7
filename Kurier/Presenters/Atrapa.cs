@@ -221,12 +221,12 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-        public void wybranoZapiszPowiazanieKurieraZPaczka(int idKuriera)
+        public void wybranoZapiszPowiazanieKurieraZPaczka(int idKuriera, int idPaczki)
         {
             throw new NotImplementedException();
         }
 
-        public void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status)
+        public void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status, int idPaczki)
         {
             throw new NotImplementedException();
         }
