@@ -153,3 +153,42 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Ku
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.init2.resources
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.adrespaczki.resources
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.dodanienulowalnychdatdopaczki.resources
+C:\TfsProjects\projOprog2\Kurier\bin\Kurier.dll.config
+C:\TfsProjects\projOprog2\Kurier\bin\Kurier.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Kurier.pdb
+C:\TfsProjects\projOprog2\Kurier\bin\Antlr3.Runtime.dll
+C:\TfsProjects\projOprog2\Kurier\bin\EntityFramework.dll
+C:\TfsProjects\projOprog2\Kurier\bin\EntityFramework.SqlServer.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Newtonsoft.Json.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Owin.dll
+C:\TfsProjects\projOprog2\Kurier\bin\System.Web.Razor.dll
+C:\TfsProjects\projOprog2\Kurier\bin\Antlr3.Runtime.pdb
+C:\TfsProjects\projOprog2\Kurier\bin\EntityFramework.xml
+C:\TfsProjects\projOprog2\Kurier\bin\EntityFramework.SqlServer.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+C:\TfsProjects\projOprog2\Kurier\bin\Newtonsoft.Json.xml
+C:\TfsProjects\projOprog2\Kurier\bin\System.Web.Razor.xml
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.init.resources
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.init2.resources
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.adrespaczki.resources
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.dodanienulowalnychdatdopaczki.resources
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.dodaniezewnetrzengoiddlapaczki.resources
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.dll
+C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.pdb
