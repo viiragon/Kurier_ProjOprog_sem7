@@ -5,28 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
-using Kurier.Models.DataAccess;
-using Kurier.Models.DTO.Uzytkownik;
 
-namespace Kurier.Views.Menu
+namespace Kurier.Views.Menu.Kurier
 {
-	public partial class LogowanieKlient : System.Web.UI.Page
+	public partial class OknoLogowanieKurier : System.Web.UI.Page
 	{
-        private static VKlient controller;
+        private static VKurier controller;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
             Pages.setCurrent(this);
             if (controller != null)
             {
-                controller.setLogowanieKlient(this);
+                controller.setOknoLogowanieKurier(this);
             }
 		}
 
-        public static void wyswietlOkno(VKlient caller)
+        public static void wyswietlOkno(VKurier caller)
         {
             controller = caller;
-            Pages.loadPage("/Views/Menu/LogowanieKlient.aspx");
+            Pages.loadPage("/Views/Menu/Kurier/LogowanieKurier.aspx");
         }
 
         private bool checkAuths()
@@ -49,11 +47,8 @@ namespace Kurier.Views.Menu
         {
             lError.Text = "Błędne dane logowania";
         }
-    protected void SignIn(object sender, EventArgs e)
-    {
-      new UzytkownicyModel().ZalogujJakoKlient(new DaneAuthKlienta() { Login = tbLogin.Text, Haslo = tbPassword.Text });
-    }
-    protected void onClickBtLogin(object sender, EventArgs e)
+
+        protected void onClickBtLogin(object sender, EventArgs e)
         {
             lError.Text = "";
             if (tbLogin.Text.Length == 0 || tbPassword.Text.Length == 0)
@@ -70,9 +65,9 @@ namespace Kurier.Views.Menu
             }
         }
 
-        protected void onClickBtNoLogin(object sender, EventArgs e)
+        protected void onClickBtHack(object sender, EventArgs e)
         {
-            controller.wybranoNadajBezLogowania();
+            controller.wybranoZaloguj("mkowa", "natak139a");
         }
     }
 }

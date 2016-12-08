@@ -13,13 +13,14 @@ namespace Kurier.Interfaces.View
     {
         public static IVKurier createInstance(Presenter.IPKurier kurierP)
         {
-            return new Views.Menu.VKurier(kurierP);
+            return new Views.Menu.Kurier.VKurier(kurierP);
         }
         public abstract void wyswietlFormularzEdycjiStatusuPaczki(String[] statusy);
         public abstract void wyswietlFormularzLogowaniaJakoKurier();
         public abstract void wyswietlKomunikatOBlednychDanychLogowania();
         public abstract void wyswietlOknoKolejnegoPrzegladu(DateTime data);
-        public abstract void wyswietlOknoListyZlecenKuriera(DanePaczki[] zlecenia);
+        public abstract void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia);
+        public abstract void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod);
         public abstract void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod);
         public abstract void wyswietlOknoWydaniaPaczki(DanePaczki paczki);
     }

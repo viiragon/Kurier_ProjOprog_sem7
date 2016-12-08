@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CentralaPaczki.aspx.cs" Inherits="Kurier.Views.Menu.CentralaPaczki" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoCentralaPaczki.aspx.cs" Inherits="Kurier.Views.Menu.CentralaPaczki" %>
 
 <!DOCTYPE html>
 

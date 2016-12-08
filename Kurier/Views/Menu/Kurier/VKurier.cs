@@ -5,11 +5,12 @@ using System.Web;
 using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Samochod;
 
-namespace Kurier.Views.Menu
+namespace Kurier.Views.Menu.Kurier
 {
     public class VKurier : Interfaces.View.IVKurier
     {
-        private LogowanieKurier logowanie;
+        private OknoLogowanieKurier logowanie;
+        private Kurier.MenuGlowneKurier menuKurier;
         private Interfaces.Presenter.IPKurier presenter;
 
         public VKurier(Interfaces.Presenter.IPKurier presenter)
@@ -17,9 +18,14 @@ namespace Kurier.Views.Menu
             this.presenter = presenter;
         }
 
-        public void setLogowanieKurier(LogowanieKurier logowanie)
+        public void setOknoLogowanieKurier(OknoLogowanieKurier logowanie)
         {
             this.logowanie = logowanie;
+        }
+
+        public void setMenuGlowneKurier(Kurier.MenuGlowneKurier menuKurier)
+        {
+            this.menuKurier = menuKurier;
         }
 
         public void wybranoZaloguj(string login, string password)
@@ -30,6 +36,11 @@ namespace Kurier.Views.Menu
             presenter.wybranoZalogujKuriera(dto);
         }
 
+        public void wybranoWyloguj()
+        {
+            presenter.wybranoWylogujKuriera();
+        }
+
         public override void wyswietlFormularzEdycjiStatusuPaczki(string[] statusy)
         {
             throw new NotImplementedException();
@@ -37,7 +48,7 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlFormularzLogowaniaJakoKurier()
         {
-            LogowanieKurier.wyswietlOkno(this);
+            OknoLogowanieKurier.wyswietlOkno(this);
         }
 
         public override void wyswietlKomunikatOBlednychDanychLogowania()
@@ -50,9 +61,14 @@ namespace Kurier.Views.Menu
             throw new NotImplementedException();
         }
 
-        public override void wyswietlOknoListyZlecenKuriera(DanePaczki[] zlecenia)
+        public override void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia)
         {
-            throw new NotImplementedException();
+            Kurier.MenuGlowneKurier.wyswietlOkno(this, dane, zlecenia);
+        }
+
+        public override void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod)
+        {
+            Kurier.MenuGlowneKurier.wyswietlOknoIKomunikatOPrzegladzie(this, dane, zlecenia, samochod);
         }
 
         public override void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod)

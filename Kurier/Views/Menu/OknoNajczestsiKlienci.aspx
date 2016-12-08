@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NajczestsiKlienci.aspx.cs" Inherits="Kurier.Views.Menu.NajczestsiKlienci" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoNajczestsiKlienci.aspx.cs" Inherits="Kurier.Views.Menu.NajczestsiKlienci" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieKurier.aspx.cs" Inherits="Kurier.Views.Menu.LogowanieKurier" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoLogowanieCentrali.aspx.cs" Inherits="Kurier.Views.Menu.LogowanieCentrali" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Logowanie Kurier</h1>
+            <h1>LOGOWANIE</h1>
             <p>
                 <asp:Label ID="lError" runat="server"></asp:Label>    
             </p>

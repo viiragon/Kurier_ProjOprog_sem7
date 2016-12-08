@@ -8,14 +8,17 @@ using System.Web.UI.WebControls;
 
 namespace Kurier.Views.Menu
 {
-    public partial class LogowanieCentrali : System.Web.UI.Page
+    public partial class NadaniePaczki : System.Web.UI.Page
     {
-        private static VLogowanieCentrali controller;
+        private static VKlient controller;
+        private static bool zalogowany = true;
 
-        public static void wyswietlOkno(VLogowanieCentrali caller)
+
+        public static void wyswietlOkno(VKlient caller, bool zalogowanyArg)
         {
             controller = caller;
-            Pages.loadPage("/Views/Menu/LogowanieCentrali.aspx");
+            zalogowany = zalogowanyArg;
+            Pages.loadPage("/Views/Menu/OknoNadaniePaczki.aspx");
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -23,14 +26,14 @@ namespace Kurier.Views.Menu
             Pages.setCurrent(this);
             if (controller != null)
             {
-                controller.setLogowanieCentrali(this);
+                controller.setNadawaniePaczki(this);
             }
         }
 
         private bool checkAuths()
         {
-            Regex r = new Regex("[A-Za-z0-9]");
-            return r.IsMatch(tbLogin.Text) && r.IsMatch(tbPassword.Text);
+            //Regex r = new Regex("[A-Za-z0-9.,]");
+            return true;//r.IsMatch(tbLogin.Text) && r.IsMatch(tbPassword.Text);
         }
 
         public void wyswietlBladBrakPol()
@@ -48,26 +51,25 @@ namespace Kurier.Views.Menu
             lError.Text = "Błędne dane logowania";
         }
 
-        protected void onClickBtLogin(object sender, EventArgs e)
+        public void wyswietlKomunikatONadaniuPaczki()
         {
-            lError.Text = "";
-            if (tbLogin.Text.Length == 0 || tbPassword.Text.Length == 0)
+            lError.Text = "Paczka nadana poprawnie";
+        }
+
+        protected void onClickBtNadaj(object sender, EventArgs e)
+        {
+            if (tbAdresat.Text.Length == 0 || tbAdresAdresata.Text.Length == 0 || tbNadawca.Text.Length == 0 || tbAdresNadawcy.Text.Length == 0)
             {
                 wyswietlBladBrakPol();
             }
             else if (!checkAuths())
             {
-                wyswietlBladZleZnaki();
+
             }
             else
             {
-                controller.wybranoZaloguj(tbLogin.Text, tbPassword.Text);
+                controller.wybranoZapiszNadanaPaczke(tbAdresat.Text, tbAdresAdresata.Text, tbNadawca.Text, tbAdresNadawcy.Text);
             }
-        }
-
-        protected void onClickBtHack(object sender, EventArgs e)
-        {
-            controller.wybranoZaloguj("corzel", "natak139l");
         }
     }
 }

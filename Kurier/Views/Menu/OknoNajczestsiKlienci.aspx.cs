@@ -14,7 +14,7 @@ namespace Kurier.Views.Menu
         public static void wyswietlOkno(VCentralaStatystyka caller)
         {
             controller = caller;
-            Pages.loadPage("/Views/Menu/NajczestsiKlienci.aspx");
+            Pages.loadPage("/Views/Menu/OknoNajczestsiKlienci.aspx");
         }
 
         protected void Page_Load(object sender, EventArgs e)

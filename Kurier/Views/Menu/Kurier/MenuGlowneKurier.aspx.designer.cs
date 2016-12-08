@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kurier.Views.Menu {
+namespace Kurier.Views.Menu.Kurier {
     
     
-    public partial class LogowanieKurier {
+    public partial class MenuGlowneKurier {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,30 @@ namespace Kurier.Views.Menu {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lError control.
+        /// lUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lError;
+        protected global::System.Web.UI.WebControls.Label lUser;
         
         /// <summary>
-        /// tbLogin control.
+        /// lMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLogin;
+        protected global::System.Web.UI.WebControls.Label lMessage;
         
         /// <summary>
-        /// tbPassword control.
+        /// rptZlecenia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+        protected global::System.Web.UI.WebControls.Repeater rptZlecenia;
     }
 }

@@ -78,7 +78,7 @@ namespace Kurier.Presenters
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
-                logowanie.wyswietlMenuGlowneCentrali(user, this, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter() , this, this);
+                logowanie.wyswietlMenuGlowneCentrali(user, this, this/*new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter()*/ , this, this);
             }
             else
             {
@@ -327,12 +327,25 @@ namespace Kurier.Presenters
 
         public void wybranoWylogujKuriera()
         {
-            throw new NotImplementedException();
+            ivKurier.wyswietlFormularzLogowaniaJakoKurier();
         }
 
         public void wybranoZalogujKuriera(DaneUzytkownika dane)
         {
-            throw new NotImplementedException();
+            if (dane.Login.Equals("mkowa") && dane.Haslo.Equals("natak139a"))
+            {
+                Models.DTO.Uzytkownik.DaneUzytkownika user = daneKuriera1;
+                user.Login = dane.Login;
+                user.Haslo = dane.Haslo;
+                if (new Random().Next(100) > 50)
+                {
+                    ivKurier.wyswietlOknoListyZlecenKuriera(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 });
+                }
+                else
+                {
+                    ivKurier.wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 }, samochod);
+                }
+            }
         }
 
         public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera1 = new Models.DTO.Uzytkownik.DaneKuriera()
@@ -394,6 +407,13 @@ namespace Kurier.Presenters
             Status = new Status() { KodStatusu = 1, Kurier = daneKuriera2, Czas = new DateTime(1990, 10, 11) },
             PoczatekObslugi = new DateTime(1990, 10, 10),
             KoniecObslugi = new DateTime(1990, 10, 12)
+        };
+
+        Models.DTO.Samochod.DaneSamochodu samochod = new Models.DTO.Samochod.DaneSamochodu()
+        {
+            Id = 212,
+            NumRejestracyjny = "PO L74B6",
+            Stan = "Działa"
         };
     }
 }

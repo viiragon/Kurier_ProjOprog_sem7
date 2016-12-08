@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieKlient.aspx.cs" Inherits="Kurier.Views.Menu.LogowanieKlient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoLogowanieKlient.aspx.cs" Inherits="Kurier.Views.Menu.LogowanieKlient" %>
 
 <!DOCTYPE html>
 

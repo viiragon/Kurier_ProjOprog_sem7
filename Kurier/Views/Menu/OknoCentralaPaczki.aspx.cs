@@ -29,7 +29,7 @@ namespace Kurier.Views.Menu
         {
             controller = caller;
             paczki = lista;
-            Pages.loadPage("/Views/Menu/CentralaPaczki.aspx");
+            Pages.loadPage("/Views/Menu/OknoCentralaPaczki.aspx");
         }
 
         protected void onClickDetails(object sender, EventArgs e)
