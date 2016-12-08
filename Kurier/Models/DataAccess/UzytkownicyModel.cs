@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-
+using Kurier.Models.Context;
 
 namespace Kurier.Models.DataAccess
 {
@@ -39,9 +39,24 @@ namespace Kurier.Models.DataAccess
 
     public void ZarejestrujJakoKlient(DaneKlienta dane)
     {
-      var user = GetUser(dane.Login, dane.Haslo);
-      SignIn(user);
+      var userStore = new UserStore<IdentityUser>();
+      var manager = new UserManager<IdentityUser>(userStore);
+
+      var user = new DaneKlienta() { UserName = dane.UserName};
+      IdentityResult result = manager.Create(user, dane.Haslo);
+
+    //  if (result.Succeeded)
+ 
     }
+
+    public bool CzyIstniejeUzytkonik(string username)
+    {
+      using (var db = new ApplicationContext())
+      {
+        return db.Uzytkownicy.Any(p => p.UserName == username);
+      }
+    }
+
     private IdentityUser GetUser(string login, string password)
     {
       var userStore = new UserStore<IdentityUser>();

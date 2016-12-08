@@ -21,6 +21,8 @@ namespace Kurier.Models.Context
     //public virtual DbSet<DaneUzytkownika> Uzytkownicy { get; set; }
     public virtual DbSet<DaneKuriera> Kurierzy { get; set; }
 
+    public virtual DbSet<DaneUzytkownika> Uzytkownicy { get; set; }
+
     public ApplicationContext() : base("ApplicationContext")
     {
       Database.SetInitializer<ApplicationContext>(new AplicationDbInitializer());
