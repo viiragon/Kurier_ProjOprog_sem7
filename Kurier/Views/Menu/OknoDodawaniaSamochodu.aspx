@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoDodawaniaSamochodu.aspx.cs" Inherits="CentralaSamochody" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoDodawaniaSamochodu.aspx.cs" Inherits="Kurier.Views.Menu.OknoDodawaniaSamochodu" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <h1>CENTRALA SAMOCHODY</h1>
-        <h3>Dodaj nowy samochód</h3>
+       
         <p>
             Marka: <asp:TextBox runat="server"></asp:TextBox>
         </p>

@@ -27,7 +27,11 @@ namespace Kurier.Views.Menu
         }
         protected void onClickBtCarEdit(object sender, EventArgs e)
         {
-            Pages.loadPage("/Views/Menu/OknoEdycjiSamochodow.aspx");
+            controller.wyswietlOknoDodawaniaSamochodu();
+        }
+        protected void onClickBtDelete(object sender, EventArgs e)
+        {
+
         }
     }
 }

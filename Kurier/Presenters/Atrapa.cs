@@ -78,7 +78,7 @@ namespace Kurier.Presenters
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
-                logowanie.wyswietlMenuGlowneCentrali(user, this, this/*new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter()*/ , this, this);
+                logowanie.wyswietlMenuGlowneCentrali(user, this, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter() , this, this);
             }
             else
             {
