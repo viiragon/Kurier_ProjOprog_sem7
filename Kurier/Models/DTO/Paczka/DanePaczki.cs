@@ -23,17 +23,9 @@ namespace Kurier.Models.DTO.Paczka
       DanePaczki danePaczkiObj = obj as DanePaczki;
       if (danePaczkiObj != null)
       {
-        return Id == danePaczkiObj.Id
-               && Adresat == danePaczkiObj.Adresat
-               && Nadawca == danePaczkiObj.Nadawca
-               && Adres == danePaczkiObj.Adres
-               && PoczatekObslugi == danePaczkiObj.PoczatekObslugi
-               && KoniecObslugi == danePaczkiObj.KoniecObslugi
-               && Status == danePaczkiObj.Status
-               ;
+        return Equals(danePaczkiObj);
       }
-      else
-        return false;
+      return base.Equals(obj);
     }
 
     protected bool Equals(DanePaczki other)
