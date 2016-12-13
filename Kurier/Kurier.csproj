@@ -179,7 +179,6 @@
       <DependentUpon>201612072203077_dodanie zewnetrzengo id dla paczki.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\DataAccess\AplicationDbInitializer.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
@@ -240,12 +239,14 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.designer.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.cs">
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.designer.cs">
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
@@ -253,6 +254,7 @@
     <Compile Include="Views\Menu\Kurier\VKurier.cs" />
     <Compile Include="Views\Menu\OknoCentralaPaczki.aspx.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoCentralaPaczki.aspx.designer.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
@@ -294,24 +296,28 @@
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.cs">
       <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.designer.cs">
       <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieKlient.aspx.cs">
       <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieKlient.aspx.designer.cs">
       <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoNadaniePaczki.aspx.cs">
       <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoNadaniePaczki.aspx.designer.cs">
       <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.cs">
       <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
@@ -338,7 +344,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>

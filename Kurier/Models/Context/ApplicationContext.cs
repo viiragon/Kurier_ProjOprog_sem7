@@ -25,7 +25,7 @@ namespace Kurier.Models.Context
 
     public ApplicationContext() : base("ApplicationContext")
     {
-      Database.SetInitializer<ApplicationContext>(new AplicationDbInitializer());
+    //  Database.SetInitializer<ApplicationContext>(new AplicationDbInitializer());
     }
 
     public void FixEfProviderServicesProblem()
