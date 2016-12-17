@@ -7,6 +7,7 @@ using Kurier.Models.Context;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Samochod;
 using Kurier.Models.DTO.Uzytkownik;
+using System.Text.RegularExpressions;
 
 namespace Kurier.Models.DataAccess
 {
@@ -36,31 +37,43 @@ namespace Kurier.Models.DataAccess
 
         public DaneSamochodu PobierzSamochod(int id)
         {
-            return _context.Samochody.Find(id);
+            return _context.Samochody.FirstOrDefault(p => p.Id == id);
         }
 
         public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
         {
-            DaneKuriera kurier = _context.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
-            DaneSamochodu samochod = _context.Samochody.Find(idSamochodu);
-
+            DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
+            DaneSamochodu samochod = _context.Samochody.FirstOrDefault(p => p.Id == idSamochodu);
             if (samochod != null)
                 kurier.Samochod = samochod;
 
             _context.SaveChanges();
-
         }
 
-        public void UsunSamochod(int id)
+        public void UsunSamochod(int idSamochodu)
         {
-            var samochod = _context.Samochody.Find(id);
+            var samochod = _context.Samochody.FirstOrDefault(p => p.Id == idSamochodu);
             _context.Samochody.Remove(samochod);
             _context.SaveChanges();
         }
 
         public bool WalidujDaneSamochodu(DaneSamochodu samochod)
         {
-            throw new NotImplementedException();
+            return WalidujRejestracje(samochod.NumRejestracyjny)
+                && WalidujStatus(samochod.Stan);
+        }
+
+        private bool WalidujRejestracje(String NumRejestracyjny)
+        {
+            return Regex.IsMatch(NumRejestracyjny, @"^[a-zA-Z][a-zA-Z0-9]*$")
+               && NumRejestracyjny.Length > 0
+               && NumRejestracyjny.Length < 12;
+        }
+
+        private bool WalidujStatus(String Stan)
+        {
+            return Regex.IsMatch(Stan, @"^[a-zA-Z]*$")
+               && Stan.Length > 0;
         }
     }
 }

@@ -24,6 +24,8 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,6 +107,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
@@ -240,12 +245,14 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.designer.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.cs">
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\Kurier\MenuGlowneKurier.aspx.designer.cs">
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
@@ -253,6 +260,7 @@
     <Compile Include="Views\Menu\Kurier\VKurier.cs" />
     <Compile Include="Views\Menu\OknoCentralaPaczki.aspx.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoCentralaPaczki.aspx.designer.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
@@ -294,24 +302,28 @@
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.cs">
       <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieCentrali.aspx.designer.cs">
       <DependentUpon>OknoLogowanieCentrali.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieKlient.aspx.cs">
       <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoLogowanieKlient.aspx.designer.cs">
       <DependentUpon>OknoLogowanieKlient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoNadaniePaczki.aspx.cs">
       <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoNadaniePaczki.aspx.designer.cs">
       <DependentUpon>OknoNadaniePaczki.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.cs">
       <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\OknoNajczestsiKlienci.aspx.designer.cs">
       <DependentUpon>OknoNajczestsiKlienci.aspx</DependentUpon>
@@ -396,6 +408,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

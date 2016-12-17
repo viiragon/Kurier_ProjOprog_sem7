@@ -63,7 +63,7 @@ namespace KurierTest.Models
             DaneSamochodu samochod1 = new DaneSamochodu()
             {
                 Id = 1,
-                NumRejestracyjny = "WE123R",
+                NumRejestracyjny = "PO6478A",
                 Stan = "Sprawny"
 
             };
@@ -71,16 +71,17 @@ namespace KurierTest.Models
             DaneSamochodu samochod2 = new DaneSamochodu()
             {
                 Id = 2,
-                NumRejestracyjny = "PO123W",
+                NumRejestracyjny = "POL74B6",
                 Stan = "Sprawny"
 
             };
 
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1, samochod2 });
-            DaneSamochodu pobranySamochod = new SamochodyModel(context).PobierzSamochod(samochod2.Id);
+            DaneSamochodu pobranySamochod = new SamochodyModel(context).PobierzSamochod(2);
 
-            Assert.AreEqual(samochod2, pobranySamochod);
-
+            Assert.AreEqual(samochod2.Id, pobranySamochod.Id);
+            Assert.AreEqual(samochod2.NumRejestracyjny, pobranySamochod.NumRejestracyjny);
+            Assert.AreEqual(samochod2.Stan, pobranySamochod.Stan);
         }
 
         [TestMethod]
@@ -108,12 +109,13 @@ namespace KurierTest.Models
 
             };
 
-            var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 });
+            var context = MockMainteiner.PobierzContextKurierow(new List<DaneKuriera>() { daneKuriera1 },
+                samochody: new List<DaneSamochodu>() { samochod1 });
             new SamochodyModel(context).PowiazKurieraISamochod(samochod1.Id, daneKuriera1.UserId);
             var samochodKuriera = context.Kurierzy.FirstOrDefault(p => p.UserId == daneKuriera1.UserId).Samochod;
 
             Assert.IsNotNull(samochodKuriera);
-            Assert.AreEqual(samochodKuriera, samochod1.Id);
+            Assert.AreEqual(samochodKuriera, samochod1);
 
         }
 
@@ -130,13 +132,59 @@ namespace KurierTest.Models
 
             ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1 });
             new SamochodyModel(context).UsunSamochod(samochod1.Id);
-            Assert.IsNull(context.Samochody.FirstOrDefault(p => p.Id == samochod1.Id));
+            var usuniety = context.Samochody.Find(samochod1.Id);
+            Assert.IsNull(usuniety);
         }
 
         [TestMethod]
         public void WalidujDaneSamochoduTest()
         {
-            throw new NotImplementedException();
+            DaneSamochodu samochodPoprawny = new DaneSamochodu()
+            {
+                Id = 1,
+                NumRejestracyjny = "PO6478A",
+                Stan = "Sprawny"
+
+            };
+
+            DaneSamochodu samochodBlednyNumerRej = new DaneSamochodu()
+            {
+                Id = 1,
+                NumRejestracyjny = "PO@647&8A",
+                Stan = "Sprawny"
+
+            };
+
+            DaneSamochodu samochodBrakNumeruRej = new DaneSamochodu()
+            {
+                Id = 1,
+                NumRejestracyjny = "",
+                Stan = "Sprawny"
+
+            };
+
+            DaneSamochodu samochodBlednyStan = new DaneSamochodu()
+            {
+                Id = 2,
+                NumRejestracyjny = "POL74B6",
+                Stan = "Sprawny11"
+
+            };
+
+            DaneSamochodu samochodBrakStanu = new DaneSamochodu()
+            {
+                Id = 1,
+                NumRejestracyjny = "PO6478A",
+                Stan = ""
+
+            };
+
+            ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochodPoprawny, samochodBlednyNumerRej, samochodBrakNumeruRej, samochodBlednyStan, samochodBrakStanu });
+            Assert.IsTrue(new SamochodyModel(context).WalidujDaneSamochodu(samochodPoprawny));
+            Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBlednyNumerRej));
+            Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBrakNumeruRej));
+            Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBlednyStan));
+            Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBrakStanu));
         }
     }
 }

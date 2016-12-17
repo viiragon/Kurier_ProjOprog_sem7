@@ -89,7 +89,10 @@ namespace Kurier.Models.DataAccess
       DaneSamochodu samochod1 = new DaneSamochodu()
       {
         Id = 1,
+        Marka = "Citroen",
+        Model = "Jumper",
         NumRejestracyjny = "PO6478A",
+        DataKontroli = new DateTime(2017, 03, 15),
         Stan = "Sprawny"
 
       };
@@ -97,7 +100,10 @@ namespace Kurier.Models.DataAccess
       DaneSamochodu samochod2 = new DaneSamochodu()
       {
         Id = 2,
+        Marka = "Peugeot",
+        Model = "Boxer",
         NumRejestracyjny = "POL74B6",
+        DataKontroli = new DateTime(2017, 03, 17),
         Stan = "Sprawny"
 
       };
