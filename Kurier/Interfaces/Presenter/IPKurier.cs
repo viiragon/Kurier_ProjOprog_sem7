@@ -14,6 +14,7 @@ namespace Kurier.Interfaces.Presenter
         void wybranoPokazSamochodKuriera();
         void wybranoWydajPaczke(Models.DTO.Paczka.DanePaczki paczka);
         void wybranoWylogujKuriera();
+        void wybranoPokazSzczegolyPaczkiDlaKuriera(int id);
         void wybranoZalogujKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane);
         void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status, int idPaczki);
     }

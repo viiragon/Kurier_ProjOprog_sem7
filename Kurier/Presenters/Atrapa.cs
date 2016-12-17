@@ -348,6 +348,11 @@ namespace Kurier.Presenters
             }
         }
 
+        public void wybranoPokazSzczegolyPaczkiDlaKuriera(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera1 = new Models.DTO.Uzytkownik.DaneKuriera()
         {
             Adres = new Adres()

@@ -80,5 +80,10 @@ namespace Kurier.Views.Menu.Kurier
         {
             throw new NotImplementedException();
         }
+
+        public override void wyswietlOknoSzczegolowPaczkiDlaKuriera(DanePaczki paczka)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
