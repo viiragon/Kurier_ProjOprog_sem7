@@ -39,14 +39,14 @@ namespace Kurier.Models.DataAccess
 
     public DanePaczki PobierzPaczke(int id)
     {
-      return _context.Paczki.FirstOrDefault(p => p.Id == id);
+      return _context.Paczki.Find(id);
     }
 
     public void PowiazKurieraIPaczke(int idPaczki, int idKuriera)
     {
       DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
 
-      DanePaczki paczka = _context.Paczki.FirstOrDefault(p => p.Id == idPaczki);
+      DanePaczki paczka = _context.Paczki.Find(idPaczki);
       if (paczka != null)
         paczka.Status.Kurier = kurier;
 
@@ -70,7 +70,7 @@ namespace Kurier.Models.DataAccess
 
     public void ZmienStatusPaczki(Status status, int idPaczki)
     {
-      DanePaczki paczka = _context.Paczki.FirstOrDefault(p => p.Id == idPaczki);
+      DanePaczki paczka = _context.Paczki.Find(idPaczki);
       if (paczka != null)
       {
         if (paczka.Historia == null)

@@ -10,6 +10,14 @@ namespace Kurier.Models.DTO.Paczka
     public DateTime Czas { get; set; }
     public DaneKuriera Kurier { get; set; }
 
+    public override bool Equals(object obj)
+    {
+      if (ReferenceEquals(null, obj)) return false;
+      if (ReferenceEquals(this, obj)) return true;
+      if (obj.GetType() != this.GetType()) return false;
+      return Equals((Status) obj);
+    }
+
     protected bool Equals(Status other)
     {
       return Id == other.Id && KodStatusu == other.KodStatusu && Czas.Equals(other.Czas) && Equals(Kurier, other.Kurier);

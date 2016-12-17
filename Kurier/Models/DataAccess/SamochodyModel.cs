@@ -37,13 +37,13 @@ namespace Kurier.Models.DataAccess
 
         public DaneSamochodu PobierzSamochod(int id)
         {
-            return _context.Samochody.FirstOrDefault(p => p.Id == id);
+            return _context.Samochody.Find(id);
         }
 
         public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
         {
             DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
-            DaneSamochodu samochod = _context.Samochody.FirstOrDefault(p => p.Id == idSamochodu);
+            DaneSamochodu samochod = _context.Samochody.Find(idSamochodu);
             if (samochod != null)
                 kurier.Samochod = samochod;
 
@@ -52,7 +52,7 @@ namespace Kurier.Models.DataAccess
 
         public void UsunSamochod(int idSamochodu)
         {
-            var samochod = _context.Samochody.FirstOrDefault(p => p.Id == idSamochodu);
+            var samochod = _context.Samochody.Find(idSamochodu);
             _context.Samochody.Remove(samochod);
             _context.SaveChanges();
         }

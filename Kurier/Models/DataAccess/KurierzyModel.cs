@@ -34,7 +34,7 @@ namespace Kurier.Models.DataAccess
 
     public DaneKuriera PobierzKuriera(int id)
     {
-        return _context.Kurierzy.FirstOrDefault(p=>p.UserId==id);
+        return _context.Kurierzy.Find(id);
     }
 
     public List<DaneKuriera> PobierzListeKurierow()
@@ -49,7 +49,7 @@ namespace Kurier.Models.DataAccess
 
     public DaneSamochodu PobierzSamochodKuriera(int idKuriera)
     {
-      var firstOrDefault = _context.Kurierzy.FirstOrDefault(p=>p.UserId==idKuriera);
+      var firstOrDefault = _context.Kurierzy.Find(idKuriera);
       return firstOrDefault != null ? firstOrDefault.Samochod : null;
     }
 

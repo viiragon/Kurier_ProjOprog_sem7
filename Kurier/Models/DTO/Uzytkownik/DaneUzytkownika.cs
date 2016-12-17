@@ -11,7 +11,7 @@
 
     protected bool Equals(DaneUzytkownika other)
     {
-      return Id == other.Id && string.Equals(Imie, other.Imie) && string.Equals(Nazwisko, other.Nazwisko) && Equals(Adres, other.Adres) && Telefon == other.Telefon && Uprawnienia == other.Uprawnienia;
+      return string.Equals(Imie, other.Imie) && string.Equals(Nazwisko, other.Nazwisko) && Equals(Adres, other.Adres) && Telefon == other.Telefon && Uprawnienia == other.Uprawnienia;
     }
 
     public override int GetHashCode()

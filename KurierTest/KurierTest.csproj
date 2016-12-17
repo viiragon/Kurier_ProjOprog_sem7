@@ -90,6 +90,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Models\TestDataFactory.cs" />
     <Compile Include="Models\MockMainteiner.cs" />
     <Compile Include="Models\IMPaczkaTest.cs" />
     <Compile Include="Models\IMSamochodTest.cs" />
