@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Kurier.Views.Menu
 {
-    public partial class OknoSzczegolowSamochodu : System.Web.UI.Page
+    public partial class OknoEdycjiSamochodu : System.Web.UI.Page
     {
         private static VCentralaSamochody controller;
 
@@ -16,20 +16,17 @@ namespace Kurier.Views.Menu
             Pages.setCurrent(this);
             if (controller != null)
             {
-                controller.setOknoSzczegolowSamochodu(this);
+                controller.setOknoEdycjiSamochodu(this);
             }
         }
 
         public static void wyswietlOkno(VCentralaSamochody caller)
         {
             controller = caller;
-            Pages.loadPage("/Views/Menu/OknoSzczegolowSamochodu.aspx");
+            Pages.loadPage("/Views/Menu/Samochody/OknoEdycjiSamochodu.aspx");
         }
-        protected void onClickBtCarEdit(object sender, EventArgs e)
-        {
-            controller.wyswietlOknoDodawaniaSamochodu();
-        }
-        protected void onClickBtDelete(object sender, EventArgs e)
+
+        protected void onClickSave(object sender, EventArgs e)
         {
 
         }

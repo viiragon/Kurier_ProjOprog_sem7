@@ -9,8 +9,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h1>LOGOWANIE</h1>
+        <header>LOGOWANIE</header>
+        <article>
             <p>
                 <asp:Label ID="lError" runat="server"></asp:Label>    
             </p>
@@ -26,7 +26,7 @@
             <p>
                 <asp:Button Text="Hakuj System" OnClick="onClickBtHack" runat="server"/>
             </p>
-        </div>
+        </article>
     </form>
 </body>
 </html>

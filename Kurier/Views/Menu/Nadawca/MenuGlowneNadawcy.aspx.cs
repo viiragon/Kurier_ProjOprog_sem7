@@ -16,7 +16,7 @@ namespace Kurier.Views.Menu
         {
             controller = caller;
             dane = daneArg;
-            Pages.loadPage("/Views/Menu/MenuGlowneNadawcy.aspx");
+            Pages.loadPage("/Views/Menu/Nadawca/MenuGlowneNadawcy.aspx");
         }
 
         protected void Page_Load(object sender, EventArgs e)

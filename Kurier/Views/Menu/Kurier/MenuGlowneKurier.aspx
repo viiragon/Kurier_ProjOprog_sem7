@@ -9,15 +9,14 @@
 </head>
 <body>
     <form runat="server">
+        <header>
+            Kurier
+        </header>
         <nav>
             Zalogowano jako
-                <asp:Label ID="lUser" runat="server"></asp:Label>
+            <asp:Label ID="lUser" runat="server"></asp:Label>
             <asp:Button Text="Wyloguj" OnClick="onClickLogout" runat="server" />
         </nav>
-        <header>
-            <h1>Kurier</h1>
-        </header>
-
         <article>
             <asp:Button Text="Wydaj Paczkę" OnClick="onClickSendPackage" runat="server" />
             <asp:Button Text="Przypisany Samochód" OnClick="onClickCar" runat="server" />
@@ -27,6 +26,12 @@
                 </div>
             </asp:PlaceHolder>
             <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Adres docelowy</td>
+                    <td>Status</td>
+                    <td></td>
+                </tr>
                 <asp:Repeater ID="rptZlecenia" runat="server" OnItemCommand="onClickDetails">
                     <ItemTemplate>
                         <tr>
@@ -49,18 +54,20 @@
                             <tr>
                                 <th colspan="4">
                                     <div>
-                                        Adresat : <%# Eval("Adresat.Imie") %> <%# Eval("Adresat.Nazwisko") %> : 
-                                    <p><%# Eval("Adresat.Adres.Miasto") %> <%# Eval("Adresat.Adres.KodPocztowy") %></p>
+                                        <em>Adresat : <%# Eval("Adresat.Imie") %> <%# Eval("Adresat.Nazwisko") %> : </em>
+                                        <p><%# Eval("Adresat.Adres.Miasto") %> <%# Eval("Adresat.Adres.KodPocztowy") %></p>
                                         <p><%# Eval("Adresat.Adres.Ulica") %> <%# Eval("Adresat.Adres.NumerMieszkania") %></p>
                                     </div>
                                     <div>
-                                        Nadawca : <%# Eval("Nadawca.Imie") %> <%# Eval("Nadawca.Nazwisko") %> : 
-                                    <p><%# Eval("Nadawca.Adres.Miasto") %> <%# Eval("Nadawca.Adres.KodPocztowy") %></p>
+                                        <em>Nadawca : <%# Eval("Nadawca.Imie") %> <%# Eval("Nadawca.Nazwisko") %> : </em>
+                                        <p><%# Eval("Nadawca.Adres.Miasto") %> <%# Eval("Nadawca.Adres.KodPocztowy") %></p>
                                         <p><%# Eval("Nadawca.Adres.Ulica") %> <%# Eval("Nadawca.Adres.NumerMieszkania") %></p>
                                     </div>
                                     <div>
-                                        <p>Nadana : <%# Eval("PoczatekObslugi") %></p>
-                                        <p>Odebrana : <%# Eval("KoniecObslugi") %></p>
+                                        <em>Nadana : </em><%# Eval("PoczatekObslugi") %>
+                                    </div>
+                                    <div>
+                                        <em>Odebrana : </em><%# Eval("KoniecObslugi") %>
                                     </div>
                                 </th>
                             </tr>

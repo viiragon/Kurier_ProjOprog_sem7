@@ -18,7 +18,7 @@ namespace Kurier.Views.Menu
         {
             controller = caller;
             zalogowany = zalogowanyArg;
-            Pages.loadPage("/Views/Menu/OknoNadaniePaczki.aspx");
+            Pages.loadPage("/Views/Menu/Paczki/OknoNadaniePaczki.aspx");
         }
 
         protected void Page_Load(object sender, EventArgs e)

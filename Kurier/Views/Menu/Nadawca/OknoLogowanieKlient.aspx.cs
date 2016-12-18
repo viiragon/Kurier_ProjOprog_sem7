@@ -26,7 +26,7 @@ namespace Kurier.Views.Menu
         public static void wyswietlOkno(VKlient caller)
         {
             controller = caller;
-            Pages.loadPage("/Views/Menu/OknoLogowanieKlient.aspx");
+            Pages.loadPage("/Views/Menu/Nadawca/OknoLogowanieKlient.aspx");
         }
 
         private bool checkAuths()
