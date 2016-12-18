@@ -54,7 +54,18 @@ namespace Kurier.Views.Menu.Kurier
 
         public void wyswietlKomunikatOPrzegladzie(Models.DTO.Samochod.DaneSamochodu dane)
         {
-            lMessage.Text = "Zbliża się termin kontroli pojazdu Peugeot Boxer " + dane.NumRejestracyjny + " - 15.03.2017";
+            phMessage.Visible = true;
+            lMessage.Text = "Zbliża się termin kontroli pojazdu " + dane.Marka 
+                + " " + dane.Model 
+                + " " + dane.NumRejestracyjny
+                + " - " + getProperDateString(dane.DataKontroli);
+        }
+
+        private string getProperDateString(DateTime date)
+        {
+            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
+            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
+            return day + "." + month + "." + date.Year;
         }
 
         protected void onClickDetails(object sender, RepeaterCommandEventArgs e)
@@ -62,9 +73,10 @@ namespace Kurier.Views.Menu.Kurier
             if (e.CommandName == "details")
             {
                 Button c = e.Item.FindControl("btDetails") as Button;
-                if (c != null)
+                PlaceHolder ph = e.Item.FindControl("phDetails") as PlaceHolder;
+                if (c != null && ph != null)
                 {
-                    MainLauncher.message(c.Attributes["data-id"]);
+                    ph.Visible = !ph.Visible;
                 }
             }
         }

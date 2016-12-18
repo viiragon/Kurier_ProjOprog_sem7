@@ -73,12 +73,12 @@ namespace Kurier.Presenters
                 Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika();
                 user.Imie = "Cichosław";
                 user.Nazwisko = "Orzeł";
-                user.UserId= 0;
+                user.UserId = 0;
                 user.Telefon = 0700880;
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
-                logowanie.wyswietlMenuGlowneCentrali(user, this, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter() , this, this);
+                logowanie.wyswietlMenuGlowneCentrali(user, this, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), this, this);
             }
             else
             {
@@ -195,7 +195,7 @@ namespace Kurier.Presenters
         public void wybranoPokazListePaczek()
         {
             DanePaczki[] listaPaczek = new Models.DTO.Paczka.DanePaczki[4];
-          
+
             listaPaczek[0] = paczka1;
             listaPaczek[1] = paczka1;
             listaPaczek[2] = paczka2;
@@ -255,31 +255,31 @@ namespace Kurier.Presenters
         {
             if (dane.Login.Equals("eadam") && dane.Haslo.Equals("natak139k"))
             {
-              Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
-              {
-                Imie = "Ewa",
-                Nazwisko = "Adamska",
-                UserId = 0,
-                Telefon = 0700880,
-                Uprawnienia = 0,
-                Login = dane.Login,
-                Haslo = dane.Haslo
-              };
-              ivKlient.wyswietlMenuGlowneKlienta(user, null);
+                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
+                {
+                    Imie = "Ewa",
+                    Nazwisko = "Adamska",
+                    UserId = 0,
+                    Telefon = 0700880,
+                    Uprawnienia = 0,
+                    Login = dane.Login,
+                    Haslo = dane.Haslo
+                };
+                ivKlient.wyswietlMenuGlowneKlienta(user, null);
             }
             else if (dane.Login.Equals("wkruk") && dane.Haslo.Equals("natak139k"))
             {
-              Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
-              {
-                Imie = "Wojciech",
-                Nazwisko = "Kruk",
-                UserId = 0,
-                Telefon = 0700880,
-                Uprawnienia = 0,
-                Login = dane.Login,
-                Haslo = dane.Haslo
-              };
-              ivKlient.wyswietlMenuGlowneKlienta(user, null);
+                Models.DTO.Uzytkownik.DaneUzytkownika user = new Models.DTO.Uzytkownik.DaneUzytkownika
+                {
+                    Imie = "Wojciech",
+                    Nazwisko = "Kruk",
+                    UserId = 0,
+                    Telefon = 0700880,
+                    Uprawnienia = 0,
+                    Login = dane.Login,
+                    Haslo = dane.Haslo
+                };
+                ivKlient.wyswietlMenuGlowneKlienta(user, null);
             }
             else
             {
@@ -364,7 +364,7 @@ namespace Kurier.Presenters
             },
             Nazwisko = "Kowalski",
             Imie = "Maciej",
-            UserId =  1
+            UserId = 1
         };
 
         public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera2 = new Models.DTO.Uzytkownik.DaneKuriera()
@@ -391,8 +391,31 @@ namespace Kurier.Presenters
                 NumerMieszkania = "12",
                 Ulica = "Spółdzielcza"
             },
-            Status = new Status() { KodStatusu = 0, Kurier = daneKuriera1, Czas = new DateTime(1990, 10, 11) }
-          ,
+            Nadawca = new DaneUzytkownika()
+            {
+                Imie = "Jan",
+                Nazwisko = "Kowalski",
+                Adres = new Adres()
+                {
+                    Ulica = "Biała",
+                    KodPocztowy = "11-008",
+                    Miasto = "Kielce",
+                    NumerMieszkania = "139"
+                },
+            },
+            Adresat = new DaneUzytkownika()
+            {
+                Imie = "Maria",
+                Nazwisko = "Janda",
+                Adres = new Adres()
+                {
+                    Ulica = "Niebieska",
+                    KodPocztowy = "01-999",
+                    Miasto = "Białe Trzecie",
+                    NumerMieszkania = "139"
+                },
+            },
+            Status = new Status() { KodStatusu = 0, Kurier = daneKuriera1, Czas = new DateTime(1990, 10, 11) },
             //Historia = new List<Status>() { new Status() { KodStatusu = 0, Czas = new DateTime(2016, 12, 02) }, new Status() { KodStatusu = 1, Czas = new DateTime(2016, 12, 04) } },
             PoczatekObslugi = new DateTime(2016, 12, 02),
             KoniecObslugi = new DateTime(2016, 12, 04)
@@ -407,8 +430,31 @@ namespace Kurier.Presenters
                 KodPocztowy = "01-999",
                 Miasto = "Białe Trzecie",
                 NumerMieszkania = "139"
-            }
-          ,
+            },
+            Nadawca = new DaneUzytkownika()
+            {
+                Imie = "Jan",
+                Nazwisko = "Kowalski",
+                Adres = new Adres()
+                {
+                    Ulica = "Biała",
+                    KodPocztowy = "11-008",
+                    Miasto = "Kielce",
+                    NumerMieszkania = "139"
+                },
+            },
+            Adresat = new DaneUzytkownika()
+            {
+                Imie = "Maria",
+                Nazwisko = "Janda",
+                Adres = new Adres()
+                {
+                    Ulica = "Niebieska",
+                    KodPocztowy = "01-999",
+                    Miasto = "Białe Trzecie",
+                    NumerMieszkania = "139"
+                },
+            },
             Status = new Status() { KodStatusu = 1, Kurier = daneKuriera2, Czas = new DateTime(1990, 10, 11) },
             PoczatekObslugi = new DateTime(1990, 10, 10),
             KoniecObslugi = new DateTime(1990, 10, 12)
@@ -417,8 +463,11 @@ namespace Kurier.Presenters
         Models.DTO.Samochod.DaneSamochodu samochod = new Models.DTO.Samochod.DaneSamochodu()
         {
             Id = 212,
+            Marka = "Peugeot",
+            Model = "Boxer",
             NumRejestracyjny = "PO L74B6",
-            Stan = "Działa"
+            DataKontroli = new DateTime(2017, 3, 15),
+            Stan = "Sprawny"
         };
     }
 }

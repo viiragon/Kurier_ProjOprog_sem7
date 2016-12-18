@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
     <title></title>
 </head>
 <body>
@@ -21,12 +22,12 @@
                    <tr>
                        <td><%# Eval("Id") %></td>
                        <td>
-                           <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>
+                           <asp:Placeholder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>
                                Nadana
-                            </asp:placeholder>
-                           <asp:PlaceHolder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 0 %>'>
+                            </asp:Placeholder>
+                           <asp:Placeholder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 0 %>'>
                                Doręczona
-                            </asp:placeholder>
+                            </asp:Placeholder>
                        </td>
                        <td><asp:Button Text="Szczegóły" OnClick="onClickDetails" runat="server"/></td>
                        <td><asp:Button Text="Kurier" OnClick="onClickKurier" runat="server"/></td>
@@ -37,12 +38,12 @@
                    <tr>
                        <td><%# Eval("Id") %></td>
                        <td>
-                           <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 0 %>'>
+                           <asp:Placeholder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 0 %>'>
                                Nadana
-                            </asp:placeholder>
-                           <asp:PlaceHolder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>
+                            </asp:Placeholder>
+                           <asp:Placeholder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>
                                Doręczona
-                            </asp:placeholder>
+                            </asp:Placeholder>
                        </td>
                        <td><asp:Button Text="Szczegóły" OnClick="onClickDetails" runat="server"/></td>
                        <td><asp:Button Text="Kurier" OnClick="onClickKurier" runat="server"/></td>
