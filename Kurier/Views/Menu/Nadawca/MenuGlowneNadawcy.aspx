@@ -9,16 +9,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <p>
-                Zalogowano jako : <asp:Label ID="lUser" runat="server"></asp:Label>
-                <asp:Button Text="Wyloguj" OnClick="onClickBtWyloguj" runat="server" />
-            </p>
-            <h1>Menu</h1>
+        <header>Menu</header>
+        <nav>
+            Zalogowano jako :
+            <asp:Label ID="lUser" runat="server"></asp:Label>
+            <asp:Button Text="Wyloguj" OnClick="onClickBtWyloguj" runat="server" />
+        </nav>
+        <article>
             <p>
                 <asp:Button Text="Nadaj Paczkę" OnClick="onClickBtNadaj" runat="server" />
             </p>
-        </div>
+        </article>
     </form>
 </body>
 </html>

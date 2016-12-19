@@ -33,7 +33,7 @@ namespace Kurier.Views.Menu
             controller = caller;
             paczka = dp;
             kurier = dp.Status.KodStatusu == 0 ? Atrapa.daneKuriera1 : Atrapa.daneKuriera2;
-            Pages.loadPage("/Views/Menu/OknoSzczegolowPaczki.aspx");
+            Pages.loadPage("/Views/Menu/Paczki/OknoSzczegolowPaczki.aspx");
         }
     }
 }

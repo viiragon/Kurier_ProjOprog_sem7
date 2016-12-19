@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieKurier.aspx.cs" Inherits="Kurier.Views.Menu.Kurier.OknoLogowanieKurier" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OknoLogowanieKlient.aspx.cs" Inherits="Kurier.Views.Menu.LogowanieKlient" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,12 @@
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="~/css/main.css" />
     <title></title>
+
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <header>
-            Logowanie Kurier
-        </header>
+        <header>Logowanie Klient</header>
         <article>
             <p>
                 <asp:Label ID="lError" runat="server"></asp:Label>
@@ -25,10 +25,10 @@
                 <asp:TextBox ID="tbPassword" type="password" runat="server"></asp:TextBox>
             </p>
             <p>
-                <asp:Button Text="Zaloguj" OnClick="onClickBtLogin" runat="server" />
+                <asp:Button Text="Zaloguj" OnClick="SignIn" runat="server" />
             </p>
             <p>
-                <asp:Button Text="Hakuj System" OnClick="onClickBtHack" runat="server" />
+                <asp:Button Text="Nadaj paczkę bez logowania" OnClick="onClickBtNoLogin" runat="server" />
             </p>
         </article>
     </form>
