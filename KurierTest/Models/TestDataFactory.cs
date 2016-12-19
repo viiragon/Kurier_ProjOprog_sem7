@@ -70,7 +70,7 @@ namespace KurierTest.Models
 
     public static DanePaczki Paczka1 => new DanePaczki()
     {
-      Adres = new Adres()
+      AdresAdresata = new Adres()
       {
         KodPocztowy = "29-120",
         Miasto = "Kluczewsko",
@@ -85,7 +85,7 @@ namespace KurierTest.Models
 
     public static DanePaczki Paczka2 => new DanePaczki()
     {
-      Adres = new Adres()
+      AdresAdresata = new Adres()
       {
         Ulica = "Niebieska",
         KodPocztowy = "01-999",

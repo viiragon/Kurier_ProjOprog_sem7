@@ -21,7 +21,7 @@ namespace KurierTest.Models
     {
       DanePaczki paczka2 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           Ulica = "Niebieska",
           KodPocztowy = "01-999",
@@ -59,7 +59,7 @@ namespace KurierTest.Models
 
       DanePaczki paczka1 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           KodPocztowy = "29-120",
           Miasto = "Kluczewsko",
@@ -74,7 +74,7 @@ namespace KurierTest.Models
 
       DanePaczki paczka2 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           Ulica = "Niebieska",
           KodPocztowy = "01-999",
@@ -99,7 +99,7 @@ namespace KurierTest.Models
     {
       DanePaczki paczka1 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           KodPocztowy = "29-120",
           Miasto = "Kluczewsko",
@@ -113,7 +113,7 @@ namespace KurierTest.Models
       };
       DanePaczki paczka2 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           Ulica = "Niebieska",
           KodPocztowy = "01-999",
@@ -151,7 +151,7 @@ namespace KurierTest.Models
 
       DanePaczki paczka1 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           KodPocztowy = "29-120",
           Miasto = "Kluczewsko",
@@ -199,7 +199,7 @@ namespace KurierTest.Models
 
       DanePaczki paczka1 = new DanePaczki()
       {
-        Adres = new Adres()
+        AdresAdresata = new Adres()
         {
           KodPocztowy = "29-120",
           Miasto = "Kluczewsko",

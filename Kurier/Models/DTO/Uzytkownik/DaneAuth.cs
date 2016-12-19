@@ -15,7 +15,6 @@ namespace Kurier.Models.DTO.Uzytkownik
     public int UserId { get; set; }
     public string Login { get; set; }
     public string Haslo { get; set; }
-
     public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<DaneAuth> manager, string authenticationType)
     {
       // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
