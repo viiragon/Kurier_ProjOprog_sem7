@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Samochod;
 
@@ -15,9 +16,12 @@ namespace Kurier.Interfaces.Model
 
     void PowiazKurieraISamochod(int idSamochodu, int idKuriera);
 
-
     void UsunSamochod(int id);
 
     bool WalidujDaneSamochodu(DaneSamochodu samochod);
+
+    List<DaneSamochodu> PobierzListeSamochodowZDataKontroli(DateTime od, DateTime @do);
+
+    void ZmienDaneSamochodu(DaneSamochodu daneSamochodu);
   }
 }
