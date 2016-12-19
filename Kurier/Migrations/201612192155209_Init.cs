@@ -3,7 +3,7 @@ namespace Kurier.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -35,7 +35,6 @@ namespace Kurier.Migrations
                         Adres_Ulica = c.String(),
                         Adres_NumerMieszkania = c.String(),
                         NumerPracowanika = c.Int(),
-                        KurierKey = c.Int(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                         Samochod_Id = c.Int(),
                     })
@@ -88,7 +87,10 @@ namespace Kurier.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         NumRejestracyjny = c.String(),
+                        Marka = c.String(),
+                        Model = c.String(),
                         Stan = c.String(),
+                        DataKontroli = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -97,12 +99,17 @@ namespace Kurier.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Adres_Miasto = c.String(),
-                        Adres_KodPocztowy = c.String(),
-                        Adres_Ulica = c.String(),
-                        Adres_NumerMieszkania = c.String(),
-                        PoczatekObslugi = c.DateTime(nullable: false),
-                        KoniecObslugi = c.DateTime(nullable: false),
+                        IdPaczki = c.String(),
+                        AdresAdresata_Miasto = c.String(),
+                        AdresAdresata_KodPocztowy = c.String(),
+                        AdresAdresata_Ulica = c.String(),
+                        AdresAdresata_NumerMieszkania = c.String(),
+                        AdresNadawcy_Miasto = c.String(),
+                        AdresNadawcy_KodPocztowy = c.String(),
+                        AdresNadawcy_Ulica = c.String(),
+                        AdresNadawcy_NumerMieszkania = c.String(),
+                        PoczatekObslugi = c.DateTime(),
+                        KoniecObslugi = c.DateTime(),
                         Adresat_Id = c.String(maxLength: 128),
                         Nadawca_Id = c.String(maxLength: 128),
                         Status_Id = c.Int(),

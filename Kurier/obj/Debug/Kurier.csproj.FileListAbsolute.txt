@@ -195,3 +195,39 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Ku
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.dll
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.xml
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\_Git\KurierPO\Kurier\bin\Kurier.dll.config
+C:\_Git\KurierPO\Kurier\bin\Kurier.dll
+C:\_Git\KurierPO\Kurier\bin\Kurier.pdb
+C:\_Git\KurierPO\Kurier\bin\Antlr3.Runtime.dll
+C:\_Git\KurierPO\Kurier\bin\EntityFramework.dll
+C:\_Git\KurierPO\Kurier\bin\EntityFramework.SqlServer.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.dll
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+C:\_Git\KurierPO\Kurier\bin\Newtonsoft.Json.dll
+C:\_Git\KurierPO\Kurier\bin\Owin.dll
+C:\_Git\KurierPO\Kurier\bin\System.Web.Providers.dll
+C:\_Git\KurierPO\Kurier\bin\System.Web.Razor.dll
+C:\_Git\KurierPO\Kurier\bin\Antlr3.Runtime.pdb
+C:\_Git\KurierPO\Kurier\bin\EntityFramework.xml
+C:\_Git\KurierPO\Kurier\bin\EntityFramework.SqlServer.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+C:\_Git\KurierPO\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+C:\_Git\KurierPO\Kurier\bin\Newtonsoft.Json.xml
+C:\_Git\KurierPO\Kurier\bin\System.Web.Providers.xml
+C:\_Git\KurierPO\Kurier\bin\System.Web.Razor.xml
+C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.dll
+C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.pdb
+C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.Migrations.Init.resources
+C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache

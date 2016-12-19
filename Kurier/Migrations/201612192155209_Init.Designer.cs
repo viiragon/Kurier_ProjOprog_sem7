@@ -7,13 +7,13 @@ namespace Kurier.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class adrespaczki : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adrespaczki));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612062227477_adres paczki"; }
+            get { return "201612192155209_Init"; }
         }
         
         string IMigrationMetadata.Source

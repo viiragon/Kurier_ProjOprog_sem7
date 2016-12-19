@@ -95,7 +95,7 @@ namespace Kurier.Migrations
 
       DaneSamochodu samochod1 = new DaneSamochodu()
       {
-        Id = 1,
+       
         Marka = "Citroen",
         Model = "Jumper",
         NumRejestracyjny = "PO6478A",
@@ -106,7 +106,7 @@ namespace Kurier.Migrations
 
       DaneSamochodu samochod2 = new DaneSamochodu()
       {
-        Id = 2,
+   
         Marka = "Peugeot",
         Model = "Boxer",
         NumRejestracyjny = "POL74B6",
@@ -143,23 +143,22 @@ namespace Kurier.Migrations
 
       Status status1 = new Status()
       {
-        Kurier = daneKuriera1,
+        Kurier = context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera1.UserName) ?? daneKuriera1,
         KodStatusu = 1,
         Czas = new DateTime(2016, 12, 2),
       };
 
       Status status2 = new Status()
       {
-        Kurier = daneKuriera1,
+        Kurier = context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera1.UserName) ?? daneKuriera1,
         KodStatusu = 2,
         Czas = new DateTime(2016, 12, 4),
       };
 
       DanePaczki paczka1 = new DanePaczki()
       {
-        Adres = new Adres(),
-        Nadawca = adresat1,
-        Adresat = nadawca1,
+        AdresNadawcy =  adresat1.Adres,
+        AdresAdresata = nadawca1.Adres,
         Status = (Status)status2.Clone(),
         Historia = new List<Status>() { status1, status2 },
         PoczatekObslugi = new DateTime(2016, 12, 2),
@@ -170,14 +169,14 @@ namespace Kurier.Migrations
 
       Status status2_1 = new Status()
       {
-        Kurier = daneKuriera2,
+        Kurier = context.Kurierzy.FirstOrDefault(p=>p.UserName==daneKuriera2.UserName) ?? daneKuriera2,
         KodStatusu = 1,
         Czas = new DateTime(2016, 12, 4),
       };
 
       Status status2_2 = new Status()
       {
-        Kurier = daneKuriera2,
+        Kurier = context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera2.UserName) ?? daneKuriera2,
         KodStatusu = 2,
         Czas = new DateTime(2016, 12, 5),
       };
@@ -206,9 +205,8 @@ namespace Kurier.Migrations
       };
       DanePaczki paczka2 = new DanePaczki()
       {
-        Adres = new Adres(),
-        Nadawca = nadawca2,
-        Adresat = adresat2,
+        AdresNadawcy =  nadawca2.Adres,
+        AdresAdresata = adresat2.Adres,
         Status = (Status)status2_2.Clone(),
         Historia = new List<Status>() { status2_1, status2_2 },
         PoczatekObslugi = new DateTime(2016, 12, 4),
@@ -219,7 +217,7 @@ namespace Kurier.Migrations
 
       Status status3_1 = new Status()
       {
-        Kurier = daneKuriera1,
+        Kurier = context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera1.UserName) ?? daneKuriera1,
         KodStatusu = 1,
         Czas = new DateTime(2016, 12, 7),
       };
@@ -247,9 +245,8 @@ namespace Kurier.Migrations
       };
       DanePaczki paczka3 = new DanePaczki()
       {
-        Adres = new Adres(),
-        Nadawca = nadawca3,
-        Adresat = adresat3,
+        AdresNadawcy = nadawca3.Adres,
+        AdresAdresata = adresat3.Adres,
         Status = (Status)status3_1.Clone(),
         Historia = new List<Status>() { status3_1 },
         PoczatekObslugi = new DateTime(2016, 12, 7)
@@ -265,52 +262,78 @@ namespace Kurier.Migrations
 
       DanePaczki paczka4 = new DanePaczki()
       {
-        Adres = new Adres(),
-        Nadawca = new DaneKlienta()
-        {
-          Adres = new Adres()
+        AdresNadawcy =  new Adres()
           {
             Ulica = "Czekoladowa",
             NumerMieszkania = "23",
             KodPocztowy = "01-468",
             Miasto = "Warszawa"
           },
-          UserName = "user7"
-        },
-        Adresat = new DaneKlienta()
-        {
-          Adres = new Adres()
+        AdresAdresata =  new Adres()
           {
             Ulica = "Grochowska",
             NumerMieszkania = "194/196",
             KodPocztowy = "04-357",
             Miasto = "Warszawa"
           },
-          UserName = "user8"
-
-        },
+         
         Status = (Status)status4_1.Clone(),
         Historia = new List<Status>() { status4_1 },
         PoczatekObslugi = new DateTime(2016, 12, 7)
       };
+      if (context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera1.UserName) == null)
+      {
+        context.Kurierzy.Add(daneKuriera1);
+      }
+      if (context.Kurierzy.FirstOrDefault(p => p.UserName == daneKuriera2.UserName) == null)
+      {
+        context.Kurierzy.Add(daneKuriera2);
+      }
+      if (context.Klienci.FirstOrDefault(p => p.UserName == klient1.UserName) == null)
+      {
+        context.Klienci.Add(klient1);
+      }
+      if (context.Klienci.FirstOrDefault(p => p.UserName == klient2.UserName) == null)
+      {
+        context.Klienci.Add(klient2);
+      }
 
-      context.Kurierzy.AddRange(new[] { daneKuriera1, daneKuriera2 });
-      context.SaveChanges();
+      if (context.Users.FirstOrDefault(p=>p.UserName==nadawca1.UserName)==null)
+      {
+        context.Users.Add(nadawca1);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == nadawca2.UserName) == null)
+      {
+        context.Users.Add(nadawca2);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == nadawca3.UserName) == null)
+      {
+        context.Users.Add(nadawca3);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == adresat1.UserName) == null)
+      {
+        context.Users.Add(adresat1);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == adresat2.UserName) == null)
+      {
+        context.Users.Add(adresat2);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == adresat3.UserName) == null)
+      {
+        context.Users.Add(adresat3);
+      }
+      if (context.Users.FirstOrDefault(p => p.UserName == centrala.UserName) == null)
+      {
+        context.Users.Add(centrala);
+      }
 
-      context.Klienci.AddRange(new[] { klient1, klient2 });
-      context.SaveChanges();
-      context.Users.Add(nadawca2);
-      context.Users.Add(nadawca1);
-      context.Users.Add(nadawca3);
 
-      context.Users.Add(adresat2);
-      context.Users.Add(adresat1);
-      context.Users.Add(adresat3);
-      context.Users.Add(centrala); context.SaveChanges();
+      context.Paczki.AddRange(new[] { paczka1, paczka2, paczka3, paczka4 });
 
-      context.SaveChanges(); context.Paczki.AddRange(new[] { paczka1, paczka2, paczka3, paczka4 }); context.SaveChanges();
+   
 
       context.Samochody.AddRange(new[] { samochod1, samochod2 });
+
       try
       {
         context.SaveChanges();
