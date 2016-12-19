@@ -149,6 +149,7 @@
     <Content Include="Views\Menu\Paczki\OknoNadaniePaczki.aspx" />
     <Content Include="Views\Menu\OknoNajczestsiKlienci.aspx" />
     <Content Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx" />
     <Content Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx" />
     <Content Include="Views\SzablonStrony.aspx" />
     <Content Include="Web.config">
@@ -165,25 +166,9 @@
     <Compile Include="Interfaces\Presenter\IPKlient.cs" />
     <Compile Include="Interfaces\Presenter\IPKurier.cs" />
     <Compile Include="Interfaces\View\IVKlient.cs" />
-    <Compile Include="Migrations\201611302051166_init.cs" />
-    <Compile Include="Migrations\201611302051166_init.Designer.cs">
-      <DependentUpon>201611302051166_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611302053087_init2.cs" />
-    <Compile Include="Migrations\201611302053087_init2.Designer.cs">
-      <DependentUpon>201611302053087_init2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612062227477_adres paczki.cs" />
-    <Compile Include="Migrations\201612062227477_adres paczki.Designer.cs">
-      <DependentUpon>201612062227477_adres paczki.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.cs" />
-    <Compile Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.Designer.cs">
-      <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.cs" />
-    <Compile Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.Designer.cs">
-      <DependentUpon>201612072203077_dodanie zewnetrzengo id dla paczki.cs</DependentUpon>
+    <Compile Include="Migrations\201612192155209_Init.cs" />
+    <Compile Include="Migrations\201612192155209_Init.Designer.cs">
+      <DependentUpon>201612192155209_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
@@ -336,6 +321,13 @@
     <Compile Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx.designer.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx.cs">
+      <DependentUpon>OknoPrzypisaniaSamochodu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx.designer.cs">
+      <DependentUpon>OknoPrzypisaniaSamochodu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx.cs">
       <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,20 +364,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611302051166_init.resx">
-      <DependentUpon>201611302051166_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611302053087_init2.resx">
-      <DependentUpon>201611302053087_init2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612062227477_adres paczki.resx">
-      <DependentUpon>201612062227477_adres paczki.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612062309366_dodanie nulowalnych dat do paczki.resx">
-      <DependentUpon>201612062309366_dodanie nulowalnych dat do paczki.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612072203077_dodanie zewnetrzengo id dla paczki.resx">
-      <DependentUpon>201612072203077_dodanie zewnetrzengo id dla paczki.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612192155209_Init.resx">
+      <DependentUpon>201612192155209_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

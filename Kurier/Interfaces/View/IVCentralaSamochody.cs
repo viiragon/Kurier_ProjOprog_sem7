@@ -20,5 +20,6 @@ namespace Kurier.Interfaces.View
         public abstract void wyswietlOknoListySamochodow(DaneSamochodu[] lista);
         public abstract void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod);
         public abstract void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod);
+        public abstract void wyswietlOknoPrzypisaniaSamochoduDoKuriera(int idSamochodu, Models.DTO.Uzytkownik.DaneKuriera[] kurierzy);
     }
 }

@@ -164,7 +164,7 @@ namespace Kurier.Presenters
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            throw new NotImplementedException();
+            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, new DaneKuriera[] {daneKuriera1, daneKuriera2});
         }
 
         public void wybranoUsunSamochod(int id)
@@ -384,7 +384,7 @@ namespace Kurier.Presenters
         DanePaczki paczka1 = new DanePaczki()
         {
             Id = 312,
-            Adres = new Adres()
+            AdresAdresata = new Adres()
             {
                 KodPocztowy = "29-120",
                 Miasto = "Kluczewsko",
@@ -424,7 +424,7 @@ namespace Kurier.Presenters
         DanePaczki paczka2 = new DanePaczki()
         {
             Id = 212,
-            Adres = new Adres()
+            AdresAdresata = new Adres()
             {
                 Ulica = "Niebieska",
                 KodPocztowy = "01-999",

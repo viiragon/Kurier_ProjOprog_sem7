@@ -10,8 +10,9 @@ namespace Kurier.Models.DTO.Paczka
   {
     public int Id { get; set; }
     public string IdPaczki { get; set; }
-    public Adres Adres { get; set; }
+    public Adres AdresAdresata { get; set; }
     public DaneUzytkownika Adresat { get; set; }
+    public Adres AdresNadawcy { get; set; }
     public DaneUzytkownika Nadawca { get; set; }
     public DateTime? PoczatekObslugi { get; set; }
     public DateTime? KoniecObslugi { get; set; }
@@ -30,7 +31,7 @@ namespace Kurier.Models.DTO.Paczka
 
     protected bool Equals(DanePaczki other)
     {
-      return Id == other.Id && Equals(Nadawca, other.Nadawca) && Equals(Adresat, other.Adresat) && Equals(Adres, other.Adres) && PoczatekObslugi.Equals(other.PoczatekObslugi) && KoniecObslugi.Equals(other.KoniecObslugi) && Equals(Historia, other.Historia) && Equals(Status, other.Status);
+      return Id == other.Id && Equals(Nadawca, other.Nadawca) && Equals(Adresat, other.Adresat) && Equals(AdresAdresata, other.AdresAdresata) && PoczatekObslugi.Equals(other.PoczatekObslugi) && KoniecObslugi.Equals(other.KoniecObslugi) && Equals(Historia, other.Historia) && Equals(Status, other.Status);
     }
 
     public override int GetHashCode()
@@ -38,7 +39,7 @@ namespace Kurier.Models.DTO.Paczka
       unchecked
       {
         var hashCode = Id;
-        hashCode = (hashCode * 397) ^ (Adres != null ? Adres.GetHashCode() : 0);
+        hashCode = (hashCode * 397) ^ (AdresAdresata != null ? AdresAdresata.GetHashCode() : 0);
         hashCode = (hashCode * 397) ^ PoczatekObslugi.GetHashCode();
         hashCode = (hashCode * 397) ^ KoniecObslugi.GetHashCode();
         hashCode = (hashCode * 397) ^ (Historia != null ? Historia.GetHashCode() : 0);

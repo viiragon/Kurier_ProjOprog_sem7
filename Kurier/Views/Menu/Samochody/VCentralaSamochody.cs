@@ -12,6 +12,7 @@ namespace Kurier.Views.Menu
         private OknoEdycjiSamochodu oknoEdycjiSamochodu;
         private OknoListySamochodow oknoListySamochodow;
         private OknoSzczegolowSamochodu oknoSzczegolowSamochodu;
+        private Samochody.OknoPrzypisaniaSamochodu oknoPrzypisaniaSamochodu;
         private Interfaces.Presenter.ICMSamochody samochodyP;
 
         public VCentralaSamochody(Interfaces.Presenter.ICMSamochody samochodyP)
@@ -39,6 +40,11 @@ namespace Kurier.Views.Menu
             this.oknoSzczegolowSamochodu = okno;
         }
 
+        public void setOknoPrzypisaniaSamochodu(Samochody.OknoPrzypisaniaSamochodu okno)
+        {
+            this.oknoPrzypisaniaSamochodu = okno;
+        }
+
         public override void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod)
         {
            
@@ -64,5 +70,10 @@ namespace Kurier.Views.Menu
            
         }
 
+
+        public override void wyswietlOknoPrzypisaniaSamochoduDoKuriera(int idSamochodu, Models.DTO.Uzytkownik.DaneKuriera[] kurierzy)
+        {
+            Samochody.OknoPrzypisaniaSamochodu.wyswietlOkno(this, idSamochodu, kurierzy);
+        }
     }
 }
