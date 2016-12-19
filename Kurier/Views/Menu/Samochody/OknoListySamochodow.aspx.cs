@@ -10,6 +10,7 @@ namespace Kurier.Views.Menu
     public partial class OknoListySamochodow : System.Web.UI.Page
     {
         private static VCentralaSamochody controller;
+        public static Models.DTO.Samochod.DaneSamochodu[] samochody;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,10 +19,18 @@ namespace Kurier.Views.Menu
             {
                 controller.setOknoListySamochodow(this);
             }
+            if (!IsPostBack)
+            {
+                rptSamochody.DataSource = samochody;
+                rptSamochody.DataBind();
+            }
+         
+        
         }
 
-        public static void wyswietlOkno(VCentralaSamochody caller)
+        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu[] lista)
         {
+            samochody = lista;
             controller = caller;
             Pages.loadPage("/Views/Menu/Samochody/OknoListySamochodow.aspx");
         }
@@ -30,10 +39,16 @@ namespace Kurier.Views.Menu
         {
             controller.wyswietlOknoDodawaniaSamochodu();
         }
-        protected void onClickBtCarDetails(object sender, EventArgs e)
+        protected void onClickDetails(object sender, RepeaterCommandEventArgs e)
         {
-            controller.wyswietlOknoSzczegolowSamochodu(null);
+            if (e.CommandName == "details")
+            {
+                Button c = e.Item.FindControl("btDetails") as Button;
+                int id = Convert.ToInt32(e.CommandArgument);
+                controller.wyswietlOknoSzczegolowSamochodu(getDaneSamochodu(id));
+            }
         }
+      
         protected void onClickBtAddCar(object sender, EventArgs e)
         {
             controller.wyswietlOknoDodawaniaSamochodu();
@@ -41,6 +56,18 @@ namespace Kurier.Views.Menu
         protected void onClickBtDelete(object sender, EventArgs e)
         {
 
+        }
+
+        private Models.DTO.Samochod.DaneSamochodu getDaneSamochodu(int id)
+        {
+            foreach(Models.DTO.Samochod.DaneSamochodu s in samochody)
+            {
+                if (s.Id == id)
+                {
+                    return s;
+                }
+            }
+            return samochody[0];
         }
     }
 }

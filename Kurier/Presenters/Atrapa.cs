@@ -154,7 +154,7 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeSamochodow()
         {
-            samochody.wyswietlOknoListySamochodow(null);
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] {samochod, samochod2 });
         }
 
         public void wybranoPokazSzczegolySamochodu(int id)
@@ -460,12 +460,22 @@ namespace Kurier.Presenters
             KoniecObslugi = new DateTime(1990, 10, 12)
         };
 
-        Models.DTO.Samochod.DaneSamochodu samochod = new Models.DTO.Samochod.DaneSamochodu()
+        Models.DTO.Samochod.DaneSamochodu samochod2 = new Models.DTO.Samochod.DaneSamochodu()
         {
-            Id = 212,
+            Id = 2,
             Marka = "Peugeot",
             Model = "Boxer",
             NumRejestracyjny = "PO L74B6",
+            DataKontroli = new DateTime(2017, 3, 15),
+            Stan = "Sprawny"
+        };
+
+        Models.DTO.Samochod.DaneSamochodu samochod = new Models.DTO.Samochod.DaneSamochodu()
+        {
+            Id = 1,
+            Marka = "Citroen",
+            Model = "Jumper",
+            NumRejestracyjny = "PO 6478A",
             DataKontroli = new DateTime(2017, 3, 15),
             Stan = "Sprawny"
         };

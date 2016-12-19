@@ -21,35 +21,27 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>Id: 1</td>
-                    <td>Citroen</td>
-                    <td>Jumper</td>
-                    <td>PO 6478A</td>
-                    <td>
-                        <asp:Button Text="Szczegóły" OnClick="onClickBtCarDetails" runat="server" /></td>
-                    <td>
-                        <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" /></td>
-                    <td>
-                        <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
-                </tr>
-                <tr>
-                    <td>Id: 2</td>
-                    <td>Peugeot</td>
-                    <td>Boxer</td>
-                    <td>PO L74B6</td>
-                    <td>
-                        <asp:Button Text="Szczegóły" OnClick="onClickBtCarDetails" runat="server" /></td>
-                    <td>
-                        <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" /></td>
-                    <td>
-                        <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
-                </tr>
+                <asp:Repeater ID="rptSamochody" runat="server" OnItemCommand="onClickDetails">
+                    <ItemTemplate>
+                         <tr>
+                            <td>Id: <%# Eval("Id") %></td>
+                            <td><%# Eval("Marka") %></td>
+                            <td><%# Eval("Model") %></td>
+                            <td><%# Eval("NumRejestracyjny") %></td>
+                            <td>
+                                <asp:Button Text="Szczegóły" ID="btDetails" CommandArgument='<%# Eval("Id") %>' CommandName="details" runat="server" />
+                            <td>
+                                <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" /></td>
+                            <td>
+                               <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
+                        </tr>
+                    </ItemTemplate>
+              </asp:Repeater>
             </table>
             <p>
                 <asp:Button Text="Dodaj nowy samochód" OnClick="onClickBtAddCar" runat="server" /></p>
             <p>
-                <asp:Button Text="Wyślij zlecenie do serwisu" runat="server" /></p>
+               
         </article>
     </form>
 </body>

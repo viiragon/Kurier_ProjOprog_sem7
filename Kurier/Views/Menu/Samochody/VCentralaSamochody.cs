@@ -51,12 +51,12 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista)
         {
-            OknoListySamochodow.wyswietlOkno(this);
+            OknoListySamochodow.wyswietlOkno(this, lista);
         }
 
         public override void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod)
         {
-            OknoSzczegolowSamochodu.wyswietlOkno(this);
+            OknoSzczegolowSamochodu.wyswietlOkno(this, samochod);
         }
 
         public override void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod)

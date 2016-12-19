@@ -10,6 +10,7 @@ namespace Kurier.Views.Menu
     public partial class OknoSzczegolowSamochodu : System.Web.UI.Page
     {
         private static VCentralaSamochody controller;
+        public static Models.DTO.Samochod.DaneSamochodu samochod;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,10 +19,16 @@ namespace Kurier.Views.Menu
             {
                 controller.setOknoSzczegolowSamochodu(this);
             }
+            if (!IsPostBack)
+            {
+                rptSamochody.DataSource = new Models.DTO.Samochod.DaneSamochodu[] { samochod };
+                rptSamochody.DataBind();
+            }
         }
 
-        public static void wyswietlOkno(VCentralaSamochody caller)
+        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu s)
         {
+            samochod = s;
             controller = caller;
             Pages.loadPage("/Views/Menu/Samochody/OknoSzczegolowSamochodu.aspx");
         }
