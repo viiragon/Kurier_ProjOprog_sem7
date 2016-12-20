@@ -96,6 +96,7 @@
     <Compile Include="Models\IMSamochodTest.cs" />
     <Compile Include="Models\IMStatystykaTest.cs" />
     <Compile Include="Models\DatabaseConnectionTest.cs" />
+    <Compile Include="Models\IMUzytkownicyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\IMKurierTest.cs" />
   </ItemGroup>
