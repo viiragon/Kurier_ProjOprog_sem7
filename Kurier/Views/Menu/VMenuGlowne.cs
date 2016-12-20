@@ -52,8 +52,8 @@ namespace Kurier.Views.Menu
 
         public void wybranoPokazListeSamochodow()
         {
-            //samochodyP.wybranoPokazListeSamochodow();
-            Presenters.Atrapa.LOL_XD.wybranoPokazListeSamochodow();
+            samochodyP.wybranoPokazListeSamochodow();
+            //Presenters.Atrapa.PCentrSamochody.wybranoPokazListeSamochodow();
         }
 
         public void wybranoPokazNajczeszychKlientow()

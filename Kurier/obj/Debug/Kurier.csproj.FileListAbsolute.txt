@@ -186,7 +186,6 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Ku
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.dll
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll.config
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll
 C:\_Git\KurierPO\Kurier\bin\Kurier.pdb

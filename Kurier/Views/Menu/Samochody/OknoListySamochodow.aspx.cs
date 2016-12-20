@@ -45,7 +45,7 @@ namespace Kurier.Views.Menu
             {
                 Button c = e.Item.FindControl("btDetails") as Button;
                 int id = Convert.ToInt32(e.CommandArgument);
-                controller.wyswietlOknoSzczegolowSamochodu(getDaneSamochodu(id));
+                controller.wybranoPokazSzczegoly(id);
             }
         }
       

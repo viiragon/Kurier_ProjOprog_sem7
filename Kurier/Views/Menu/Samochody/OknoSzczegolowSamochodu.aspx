@@ -11,6 +11,11 @@
     <form id="form1" runat="server">
         <header>Szczegóły samochodu</header>
         <article>
+            <asp:PlaceHolder ID="phMessage" Visible="false" runat="server">
+                <div id="message">
+                    <asp:Label ID="lMessage" runat="server"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
             <table>
                 <tr>
                     <td>Id</td>
@@ -21,20 +26,15 @@
                     <td>Kurier</td>
                     <td>Data kontroli</td>
                 </tr>
-
-                <asp:Repeater ID="rptSamochody" runat="server">
-                    <ItemTemplate>
-                        <tr>
-                            <td>Id: <%# Eval("Id") %></td>
-                            <td><%# Eval("Marka") %></td>
-                            <td><%# Eval("Model") %></td>
-                            <td><%# Eval("NumRejestracyjny") %></td>
-                            <td><%# Eval("Stan") %></td>
-                            <td>Maciej Kowalski</td>
-                            <td><%# Eval("DataKontroli") %></td>
-                        </tr>
-                    </ItemTemplate>
-                </asp:Repeater>
+                <tr>
+                    <td><asp:Label ID="lId" runat="server" /></td>
+                    <td><asp:Label ID="lMarka" runat="server" /></td>
+                    <td><asp:Label ID="lModel" runat="server" /></td>
+                    <td><asp:Label ID="lRejestracja" runat="server" /></td>
+                    <td><asp:Label ID="lStan" runat="server" /></td>
+                    <td><asp:Label ID="lKurier" runat="server" /></td>
+                    <td><asp:Label ID="lDataKontroli" runat="server" /></td>
+                </tr>
             </table>
             <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" />
             <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" />
