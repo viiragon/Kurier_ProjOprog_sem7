@@ -34,7 +34,7 @@ namespace Kurier.Views.Menu
         }
         protected void onClickBtCarEdit(object sender, EventArgs e)
         {
-            controller.wyswietlOknoDodawaniaSamochodu();
+            controller.wyswietlOknoEdycjiSamochodu(samochod);
         }
         protected void onClickBtDelete(object sender, EventArgs e)
         {

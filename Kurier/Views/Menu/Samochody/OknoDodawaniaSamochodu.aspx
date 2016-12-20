@@ -36,8 +36,9 @@
                 <asp:TextBox runat="server"></asp:TextBox>
             </p>
             <p>
-                <asp:Button Text="Zapisz" OnClick="onClickBtAddCar" runat="server" />
+                <asp:Button Text="Zapisz" OnClick="onClickSave" runat="server" />
             </p>
+          
         </article>
     </form>
 </body>

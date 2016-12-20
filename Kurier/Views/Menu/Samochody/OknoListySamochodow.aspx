@@ -18,8 +18,7 @@
                     <td>Model</td>
                     <td>Nr rejestracyjny</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td></td> 
                 </tr>
                 <asp:Repeater ID="rptSamochody" runat="server" OnItemCommand="onClickDetails">
                     <ItemTemplate>
@@ -30,9 +29,8 @@
                             <td><%# Eval("NumRejestracyjny") %></td>
                             <td>
                                 <asp:Button Text="Szczegóły" ID="btDetails" CommandArgument='<%# Eval("Id") %>' CommandName="details" runat="server" />
-                            <td>
-                                <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" /></td>
-                            <td>
+                            </td>
+                             <td>
                                <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
                         </tr>
                     </ItemTemplate>
