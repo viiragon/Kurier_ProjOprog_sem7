@@ -42,8 +42,8 @@ namespace Kurier.Views.Menu.Samochody
                 Button c = e.Item.FindControl("btBind") as Button;
                 if (c != null)
                 {
-                    int id = Int32.Parse(c.Attributes["data-id"]);
-                    MainLauncher.message(id + "");
+                    MainLauncher.message(c.Attributes["data-id"] + "");
+                    int id = Int32.Parse(c.Attributes["data-id"] as string);
                 }
             }
         }

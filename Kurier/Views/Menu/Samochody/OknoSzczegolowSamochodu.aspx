@@ -20,23 +20,26 @@
                     <td>stan</td>
                     <td>Kurier</td>
                     <td>Data kontroli</td>
-                    <td></td>
-                    <td></td>
                 </tr>
-                <tr>
-                    <td>Id: 2</td>
-                    <td>Peugeot</td>
-                    <td>Boxer</td>
-                    <td>PO L74B6</td>
-                    <td>Uszkodzony</td>
-                    <td>Maciej Kowalski</td>
-                    <td>15.03.2017</td>
-                    <td>
-                        <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" /></td>
-                    <td>
-                        <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
-                </tr>
+
+                <asp:Repeater ID="rptSamochody" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td>Id: <%# Eval("Id") %></td>
+                            <td><%# Eval("Marka") %></td>
+                            <td><%# Eval("Model") %></td>
+                            <td><%# Eval("NumRejestracyjny") %></td>
+                            <td><%# Eval("Stan") %></td>
+                            <td>Maciej Kowalski</td>
+                            <td><%# Eval("DataKontroli") %></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
             </table>
+            <asp:Button Text="Edytuj" OnClick="onClickBtCarEdit" runat="server" />
+            <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" />
+            <asp:Button Text="Przypisz kuriera" OnClick="onClickBtBindKurier" runat="server" />
+            <asp:Button Text="Wyślij zlecenie do serwisu" OnClick="onClickBtSend" runat="server" />
         </article>
     </form>
 </body>
