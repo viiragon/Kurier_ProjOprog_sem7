@@ -11,14 +11,15 @@ namespace Kurier.Views.Menu
 	{
         private static VCentralaSamochody controller;
 
-		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
             Pages.setCurrent(this);
             if (controller != null)
             {
                 controller.setCentralaSamochody(this);
             }
-		}
+
+        }
 
         public static void wyswietlOkno(VCentralaSamochody caller)
         {
@@ -26,7 +27,7 @@ namespace Kurier.Views.Menu
             Pages.loadPage("/Views/Menu/Samochody/OknoDodawaniaSamochodu.aspx");
         }
 
-        protected void onClickBtAddCar(object sender, EventArgs e)
+        protected void onClickSave(object sender, EventArgs e)
         {
 
         }

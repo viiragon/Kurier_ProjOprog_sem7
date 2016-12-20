@@ -147,10 +147,6 @@ C:\TfsProjects\projOprog2\Kurier\bin\Newtonsoft.Json.xml
 C:\TfsProjects\projOprog2\Kurier\bin\System.Web.Razor.xml
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.init.resources
-C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.init2.resources
-C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.adrespaczki.resources
-C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.dodanienulowalnychdatdopaczki.resources
-C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.dodaniezewnetrzengoiddlapaczki.resources
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.dll
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.pdb
@@ -231,3 +227,5 @@ C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.dll
 C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.pdb
 C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.Migrations.Init.resources
 C:\_Git\KurierPO\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\TfsProjects\projOprog2\Kurier\bin\System.Web.Providers.dll
+C:\TfsProjects\projOprog2\Kurier\bin\System.Web.Providers.xml

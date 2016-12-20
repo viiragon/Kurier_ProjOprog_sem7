@@ -49,6 +49,11 @@ namespace Kurier.Views.Menu
             OknoDodawaniaSamochodu.wyswietlOkno(this);
         }
 
+        public void wyswietlOknoEdycjiSamochodu(DaneSamochodu samochod)
+        {
+            OknoEdycjiSamochodu.wyswietlOkno(this, samochod);
+        }
+
         public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista)
         {
             OknoListySamochodow.wyswietlOkno(this, lista);
