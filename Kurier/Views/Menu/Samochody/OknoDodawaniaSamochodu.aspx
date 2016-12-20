@@ -12,28 +12,31 @@
         <header>CENTRALA SAMOCHODY</header>
         <article>
             <p>
+                <asp:Label ID="lError" runat="server"></asp:Label>
+            </p>
+            <p>
                 Marka:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbMarka" runat="server"></asp:TextBox>
             </p>
             <p>
                 Model:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbModel" runat="server"></asp:TextBox>
             </p>
             <p>
                 Nr rejestracyjny:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbNumRej" runat="server"></asp:TextBox>
             </p>
             <p>
                 Data kontroli:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbDataKont" runat="server"></asp:TextBox>
             </p>
             <p>
                 Stan:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbStan" runat="server"></asp:TextBox>
             </p>
             <p>
                 Kurier:
-                <asp:TextBox runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbKurier" runat="server"></asp:TextBox>
             </p>
             <p>
                 <asp:Button Text="Zapisz" OnClick="onClickSave" runat="server" />
