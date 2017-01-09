@@ -20,7 +20,7 @@ namespace Kurier.Presenters
 
         public static Atrapa LOL_TO_JA_XD = new Atrapa();
         public static ICMLogowanie LOL_TO_TEZ_JA_XD;
-        public static ICMSamochody PCentrSamochody;//new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
+        public static ICMSamochody PCentrSamochody;
         public static ICMStatystyka LOL_A_TO_MOZE_NIE_JA_XD;
         public static ICMKurierzy TOP_KEK_XD;
         public static ICMPaczki KEK_XD;
@@ -39,7 +39,7 @@ namespace Kurier.Presenters
         {
             LOL_TO_TEZ_JA_XD = this;
             LOL_A_TO_MOZE_NIE_JA_XD = this;
-            PCentrSamochody = this;
+            PCentrSamochody = new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
             TOP_KEK_XD = this;
             KEK_XD = this;
             logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(LOL_TO_TEZ_JA_XD);
@@ -161,7 +161,7 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeSamochodow()
         {
-            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod1, samochod2 });
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod1, samochod2 }, null);
         }
 
         public void wybranoPokazSzczegolySamochodu(int id)
@@ -178,7 +178,8 @@ namespace Kurier.Presenters
 
         public void wybranoUsunSamochod(int id)
         {
-            throw new NotImplementedException();
+            DaneSamochodu samochod = id == samochod1.Id ? samochod2 : samochod1;
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod }, "Samochód został usunięty");
         }
 
         public void wybranoWyslijZlecenieDoSerwisu()

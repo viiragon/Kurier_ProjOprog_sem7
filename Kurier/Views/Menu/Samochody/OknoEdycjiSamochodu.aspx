@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
         <header>Edycja samochodu</header>
         <article>
+            <p>
+                <asp:Label ID="lError" runat="server"></asp:Label>
+            </p>
             <asp:Repeater ID="rptSamochody" runat="server">
                     <ItemTemplate>
             <p>
@@ -19,11 +22,11 @@
             </p>
             <p>
                 Model:
-                <asp:TextBox runat="server" Text='<%# Eval("Model") %>'></asp:TextBox>
+                <asp:TextBox  runat="server" Text='<%# Eval("Model") %>'></asp:TextBox>
             </p>
             <p>
                 Nr rejestracyjny:
-                <asp:TextBox runat="server" Text='<%# Eval("NumRejestracyjny") %>'></asp:TextBox>
+                <asp:TextBox  runat="server" Text='<%# Eval("NumRejestracyjny") %>'></asp:TextBox>
             </p>
             <p>
                 Data kontroli:

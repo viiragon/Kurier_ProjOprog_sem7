@@ -60,6 +60,11 @@ namespace Kurier.Views.Menu
             samochodyP.wybranoPokazSzczegolySamochodu(idSamochodu);
         }
 
+        public void wybranoUsunSamochod(int idSamochodu)
+        {
+            samochodyP.wybranoUsunSamochod(idSamochodu);
+        }
+
         public override void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod)
         {
            
@@ -75,9 +80,9 @@ namespace Kurier.Views.Menu
             OknoEdycjiSamochodu.wyswietlOkno(this, samochod);
         }
 
-        public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista)
+        public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista, string komunikat)
         {
-            OknoListySamochodow.wyswietlOkno(this, lista);
+            OknoListySamochodow.wyswietlOkno(this, lista, komunikat);
         }
 
         public override void wyswietlOknoSzczegolowSamochoduZKomunikatem(DaneSamochodu samochod, string komunikat, Models.DTO.Uzytkownik.DaneKuriera kurier)

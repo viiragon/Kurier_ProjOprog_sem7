@@ -67,7 +67,7 @@ namespace Kurier.Views.Menu
         }
         protected void onClickBtDelete(object sender, EventArgs e)
         {
-
+            controller.wybranoUsunSamochod(samochod.Id);
         }
         protected void onClickBtBindKurier(object sender, EventArgs e)
         {

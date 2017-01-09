@@ -170,6 +170,10 @@
     <Compile Include="Migrations\201612192155209_Init.Designer.cs">
       <DependentUpon>201612192155209_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612201507482_x.cs" />
+    <Compile Include="Migrations\201612201507482_x.Designer.cs">
+      <DependentUpon>201612201507482_x.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
@@ -366,6 +370,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612192155209_Init.resx">
       <DependentUpon>201612192155209_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201507482_x.resx">
+      <DependentUpon>201612201507482_x.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

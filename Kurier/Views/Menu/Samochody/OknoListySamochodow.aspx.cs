@@ -11,6 +11,7 @@ namespace Kurier.Views.Menu
     {
         private static VCentralaSamochody controller;
         public static Models.DTO.Samochod.DaneSamochodu[] samochody;
+        public static string komentarz;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,13 +25,17 @@ namespace Kurier.Views.Menu
                 rptSamochody.DataSource = samochody;
                 rptSamochody.DataBind();
             }
-         
-        
+            if (komentarz != null)
+            {
+                phMessage.Visible = true;
+                lMessage.Text = komentarz;
+            }        
         }
 
-        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu[] lista)
+        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu[] lista, string komentarzArg)
         {
             samochody = lista;
+            komentarz = komentarzArg;
             controller = caller;
             Pages.loadPage("/Views/Menu/Samochody/OknoListySamochodow.aspx");
         }
@@ -46,6 +51,11 @@ namespace Kurier.Views.Menu
                 Button c = e.Item.FindControl("btDetails") as Button;
                 int id = Convert.ToInt32(e.CommandArgument);
                 controller.wybranoPokazSzczegoly(id);
+            }
+            else if (e.CommandName == "delete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                controller.wybranoUsunSamochod(id);
             }
         }
       

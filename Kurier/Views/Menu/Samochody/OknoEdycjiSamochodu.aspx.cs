@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -33,10 +34,21 @@ namespace Kurier.Views.Menu
             Pages.loadPage("/Views/Menu/Samochody/OknoEdycjiSamochodu.aspx");
         }
 
-        protected void onClickSave(object sender, EventArgs e)
+        private bool walidujDane()
         {
+            bool jestOk = true;
+            lError.Text = "";
 
+            return jestOk;
         }
 
+        protected void onClickSave(object sender, EventArgs e)
+        {
+            if (walidujDane())
+            {
+                //todo aktualizuj
+            }
+
+        }
     }
 }
