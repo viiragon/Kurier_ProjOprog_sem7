@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Providers.Entities;
 using Kurier.Interfaces.Model;
 using Kurier.Models.Context;
 using Kurier.Models.DTO.Paczka;
@@ -35,7 +37,10 @@ namespace Kurier.Models.DataAccess
       };
 
       List<DanePaczki> listaPaczek =
-        new ApplicationContext().Paczki.Where(p => p.Status != null && p.Status.Kurier != null).ToList();
+        new ApplicationContext().Paczki.Include(p => p.Status)
+          .Include(p => p.Status.Kurier)
+          .Where(p => p.Status != null && p.Status.Kurier != null)
+          .ToList();
 
       foreach (var danePaczki in listaPaczek)
       {
@@ -57,7 +62,10 @@ namespace Kurier.Models.DataAccess
       };
 
       List<DanePaczki> paczki =
-        new ApplicationContext().Paczki.Where(p => p.Adresat != null || p.Nadawca != null).ToList();
+        new ApplicationContext().Paczki.Include(p => p.Adresat)
+          .Include(p => p.Nadawca)
+          .Where(p => p.Adresat != null || p.Nadawca != null)
+          .ToList();
 
       foreach (var paczka in paczki)
       {
