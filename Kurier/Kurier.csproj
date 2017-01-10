@@ -170,6 +170,7 @@
       <DependentUpon>201612192155209_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataAccess\StatystykaModel.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />

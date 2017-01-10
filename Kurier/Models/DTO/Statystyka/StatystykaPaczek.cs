@@ -4,6 +4,8 @@ namespace Kurier.Models.DTO.Statystyka
 {
     public class StatystykaPaczek
     {
-    public DanePaczki DanePaczki { get; set; }
+      public int LiczbaNadanychPaczek { get; set; }
+      public int  LiczbaDostarczonychPaczek { get; set; }
+      public int  SredniaLiczbaPaczekNaKuriera { get; set; }
     }
 }
