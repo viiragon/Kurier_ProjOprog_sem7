@@ -43,9 +43,9 @@ namespace Kurier.Models.DataAccess
 
     public void PowiazKurieraISamochod(int idSamochodu, int idKuriera)
     {
-      DaneKuriera kurier = new KurierzyModel(_context).PobierzKuriera(idKuriera);
+      DaneKuriera kurier = _context.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
       DaneSamochodu samochod = _context.Samochody.Find(idSamochodu);
-      if (samochod != null)
+      if (kurier != null)
         kurier.Samochod = samochod;
 
       _context.SaveChanges();
