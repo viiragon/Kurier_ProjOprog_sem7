@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Kurier.Models.DTO.Uzytkownik;
+using Kurier.Presenters.CentralaManager.KurierzyCM;
+using Kurier.Presenters.CentralaManager.PaczkiCM;
+using Kurier.Presenters.CentralaManager.SamochodyCM;
+using Kurier.Presenters.CentralaManager.StatystykiCM;
 
 namespace Kurier.Views.Menu
 {
@@ -45,6 +50,11 @@ namespace Kurier.Views.Menu
                 samochodyP,
                 statystykaP,
                 kurierzyP, paczkiP).wyswietlMenuGlowneCentrali(dane);
+        }
+
+        internal override void wyswietlMenuGlowneCentrali(DaneUzytkownika user, KurierzyPrezenter kurierzyPrezenter, SamochodyPrezenter samochodyPrezenter, StatystykiPrezenter statystykiPrezenter, PaczkiPrezenter paczkiPrezenter)
+        {
+            throw new NotImplementedException();
         }
     }
 }
