@@ -63,7 +63,9 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoWyslijZlecenieDoSerwisu()
         {
-            throw new NotImplementedException();
+            //potrzebne dane samochodu
+            //DaneSamochodu samochod = 
+            //samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu();
         }
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
