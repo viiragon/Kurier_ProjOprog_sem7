@@ -29,14 +29,14 @@ namespace Kurier.Models.DataAccess
     public StatystykaPaczek PobierzStatystykiPaczek()
     {
       int liczbaPaczekWDrodze = new ApplicationContext().Paczki.Count(
-        p => p.Status.KodStatusu == (int)StatusEnum.WDrodze && p.Status.Kurier != null);
-      int liczbaKurierowRozwazacychPaczki = new ApplicationContext().Paczki.Select(p => p.Status.Kurier).Distinct().Count();
-      int sredniaLiczbaPaczekNaKuriera = liczbaPaczekWDrodze/liczbaKurierowRozwazacychPaczki;
+        p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.WDrodze && p.Status.Kurier != null);
+      int liczbaKurierowRozwazacychPaczki = new ApplicationContext().Paczki.Where(p => p.Status != null).Select(p => p.Status.Kurier).Distinct().Count();
+      int sredniaLiczbaPaczekNaKuriera = liczbaPaczekWDrodze / liczbaKurierowRozwazacychPaczki;
 
       return new StatystykaPaczek()
       {
-        LiczbaDostarczonychPaczek = new ApplicationContext().Paczki.Count(p => p.Status.KodStatusu == (int)StatusEnum.Doreczona),
-        LiczbaNadanychPaczek = new ApplicationContext().Paczki.Count(p => p.Status.KodStatusu == (int)StatusEnum.Nadana),
+        LiczbaDostarczonychPaczek = new ApplicationContext().Paczki.Count(p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.Doreczona),
+        LiczbaNadanychPaczek = new ApplicationContext().Paczki.Count(p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.Nadana),
         SredniaLiczbaPaczekNaKuriera = sredniaLiczbaPaczekNaKuriera
       };
     }
