@@ -74,8 +74,7 @@ namespace Kurier.Models.DataAccess
         if (daneStatystykiKlienta != null) daneStatystykiKlienta.LiczbaPaczek++;
       }
 
-
-      return new StatystykaKlientow();
+      return statystykaKlientow;
     }
 
     private bool KlientMaPowiazanieZPaczka(DanePaczki paczka, DaneAuth daneKlienta)
