@@ -7,10 +7,14 @@ using Kurier.Models.DTO.Paczka;
 
 namespace Kurier.Models.DTO.Statystyka
 {
-    public class StatystykaObszaru
-    {
-    public DanePaczki[] DanePaczki { get; set; }
+  public class StatystykaObszaru
+  {
+    public List<DaneObszaru> ListaObszarow { get; set; }
 
-    public string NazwaObszaru { get; set; }
+    public class DaneObszaru
+    {
+      public int IloscPaczek { get; set; }
+      public string NazwaObszaru { get; set; }
+    }
   }
 }

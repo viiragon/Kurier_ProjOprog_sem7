@@ -50,7 +50,7 @@ namespace Kurier.Models.DataAccess
 
     public DaneSamochodu PobierzSamochodKuriera(int idKuriera)
     {
-      var firstOrDefault = _context.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
+      var firstOrDefault = _context.Kurierzy.Include(p=>p.Samochod).FirstOrDefault(p => p.UserId == idKuriera);
       return firstOrDefault != null ? firstOrDefault.Samochod : null;
     }
 
