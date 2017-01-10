@@ -7,7 +7,10 @@ using Kurier.Models.Context;
 using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Statystyka;
 using Kurier.Models.DTO.Uzytkownik;
+using Kurier.Presenters.CentralaManager.KurierzyCM;
 using Kurier.Presenters.CentralaManager.PaczkiCM;
+using DaneStatystykiKlienta = Kurier.Models.DTO.Statystyka.StatystykaKlientow.DaneStatystykiKlienta;
+using StatystykaKuriera = Kurier.Models.DTO.Statystyka.ObciazenieKurierow.StatystykaKuriera;
 
 namespace Kurier.Models.DataAccess
 {
@@ -20,11 +23,11 @@ namespace Kurier.Models.DataAccess
 
     public ObciazenieKurierow PobierzObciazenieKurierow()
     {
-      ObciazenieKurierow obciazenieKurierow = new ObciazenieKurierow();
-      List<DaneKuriera> listaKurierow = new ApplicationContext().Kurierzy.ToList();
-      obciazenieKurierow.ListaKurierow.AddRange(
-        listaKurierow.Select(
-          p => new ObciazenieKurierow.StatystykaKuriera() {Kurier = p, PrzypisanePaczki = new List<DanePaczki>()}));
+      ObciazenieKurierow obciazenieKurierow = new ObciazenieKurierow
+      {
+        ListaKurierow = new ApplicationContext().Kurierzy.Select(
+          p => new StatystykaKuriera() { Kurier = p, PrzypisanePaczki = new List<DanePaczki>() }).ToList()
+      };
 
       List<DanePaczki> listaPaczek =
         new ApplicationContext().Paczki.Where(p => p.Status != null && p.Status.Kurier != null).ToList();
@@ -42,13 +45,36 @@ namespace Kurier.Models.DataAccess
 
     public StatystykaKlientow PobierzStatystykeNajczestszychKlientow()
     {
-      throw new NotImplementedException();
+      StatystykaKlientow statystykaKlientow = new StatystykaKlientow
+      {
+        StatystykiKlienta =
+          new ApplicationContext().Klienci.Select(p => new DaneStatystykiKlienta() { DaneKlienta = p }).ToList()
+      };
+
+      List<DanePaczki> paczki =
+        new ApplicationContext().Paczki.Where(p => p.Adresat != null || p.Nadawca != null).ToList();
+
+      foreach (var paczka in paczki)
+      {
+        DaneStatystykiKlienta daneStatystykiKlienta =
+          statystykaKlientow.StatystykiKlienta.FirstOrDefault(p => KlientMaPowiazanieZPaczka(paczka, p.DaneKlienta));
+        if (daneStatystykiKlienta != null) daneStatystykiKlienta.LiczbaPaczek++;
+      }
+
+
+      return new StatystykaKlientow();
+    }
+
+    private bool KlientMaPowiazanieZPaczka(DanePaczki paczka, DaneAuth daneKlienta)
+    {
+      return paczka.Adresat != null && daneKlienta.UserId == paczka.Adresat.UserId
+         || paczka.Nadawca != null && daneKlienta.UserId == paczka.Nadawca.UserId;
     }
 
     public StatystykaPaczek PobierzStatystykiPaczek()
     {
       int liczbaPaczekWDrodze = new ApplicationContext().Paczki.Count(
-        p => p.Status != null && p.Status.KodStatusu == (int) StatusEnum.WDrodze && p.Status.Kurier != null);
+        p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.WDrodze && p.Status.Kurier != null);
       int liczbaKurierowRozwazacychPaczki =
         new ApplicationContext().Paczki.Where(p => p.Status != null).Select(p => p.Status.Kurier).Distinct().Count();
       int sredniaLiczbaPaczekNaKuriera = liczbaPaczekWDrodze / liczbaKurierowRozwazacychPaczki;
@@ -57,9 +83,9 @@ namespace Kurier.Models.DataAccess
       {
         LiczbaDostarczonychPaczek =
           new ApplicationContext().Paczki.Count(
-            p => p.Status != null && p.Status.KodStatusu == (int) StatusEnum.Doreczona),
+            p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.Doreczona),
         LiczbaNadanychPaczek =
-          new ApplicationContext().Paczki.Count(p => p.Status != null && p.Status.KodStatusu == (int) StatusEnum.Nadana),
+          new ApplicationContext().Paczki.Count(p => p.Status != null && p.Status.KodStatusu == (int)StatusEnum.Nadana),
         SredniaLiczbaPaczekNaKuriera = sredniaLiczbaPaczekNaKuriera
       };
     }
