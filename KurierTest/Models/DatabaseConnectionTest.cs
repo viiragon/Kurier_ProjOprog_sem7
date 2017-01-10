@@ -18,7 +18,7 @@ namespace KurierTest.Models
         {
           conn.Open();   // check the database connection
         }
-        catch(Exception e)
+        catch
         {
           throw new AssertFailedException();
         }

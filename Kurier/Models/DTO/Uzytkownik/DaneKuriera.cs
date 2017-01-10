@@ -7,7 +7,7 @@ namespace Kurier.Models.DTO.Uzytkownik
   public class DaneKuriera : DaneUzytkownika
   {
     public int NumerPracowanika { get; set; }
-    [Required]
+
     public DaneSamochodu Samochod { get; set; }
     public override bool Equals(object obj)
     {
