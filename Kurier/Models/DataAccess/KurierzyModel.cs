@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Kurier.Interfaces;
@@ -34,12 +35,12 @@ namespace Kurier.Models.DataAccess
 
     public DaneKuriera PobierzKuriera(int id)
     {
-        return _context.Kurierzy.Find(id);
+        return _context.Kurierzy.FirstOrDefault(p=>p.UserId==id);
     }
 
     public List<DaneKuriera> PobierzListeKurierow()
     { 
-        return _context.Kurierzy.ToList();
+        return _context.Kurierzy.Include(p=>p.Samochod).ToList();
     }
 
     public List<DanePaczki> PobierzListePaczekKuriera(int idKuriera)
@@ -49,7 +50,7 @@ namespace Kurier.Models.DataAccess
 
     public DaneSamochodu PobierzSamochodKuriera(int idKuriera)
     {
-      var firstOrDefault = _context.Kurierzy.Find(idKuriera);
+      var firstOrDefault = _context.Kurierzy.FirstOrDefault(p => p.UserId == idKuriera);
       return firstOrDefault != null ? firstOrDefault.Samochod : null;
     }
 
