@@ -1,5 +1,7 @@
 ﻿using Kurier.Models.DTO.Uzytkownik;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kurier.Models.DTO.Samochod
 {
@@ -12,6 +14,7 @@ namespace Kurier.Models.DTO.Samochod
     public DateTime DataKontroli { get; set; }
     public int Id { get; set; }
 
+    public  DaneKuriera Kurier{ get; set; }
     public override bool Equals(object obj)
     {
       if (ReferenceEquals(null, obj)) return false;
