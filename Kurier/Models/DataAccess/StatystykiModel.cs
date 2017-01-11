@@ -19,15 +19,15 @@ namespace Kurier.Models.DataAccess
 {
   public class StatystykiModel : IMStatystyka
   {
+
     public StatystykaObszaru PobierzNajczestszeObszaryPaczek() => new StatystykaObszaru()
     {
-      ListaObszarow = new ApplicationContext().Paczki.Where(p => p.AdresAdresata != null)
-        .Select(p => p.AdresAdresata.Miasto)
-        .GroupBy(p => p, q => q)
-        .Select(p => new DaneObszaru() {NazwaObszaru = p.Key, IloscPaczek = p.Count()})
-        .ToList()
+      ListaObszarow = new ApplicationContext().Paczki.ToList().Where(p => p.AdresAdresata != null)
+    .Select(p => p.AdresAdresata.Miasto)
+    .GroupBy(p => p, q => q)
+    .Select(p => new DaneObszaru() { NazwaObszaru = p.Key, IloscPaczek = p.Count() })
+    .ToList()
     };
-
     public ObciazenieKurierow PobierzObciazenieKurierow()
     {
       ObciazenieKurierow obciazenieKurierow = new ObciazenieKurierow
