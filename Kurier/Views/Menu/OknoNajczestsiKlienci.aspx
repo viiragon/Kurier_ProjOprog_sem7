@@ -9,9 +9,27 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <header>Stali klienci</header>
+        <article>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td>Imię</td>
+                    <td>Nazwisko</td>
+                    <td>Lista paczek</td> 
+                </tr>
+                <asp:Repeater ID="rptKlienci" runat="server">
+                    <ItemTemplate>
+                         <tr>
+                            <td>Id: <%# Eval("DaneKlienta.UserId") %></td>
+                            <td><%# Eval("DaneKlienta.Imie") %></td>
+                            <td><%# Eval("DaneKlienta.Nazwisko") %></td>
+                            <td>2</td>
+                        </tr>
+                    </ItemTemplate>
+              </asp:Repeater>
+            </table>  
+        </article>
     </form>
 </body>
 </html>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 using Kurier.Models.DTO.Statystyka;
+using static Kurier.Models.DTO.Statystyka.StatystykaKlientow;
 
 namespace Kurier.Views.Menu
 {
@@ -27,7 +28,13 @@ namespace Kurier.Views.Menu
         public override void wyswietlOknoStatystykPaczek(StatystykaPaczek statystyka) { }
         public override void wyswietlOknoNajczestszychKlientow(StatystykaKlientow statystyka)
         {
-            NajczestsiKlienci.wyswietlOkno(this);
+            List<DaneStatystykiKlienta> statystykiKlienta = statystyka.StatystykiKlienta;
+            DaneStatystykiKlienta[] lista = new DaneStatystykiKlienta[statystykiKlienta.Count];
+            for (int i = 0; i < lista.Length; i++)
+            {
+                lista[i] = statystykiKlienta[i];
+            }
+            NajczestsiKlienci.wyswietlOkno(this, lista);
         }
     }
 }
