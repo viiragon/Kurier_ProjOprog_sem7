@@ -12,11 +12,18 @@ namespace Kurier.Views.Menu.Kurier
         private OknoLogowanieKurier logowanie;
         private Kurier.MenuGlowneKurier menuKurier;
         private Interfaces.Presenter.IPKurier presenter;
+        private Interfaces.Presenter.ICMKurierzy kurierzyP;
 
         public VKurier(Interfaces.Presenter.IPKurier presenter)
         {
             this.presenter = presenter;
         }
+        
+
+       // public VKurier(Interfaces.Presenter.ICMKurierzy kurierzyP)
+       // {
+       //     this.kurierzyP = kurierzyP;
+       // }
 
         public void setOknoLogowanieKurier(OknoLogowanieKurier logowanie)
         {

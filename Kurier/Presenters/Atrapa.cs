@@ -9,6 +9,8 @@ using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Uzytkownik;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Paczka;
+using Kurier.Presenters.CentralaManager;
+
 
 namespace Kurier.Presenters
 {
@@ -40,6 +42,7 @@ namespace Kurier.Presenters
             paczki = Interfaces.View.IVCentralaPaczki.createInstance(this);
             samochody = Interfaces.View.IVCentralaSamochody.createInstance(this);
             kurierzy = null;// Interfaces.View.IVCentralaKurierzy.createInstance(this);
+        //    kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this);
 
             ivKurier = Interfaces.View.IVKurier.createInstance(this);
             ivKlient = Interfaces.View.IVKlient.createInstance(this);
@@ -77,8 +80,8 @@ namespace Kurier.Presenters
                 user.Telefon = 0700880;
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
-                user.Haslo = dane.Haslo;
-                logowanie.wyswietlMenuGlowneCentrali(user, this, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), this, this);
+                user.Haslo = dane.Haslo; //kurier, samochody, statystyka, paczka
+                logowanie.wyswietlMenuGlowneCentrali(user, this /*new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter()*/, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), /*this*/ new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter());
             }
             else
             {
@@ -100,7 +103,8 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeKurierow()
         {
-            throw new NotImplementedException();
+
+            //throw new NotImplementedException();
         }
 
         public void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier)

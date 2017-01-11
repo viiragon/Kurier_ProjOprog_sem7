@@ -137,6 +137,7 @@
   <ItemGroup>
     <Content Include="Views\Menu\Kurier\LogowanieKurier.aspx" />
     <Content Include="Views\Menu\Kurier\MenuGlowneKurier.aspx" />
+    <Content Include="Views\Menu\OknoNajczestszeMiasta.aspx" />
     <Content Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx" />
     <Content Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx" />
     <Content Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx" />
@@ -244,6 +245,13 @@
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Kurier\VKurier.cs" />
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.designer.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

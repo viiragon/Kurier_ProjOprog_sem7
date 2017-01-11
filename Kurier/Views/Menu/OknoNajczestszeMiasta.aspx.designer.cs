@@ -10,7 +10,7 @@
 namespace Kurier.Views.Menu {
     
     
-    public partial class NajczestsiKlienci {
+    public partial class OknoNajczestszeMiasta {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,12 @@ namespace Kurier.Views.Menu {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rptKlienci control.
+        /// rptMiasta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptKlienci;
+        protected global::System.Web.UI.WebControls.Repeater rptMiasta;
     }
 }
