@@ -40,5 +40,9 @@ namespace Kurier.Views.Menu
         {
 
         }
+        protected void onClickBtSend(object sender, EventArgs e)
+        {
+            controller.wyswietlOknoWysylaniaZleceniaDoSerwisu(samochod);
+        }
     }
 }

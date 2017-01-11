@@ -44,6 +44,7 @@
 
            
             </table>
+            <asp:Button Text="Wyślij zlecenie do serwisu" OnClick="onClickBtSend" runat="server" />
         </article>
     </form>
 </body>

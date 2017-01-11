@@ -12,6 +12,7 @@ namespace Kurier.Views.Menu
         private OknoEdycjiSamochodu oknoEdycjiSamochodu;
         private OknoListySamochodow oknoListySamochodow;
         private OknoSzczegolowSamochodu oknoSzczegolowSamochodu;
+        private OknoWyslaniaZleceniaDoSerwisu oknoWyslaniaZleceniaDoSerwisu;
         private Interfaces.Presenter.ICMSamochody samochodyP;
 
         public VCentralaSamochody(Interfaces.Presenter.ICMSamochody samochodyP)
@@ -37,6 +38,11 @@ namespace Kurier.Views.Menu
         public void setOknoSzczegolowSamochodu(OknoSzczegolowSamochodu okno)
         {
             this.oknoSzczegolowSamochodu = okno;
+        }
+
+        public void setOknoWyslaniaZleceniaDoSerwisu(OknoWyslaniaZleceniaDoSerwisu okno)
+        {
+            this.oknoWyslaniaZleceniaDoSerwisu = okno;
         }
 
         public override void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod)
@@ -66,7 +72,7 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod)
         {
-           
+            OknoWyslaniaZleceniaDoSerwisu.wyswietlOkno(this, samochod);
         }
 
     }
