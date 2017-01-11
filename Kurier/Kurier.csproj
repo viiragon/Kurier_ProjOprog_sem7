@@ -167,13 +167,9 @@
     <Compile Include="Interfaces\Presenter\IPKlient.cs" />
     <Compile Include="Interfaces\Presenter\IPKurier.cs" />
     <Compile Include="Interfaces\View\IVKlient.cs" />
-    <Compile Include="Migrations\201612192155209_Init.cs" />
-    <Compile Include="Migrations\201612192155209_Init.Designer.cs">
-      <DependentUpon>201612192155209_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701061822217_test.cs" />
-    <Compile Include="Migrations\201701061822217_test.Designer.cs">
-      <DependentUpon>201701061822217_test.cs</DependentUpon>
+    <Compile Include="Migrations\201701111811367_init.cs" />
+    <Compile Include="Migrations\201701111811367_init.Designer.cs">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\StatystykiModel.cs" />
@@ -376,11 +372,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612192155209_Init.resx">
-      <DependentUpon>201612192155209_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701061822217_test.resx">
-      <DependentUpon>201701061822217_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701111811367_init.resx">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
