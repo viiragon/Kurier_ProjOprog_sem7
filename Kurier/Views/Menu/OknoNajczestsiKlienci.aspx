@@ -24,7 +24,7 @@
                             <td>Id: <%# Eval("DaneKlienta.UserId") %></td>
                             <td><%# Eval("DaneKlienta.Imie") %></td>
                             <td><%# Eval("DaneKlienta.Nazwisko") %></td>
-                            <td>2</td>
+                            <td><%# Eval("LiczbaPaczek") %></td>
                         </tr>
                     </ItemTemplate>
               </asp:Repeater>
