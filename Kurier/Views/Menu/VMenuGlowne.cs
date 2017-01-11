@@ -60,5 +60,10 @@ namespace Kurier.Views.Menu
         {
             statystykaP.wybranoPokazNajczestszychKlientow();
         }
+
+        public void wybranoPokazNajczestszeMiasta()
+        {
+            statystykaP.wybranoPokazNajczestszeObszaryPaczek();
+        }
     }
 }
