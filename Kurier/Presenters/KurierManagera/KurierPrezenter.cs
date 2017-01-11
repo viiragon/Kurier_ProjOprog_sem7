@@ -78,7 +78,8 @@ namespace Kurier.Presenters.KurierManager
 
         public void wybranoZalogujKuriera(DaneUzytkownika dane)
         {
-            throw new NotImplementedException();
+            ivKurier.wyswietlFormularzLogowaniaJakoKurier();
+            //throw new NotImplementedException();
         }
 
         public void wybranoZapiszStatusPaczki(Status status, int idPaczki)

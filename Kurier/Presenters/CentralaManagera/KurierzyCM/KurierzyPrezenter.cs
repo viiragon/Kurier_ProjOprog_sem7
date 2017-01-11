@@ -5,51 +5,65 @@ using System.Web;
 using Kurier.Interfaces.Presenter;
 using Kurier.Models.DTO.Uzytkownik;
 using Kurier.Models.DataAccess;
+using Kurier.Models.DTO.Paczka;
 
 namespace Kurier.Presenters.CentralaManager.KurierzyCM
 {
-    public class KurierzyPrezenter : ICMKurierzy
+    public class KurierzyPrezenter : IPKurier
     {
-        private Interfaces.View.IVCentralaKurierzy kurierzy;
+
+        private Interfaces.View.IVKurier ivKurier;
         private KurierzyModel kurierzyModel;
+
+        public static KurierzyPrezenter kurierzyPrezenter = new KurierzyPrezenter();
+
         public KurierzyPrezenter()
         {
-            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this);
+            ivKurier = Interfaces.View.IVKurier.createInstance(this);
             kurierzyModel = new KurierzyModel();
         }
 
-        public void wybranoDodajKuriera()
+        public void wybranoEdytujStatusPaczki(int id)
         {
-            kurierzy.wyswietlFormularzDodawaniaKuriera();
-           // throw new NotImplementedException();
-        }
-
-        public void wybranoEdytujKuriera(int id)
-        {
-            DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
-            kurierzy.wyswietlFormularzEdycjiKuriera(kurier);
-        //    throw new NotImplementedException();
-        }
-
-        public void wybranoPokazListeKurierow()
-        {
-            DaneKuriera[] listaKurierow = kurierzyModel.PobierzListeKurierow().ToArray();      
-            kurierzy.wyswietlOknoListyKurierow(listaKurierow);
-         //   throw new NotImplementedException();
-        }
-
-        public void wybranoZapiszEdycjeKuriera(DaneKuriera kurier)
-        {
-            bool czydanepoprawne = kurierzyModel.WalidujDaneKuriera(kurier);
-            if (czydanepoprawne)
-            {
-                throw new NotImplementedException();
-            }
-            
             throw new NotImplementedException();
         }
 
-        public void wybranoZapiszNowegoKuriera(DaneKuriera kurier)
+        public void wybranoPokazDateKolejnegoPrzegladu()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoPokazListeZlecenKuriera()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoPokazSamochodKuriera()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoPokazSzczegolyPaczkiDlaKuriera(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoWydajPaczke(DanePaczki paczka)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoWylogujKuriera()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoZalogujKuriera(DaneUzytkownika dane)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoZapiszStatusPaczki(Status status, int idPaczki)
         {
             throw new NotImplementedException();
         }

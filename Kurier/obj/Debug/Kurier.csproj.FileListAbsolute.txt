@@ -353,7 +353,6 @@ C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\System.Web.Providers
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\System.Web.Razor.xml
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.Migrations.Init.resources
-C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.pdb
