@@ -12,6 +12,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
     public class SamochodyPrezenter : ICMSamochody
     {
         private Interfaces.View.IVCentralaSamochody samochody;
+        private Interfaces.View.IVCentralaKurierzy kurierzy;
         private SamochodyModel samochodyModel;
         private KurierzyModel kurierzyModel;
         public SamochodyPrezenter()
@@ -47,15 +48,14 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
         public void wybranoPokazSzczegolySamochodu(int id)
         {
             DaneSamochodu samochod = samochodyModel.PobierzSamochod(id);
-            samochody.wyswietlOknoSzczegolowSamochodu(samochod, kurierzyModel.PobierzKurieraSamochodu(samochodyModel, id));
+            DaneKuriera kurier = kurierzyModel.PobierzKurieraSamochodu(samochodyModel, id);
+            samochody.wyswietlOknoSzczegolowSamochodu(samochod, kurier);
         }
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            DaneSamochodu dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
-            //samochodyModel.PowiazKurieraISamochod();
-            samochody.aktualizujOknoSzczegolowSamochodu(dSamochod);
-          //  throw new NotImplementedException();
+            DaneKuriera [] listakurierow = kurierzyModel.PobierzListeKurierow().ToArray();
+            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, listakurierow);
         }
 
         public void wybranoUsunSamochod(int id)
@@ -66,19 +66,17 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoWyslijZlecenieDoSerwisu()
         {
-            //potrzebne dane samochodu
-            //DaneSamochodu samochod = 
-            //samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu();
+            samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu(null);
         }
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
         {
-           // bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
-          //  if (czyPoprawneDane)
-          //  {
+            bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
+            if (czyPoprawneDane)
+            {
                 samochodyModel.DodajSamochod(dane);
                 //komunikat o dodaniu
-          //  }
+            }
             wybranoPokazListeSamochodow();
         }
 
@@ -92,7 +90,16 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             if (poprawneDaneSamochod && poprawneDaneKurier)
             {
                 samochodyModel.PowiazKurieraISamochod(idSamochodu, idKuriera);
-                //Dodac komunikat
+                dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
+                dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
+                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
+            }
+            else
+            {
+                //INWIGILACJA >:D
+                dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
+                dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
+                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Błąd", dKuriera);
             }
             //throw new NotImplementedException();    
         }
