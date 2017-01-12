@@ -38,7 +38,8 @@ namespace Kurier
 
         protected void onClickBtCentrala(object sender, EventArgs e)
         {
-            Presenters.Atrapa.LOL_TO_JA_XD.startCentrala();
+            // Presenters.Atrapa.LOL_TO_JA_XD.startCentrala();
+            Presenters.CentralaManager.Logowanie.LogowaniePrezenter.logowaniePrezenter.startCentrala();
         }
 
         protected void onClickBtKurier(object sender, EventArgs e)

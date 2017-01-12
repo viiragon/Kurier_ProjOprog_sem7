@@ -22,17 +22,19 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
 
         public void wybranoDodajKuriera()
         {
-            throw new NotImplementedException();
+            kurierzy.wyswietlFormularzDodawaniaKuriera();
         }
 
         public void wybranoEdytujKuriera(int id)
         {
-            throw new NotImplementedException();
+            DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
+            kurierzy.wyswietlFormularzEdycjiKuriera(kurier);
         }
 
         public void wybranoPokazListeKurierow()
         {
-            throw new NotImplementedException();
+            DaneKuriera[] kurierzylist = kurierzyModel.PobierzListeKurierow().ToArray();
+            kurierzy.wyswietlOknoListyKurierow(kurierzylist);
         }
 
         public void wybranoZapiszEdycjeKuriera(DaneKuriera kurier)
