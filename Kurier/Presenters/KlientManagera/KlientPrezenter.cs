@@ -19,7 +19,7 @@ namespace Kurier.Presenters.KlientManager
         private Models.DataAccess.PaczkaModel mPaczka;
         private DanePaczki[] paczki;
 
-        KlientPrezenter() {
+        public KlientPrezenter() {
             ivKlient = Interfaces.View.IVKlient.createInstance(this);
             mPaczka = new Models.DataAccess.PaczkaModel();
         }

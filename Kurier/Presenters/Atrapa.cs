@@ -18,7 +18,7 @@ namespace Kurier.Presenters
     {
         //TA KLASA JEST ATRAPĄ!!!! ZMIEŃCIE JĄ NA FAKTYCZNE KLASY PREZENTERÓW
 
-        public static Atrapa LOL_TO_JA_XD = new Atrapa();
+        public static Atrapa instance = new Atrapa();
         public static ICMLogowanie PCentrLogowanie;
         public static ICMSamochody PCentrSamochody;
         public static ICMStatystyka PCentrStatystyka;
@@ -40,13 +40,29 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            PCentrLogowanie = this;
-            PCentrStatystyka = this;
-            PCentrSamochody = this;//new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
-            PCentrKurierzy = this;
-            PCentrPaczki = this;
-            PKurier = this;
-            PKlient = this;
+            bool atrapimy = true;
+
+            PCentrLogowanie = atrapimy && true
+                ? this as Interfaces.Presenter.ICMLogowanie 
+                : new Presenters.CentralaManager.Logowanie.LogowaniePrezenter();
+            PCentrStatystyka = atrapimy && true
+                ? this as Interfaces.Presenter.ICMStatystyka 
+                : new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter();
+            PCentrSamochody = atrapimy && true
+                ? this as Interfaces.Presenter.ICMSamochody
+                : new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
+            PCentrPaczki = atrapimy && true
+                ? this as Interfaces.Presenter.ICMPaczki
+                : new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter();
+            PCentrKurierzy = atrapimy && true
+                ? this as Interfaces.Presenter.ICMKurierzy
+                : new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter(PCentrPaczki);
+            PKurier = this/*atrapimy  && true
+                ? this as Interfaces.Presenter.IPKurier
+                : new Presenters.KurierManager.KurierPrezenter()*/;
+            PKlient = atrapimy && true
+                ? this as Interfaces.Presenter.IPKlient 
+                : new Presenters.KlientManager.KlientPrezenter();
             logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(PCentrLogowanie);
             statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(PCentrStatystyka);
             paczki = Interfaces.View.IVCentralaPaczki.createInstance(PCentrPaczki);
@@ -431,10 +447,10 @@ namespace Kurier.Presenters
             {
                 Adres = new Adres()
                 {
-                    KodPocztowy = "09-201",
-                    Miasto = "Sierpc",
-                    NumerMieszkania = "2",
-                    Ulica = "Poniatowskiego"
+                    KodPocztowy = "29-120",
+                    Miasto = "Kluczewsko",
+                    NumerMieszkania = "12",
+                    Ulica = "Spółdzielcza"
                 },
                 Nazwisko = "Nowakowski",
                 Imie = "Krystian",

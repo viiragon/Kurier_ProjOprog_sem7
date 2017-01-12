@@ -43,7 +43,8 @@ namespace Kurier.Presenters.CentralaManager.Logowanie
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
-                logowanie.wyswietlMenuGlowneCentrali(user, new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter(), new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter());
+                Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter paczkiP = new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter();
+                logowanie.wyswietlMenuGlowneCentrali(user, new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter(paczkiP), new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), paczkiP);
             }
             else
             {

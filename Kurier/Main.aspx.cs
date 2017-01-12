@@ -50,19 +50,19 @@ namespace Kurier
 
         protected void onClickBtCentrala(object sender, EventArgs e)
         {
-            // Presenters.Atrapa.LOL_TO_JA_XD.startCentrala();
-            Presenters.CentralaManager.Logowanie.LogowaniePrezenter.logowaniePrezenter.startCentrala();
+            Presenters.Atrapa.instance.startCentrala();
+            //Presenters.CentralaManager.Logowanie.LogowaniePrezenter.logowaniePrezenter.startCentrala();
         }
 
         protected void onClickBtKurier(object sender, EventArgs e)
         {
-            Presenters.Atrapa.LOL_TO_JA_XD.startKurier();
+            Presenters.Atrapa.instance.startKurier();
         }
 
         protected void onClickBtNadawca(object sender, EventArgs e)
         {
-            //Presenters.Atrapa.LOL_TO_JA_XD.startNadawca();
-            Presenters.KlientManager.KlientPrezenter.klientPrezenter.startNadawca();
+            Presenters.Atrapa.instance.startNadawca();
+            //Presenters.KlientManager.KlientPrezenter.klientPrezenter.startNadawca();
         }
     }
 }

@@ -47,13 +47,15 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
         public void wybranoPokazSzczegolySamochodu(int id)
         {
             DaneSamochodu samochod = samochodyModel.PobierzSamochod(id);
-            DaneKuriera kurier = kurierzyModel.PobierzKurieraSamochodu(samochodyModel, id);
-            samochody.wyswietlOknoSzczegolowSamochodu(samochod, kurier);
+            samochody.wyswietlOknoSzczegolowSamochodu(samochod, kurierzyModel.PobierzKurieraSamochodu(samochodyModel, id));
         }
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, null);
+            DaneSamochodu dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
+            //samochodyModel.PowiazKurieraISamochod();
+            samochody.aktualizujOknoSzczegolowSamochodu(dSamochod);
+          //  throw new NotImplementedException();
         }
 
         public void wybranoUsunSamochod(int id)
@@ -71,12 +73,12 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
         {
-            bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
-            if (czyPoprawneDane)
-            {
+           // bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
+          //  if (czyPoprawneDane)
+          //  {
                 samochodyModel.DodajSamochod(dane);
                 //komunikat o dodaniu
-            }
+          //  }
             wybranoPokazListeSamochodow();
         }
 
@@ -90,16 +92,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             if (poprawneDaneSamochod && poprawneDaneKurier)
             {
                 samochodyModel.PowiazKurieraISamochod(idSamochodu, idKuriera);
-                dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
-                dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
-                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
-            }
-            else
-            {
-                //INWIGILACJA >:D
-                dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
-                dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
-                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Błąd", dKuriera);
+                //Dodac komunikat
             }
             //throw new NotImplementedException();    
         }
