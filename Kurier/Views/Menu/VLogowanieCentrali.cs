@@ -54,7 +54,10 @@ namespace Kurier.Views.Menu
 
         internal override void wyswietlMenuGlowneCentrali(DaneUzytkownika user, KurierzyPrezenter kurierzyPrezenter, SamochodyPrezenter samochodyPrezenter, StatystykiPrezenter statystykiPrezenter, PaczkiPrezenter paczkiPrezenter)
         {
-            throw new NotImplementedException();
+            new VMenuGlowne(presenter,
+                samochodyPrezenter,
+                statystykiPrezenter,
+                kurierzyPrezenter, paczkiPrezenter).wyswietlMenuGlowneCentrali(user);
         }
     }
 }
