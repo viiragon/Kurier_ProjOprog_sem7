@@ -59,6 +59,7 @@ namespace KurierTest.Models
       dbSetMock.As<IQueryable<T>>().Setup(m => m.Expression).Returns(elementsAsQueryable.Expression);
       dbSetMock.As<IQueryable<T>>().Setup(m => m.ElementType).Returns(elementsAsQueryable.ElementType);
       dbSetMock.As<IQueryable<T>>().Setup(m => m.GetEnumerator()).Returns(elementsAsQueryable.GetEnumerator());
+      dbSetMock.Setup(m => m.Include(It.IsAny<string>())).Returns(dbSetMock.Object);
       dbSetMock.Setup(m => m.Add(It.IsAny<T>())).Callback<T>(elements.Add);
       dbSetMock.Setup(m => m.Remove(It.IsAny<T>())).Returns<T>(p => RemovingMock(p, elements));
 

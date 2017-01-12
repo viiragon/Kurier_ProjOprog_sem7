@@ -137,7 +137,9 @@
   <ItemGroup>
     <Content Include="Views\Menu\Kurier\LogowanieKurier.aspx" />
     <Content Include="Views\Menu\Kurier\MenuGlowneKurier.aspx" />
+    <Content Include="Views\Menu\OknoNajczestszeMiasta.aspx" />
     <Content Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx" />
     <Content Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx" />
     <Content Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx" />
     <Content Include="Views\Menu\MenuGlowneCentrala.aspx" />
@@ -149,7 +151,6 @@
     <Content Include="Views\Menu\Paczki\OknoNadaniePaczki.aspx" />
     <Content Include="Views\Menu\OknoNajczestsiKlienci.aspx" />
     <Content Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx" />
-    <Content Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx" />
     <Content Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx" />
     <Content Include="Views\SzablonStrony.aspx" />
     <Content Include="Web.config">
@@ -166,15 +167,12 @@
     <Compile Include="Interfaces\Presenter\IPKlient.cs" />
     <Compile Include="Interfaces\Presenter\IPKurier.cs" />
     <Compile Include="Interfaces\View\IVKlient.cs" />
-    <Compile Include="Migrations\201612192155209_Init.cs" />
-    <Compile Include="Migrations\201612192155209_Init.Designer.cs">
-      <DependentUpon>201612192155209_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612201507482_x.cs" />
-    <Compile Include="Migrations\201612201507482_x.Designer.cs">
-      <DependentUpon>201612201507482_x.cs</DependentUpon>
+    <Compile Include="Migrations\201701111811367_init.cs" />
+    <Compile Include="Migrations\201701111811367_init.Designer.cs">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DataAccess\StatystykiModel.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKlienta.cs" />
     <Compile Include="Models\DTO\Uzytkownik\DaneAuthKuriera.cs" />
@@ -233,6 +231,7 @@
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Menu\Kurier\VCentralaKurier.cs" />
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,12 +247,26 @@
       <DependentUpon>MenuGlowneKurier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Kurier\VKurier.cs" />
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\OknoNajczestszeMiasta.aspx.designer.cs">
+      <DependentUpon>OknoNajczestszeMiasta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.designer.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx.cs">
+      <DependentUpon>OknoWyslaniaZleceniaDoSerwisu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx.designer.cs">
+      <DependentUpon>OknoWyslaniaZleceniaDoSerwisu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx.cs">
       <DependentUpon>OknoDodawaniaSamochodu.aspx</DependentUpon>
@@ -325,13 +338,6 @@
     <Compile Include="Views\Menu\Paczki\OknoSzczegolowPaczki.aspx.designer.cs">
       <DependentUpon>OknoSzczegolowPaczki.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx.cs">
-      <DependentUpon>OknoPrzypisaniaSamochodu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaSamochodu.aspx.designer.cs">
-      <DependentUpon>OknoPrzypisaniaSamochodu.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Menu\Samochody\OknoSzczegolowSamochodu.aspx.cs">
       <DependentUpon>OknoSzczegolowSamochodu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,7 +360,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -368,11 +373,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612192155209_Init.resx">
-      <DependentUpon>201612192155209_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612201507482_x.resx">
-      <DependentUpon>201612201507482_x.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701111811367_init.resx">
+      <DependentUpon>201701111811367_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

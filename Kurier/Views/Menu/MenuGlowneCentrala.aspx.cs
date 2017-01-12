@@ -51,5 +51,10 @@ namespace Kurier.Views.Menu
         {
             controller.wybranoPokazNajczeszychKlientow();
         }
+        protected void onClickBtNajczestszeMiasta(object sender, EventArgs e)
+        {
+            controller.wybranoPokazNajczestszeMiasta();
+        }
+       
     }
 }
