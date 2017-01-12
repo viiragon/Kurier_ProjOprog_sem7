@@ -18,7 +18,7 @@
                     <td>Nazwisko</td>
                     <td>Przypisz</td> 
                 </tr>
-                <asp:Repeater ID="rptKurierzy" runat="server" OnItemCommand="onClickDetails">
+                <asp:Repeater ID="rptKurierzy" runat="server" OnItemCommand="onClickPrzypisz">
                     <ItemTemplate>
                          <tr>
                             <td>Id: <%# Eval("Id") %></td>
