@@ -142,6 +142,7 @@
     <Content Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx" />
     <Content Include="Views\Menu\OknoNajczestszeMiasta.aspx" />
     <Content Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx" />
+    <Content Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx" />
     <Content Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx" />
     <Content Include="Views\Menu\Samochody\OknoDodawaniaSamochodu.aspx" />
     <Content Include="Views\Menu\Nadawca\MenuGlowneNadawcy.aspx" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx.designer.cs">
       <DependentUpon>OknoCentralaPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx.cs">
+      <DependentUpon>OknoPrzypisaniaKuriera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx.designer.cs">
+      <DependentUpon>OknoPrzypisaniaKuriera.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu\Samochody\OknoWyslaniaZleceniaDoSerwisu.aspx.cs">
       <DependentUpon>OknoWyslaniaZleceniaDoSerwisu.aspx</DependentUpon>

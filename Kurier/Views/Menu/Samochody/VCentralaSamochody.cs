@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Kurier.Models.DTO.Samochod;
 using Kurier.Views.Menu;
+using Kurier.Views.Menu.Samochody;
 
 namespace Kurier.Views.Menu
 {
@@ -14,8 +15,14 @@ namespace Kurier.Views.Menu
         private OknoListySamochodow oknoListySamochodow;
         private OknoSzczegolowSamochodu oknoSzczegolowSamochodu;
         private OknoWyslaniaZleceniaDoSerwisu oknoWyslaniaZleceniaDoSerwisu;
+        private OknoPrzypisaniaKuriera oknoPrzypisaniaKuriera;
         //private OknoPrzypisaniaSamochodu oknoPrzypisaniaSamochodu;
         private Interfaces.Presenter.ICMSamochody samochodyP;
+
+        internal void setOknoPrzypisaniaKuriera(OknoPrzypisaniaKuriera oknoPrzypisaniaKuriera)
+        {
+            this.oknoPrzypisaniaKuriera = oknoPrzypisaniaKuriera;
+        }
 
         public VCentralaSamochody(Interfaces.Presenter.ICMSamochody samochodyP)
         {
@@ -109,6 +116,7 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlOknoPrzypisaniaSamochoduDoKuriera(int idSamochodu, Models.DTO.Uzytkownik.DaneKuriera[] kurierzy)
         {
+            OknoPrzypisaniaKuriera.wyswietlOkno(this, idSamochodu, kurierzy);
             //Samochody.OknoPrzypisaniaSamochodu.wyswietlOkno(this, idSamochodu, kurierzy);
         }
     }
