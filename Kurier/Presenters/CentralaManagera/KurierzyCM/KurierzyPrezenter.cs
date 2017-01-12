@@ -49,6 +49,8 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
 
         public void wybranoPokazSzczegolyKuriera(int id)
         {
+            DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
+            //wyświetlenie okna
             throw new NotImplementedException();
         }
     }

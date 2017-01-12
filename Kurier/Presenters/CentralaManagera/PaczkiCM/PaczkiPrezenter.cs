@@ -46,8 +46,8 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
 
         public void wybranoPrzypiszKurieraDoPaczki(int idPaczki)
         {
-
-            throw new NotImplementedException();
+            //paczki.
+            
         }
 
         public void wybranoZapiszPowiazanieKurieraZPaczka(int idPaczki,int idKuriera)
