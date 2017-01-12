@@ -385,7 +385,6 @@ C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Providers.xml
 C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Razor.xml
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.Init.resources
-C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.dll
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.pdb
