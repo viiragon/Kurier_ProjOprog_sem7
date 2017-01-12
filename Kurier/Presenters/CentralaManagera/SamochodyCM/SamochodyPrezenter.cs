@@ -53,7 +53,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            ///
+            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, null);
         }
 
         public void wybranoUsunSamochod(int id)

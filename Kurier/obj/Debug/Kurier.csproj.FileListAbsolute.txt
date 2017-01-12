@@ -313,7 +313,6 @@ C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.Mig
 C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.dll
 C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.pdb
-C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\Kurier.dll.config
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\Kurier.pdb
@@ -389,4 +388,4 @@ C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.dll
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.pdb
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Source\Repos\Kurier_ProjOprog_sem73\Kurier\obj\Debug\Kurier.Migrations.test.resources
