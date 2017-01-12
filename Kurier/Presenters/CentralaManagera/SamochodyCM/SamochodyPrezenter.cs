@@ -12,6 +12,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
     public class SamochodyPrezenter : ICMSamochody
     {
         private Interfaces.View.IVCentralaSamochody samochody;
+        private Interfaces.View.IVCentralaKurierzy kurierzy;
         private SamochodyModel samochodyModel;
         private KurierzyModel kurierzyModel;
         public SamochodyPrezenter()
@@ -53,7 +54,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            DaneKuriera[] listakurierow = kurierzyModel.PobierzListeKurierow().ToArray();
+            DaneKuriera [] listakurierow = kurierzyModel.PobierzListeKurierow().ToArray();
             samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, listakurierow);
         }
 
@@ -65,9 +66,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoWyslijZlecenieDoSerwisu()
         {
-            //potrzebne dane samochodu
-            //DaneSamochodu samochod = 
-            //samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu();
+            samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu(null);
         }
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
