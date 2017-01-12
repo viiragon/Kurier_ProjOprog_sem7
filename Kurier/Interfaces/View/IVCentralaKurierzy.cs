@@ -10,10 +10,10 @@ namespace Kurier.Interfaces.View
 {
     public abstract class IVCentralaKurierzy
     {
-        public static IVCentralaKurierzy createInstance(Presenter.IPKurier kurierzyP)
+        public static IVCentralaKurierzy createInstance(Presenter.ICMKurierzy kurierzyP)
         {
-           // return new Views.Menu.Kurier.VKurier(kurierzyP);
-            throw new NotImplementedException();
+            return new Views.Menu.Kurier.VCentralaKurier(kurierzyP);
+           // throw new NotImplementedException();
         }
         public abstract void wyswietlFormularzDodawaniaKuriera();
         public abstract void wyswietlFormularzEdycjiKuriera(DaneKuriera kurier);

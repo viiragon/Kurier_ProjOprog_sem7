@@ -231,6 +231,7 @@
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Menu\Kurier\VCentralaKurier.cs" />
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

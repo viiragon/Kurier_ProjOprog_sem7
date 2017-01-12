@@ -9,61 +9,38 @@ using Kurier.Models.DTO.Paczka;
 
 namespace Kurier.Presenters.CentralaManager.KurierzyCM
 {
-    public class KurierzyPrezenter : IPKurier
+    public class KurierzyPrezenter : ICMKurierzy
     {
-
-        private Interfaces.View.IVKurier ivKurier;
+        private Interfaces.View.IVCentralaKurierzy kurierzy;
         private KurierzyModel kurierzyModel;
-
-        public static KurierzyPrezenter kurierzyPrezenter = new KurierzyPrezenter();
 
         public KurierzyPrezenter()
         {
-            ivKurier = Interfaces.View.IVKurier.createInstance(this);
+            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this);
             kurierzyModel = new KurierzyModel();
         }
 
-        public void wybranoEdytujStatusPaczki(int id)
+        public void wybranoDodajKuriera()
         {
             throw new NotImplementedException();
         }
 
-        public void wybranoPokazDateKolejnegoPrzegladu()
+        public void wybranoEdytujKuriera(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void wybranoPokazListeZlecenKuriera()
+        public void wybranoPokazListeKurierow()
         {
             throw new NotImplementedException();
         }
 
-        public void wybranoPokazSamochodKuriera()
+        public void wybranoZapiszEdycjeKuriera(DaneKuriera kurier)
         {
             throw new NotImplementedException();
         }
 
-        public void wybranoPokazSzczegolyPaczkiDlaKuriera(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void wybranoWydajPaczke(DanePaczki paczka)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void wybranoWylogujKuriera()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void wybranoZalogujKuriera(DaneUzytkownika dane)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void wybranoZapiszStatusPaczki(Status status, int idPaczki)
+        public void wybranoZapiszNowegoKuriera(DaneKuriera kurier)
         {
             throw new NotImplementedException();
         }
