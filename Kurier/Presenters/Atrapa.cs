@@ -28,14 +28,14 @@ namespace Kurier.Presenters
         public static IPKurier PKurier;
         public static IPKlient PKlient;
 
-        private Interfaces.View.IVCentralaLogowanie logowanie;
-        private Interfaces.View.IVCentralaStatystyka statystyka;
-        private Interfaces.View.IVCentralaPaczki paczki;
-        private Interfaces.View.IVCentralaSamochody samochody;
-        private Interfaces.View.IVCentralaKurierzy kurierzy;
+        public static Interfaces.View.IVCentralaLogowanie logowanie;
+        public static Interfaces.View.IVCentralaStatystyka statystyka;
+        public static Interfaces.View.IVCentralaPaczki paczki;
+        public static Interfaces.View.IVCentralaSamochody samochody;
+        public static Interfaces.View.IVCentralaKurierzy kurierzy;
 
-        private Interfaces.View.IVKurier ivKurier;
-        private Interfaces.View.IVKlient ivKlient;
+        public static Interfaces.View.IVKurier ivKurier;
+        public static Interfaces.View.IVKlient ivKlient;
 
 
         public Atrapa()
@@ -51,10 +51,12 @@ namespace Kurier.Presenters
             statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(PCentrStatystyka);
             paczki = Interfaces.View.IVCentralaPaczki.createInstance(PCentrPaczki);
             samochody = Interfaces.View.IVCentralaSamochody.createInstance(PCentrSamochody);
-            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(PCentrKurierzy);
+            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(PCentrKurierzy, PCentrPaczki);
 
             ivKurier = Interfaces.View.IVKurier.createInstance(PKurier);
             ivKlient = Interfaces.View.IVKlient.createInstance(PKlient);
+
+            init();
             samochod1.Kurier = daneKuriera1;
         }
 
@@ -112,12 +114,24 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeKurierow()
         {
-            throw new NotImplementedException();
+            DaneKuriera[] lista = new DaneKuriera[2];
+
+            lista[0] = daneKuriera1;
+            lista[1] = daneKuriera2;
+
+            kurierzy.wyswietlOknoListyKurierow(lista);
         }
 
         public void wybranoPokazSzczegolyKuriera(int id)
         {
-            throw new NotImplementedException();
+            if (id == daneKuriera1.UserId)
+            {
+                kurierzy.wyswietlOknoSzczegolowKuriera(daneKuriera1, null);
+            }
+            else
+            {
+                kurierzy.wyswietlOknoSzczegolowKuriera(daneKuriera2, null);
+            }
         }
 
         public void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier)
@@ -129,8 +143,6 @@ namespace Kurier.Presenters
         {
             throw new NotImplementedException();
         }
-
-
 
         public void wybranoPokazNajczestszeObszaryPaczek()
         {
@@ -216,21 +228,40 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
+        public void wybranoPokazSzczegolyKurieraDlaPaczki(int id)
+        {
+            DanePaczki paczka;
+            if (id == paczka1.Id)
+            {
+                paczka = paczka1;
+            }
+            else
+            {
+                paczka = paczka2;
+            }
+            if (paczka.Status.Kurier != null)
+            {
+                kurierzy.wyswietlOknoSzczegolowKuriera(paczka.Status.Kurier, null);
+            }
+            else
+            {
+                kurierzy.wyswietlOknoPrzypisywaniaKurieraDoPaczki(new DaneKuriera[] { daneKuriera1, daneKuriera2 }, paczka.Id);
+            }
+        }
+
         public void wybranoPokazListePaczek()
         {
-            DanePaczki[] listaPaczek = new Models.DTO.Paczka.DanePaczki[4];
+            DanePaczki[] listaPaczek = new Models.DTO.Paczka.DanePaczki[2];
 
             listaPaczek[0] = paczka1;
-            listaPaczek[1] = paczka1;
-            listaPaczek[2] = paczka2;
-            listaPaczek[3] = paczka2;
+            listaPaczek[1] = paczka2;
 
             paczki.wyswietlOknoListyPaczek(listaPaczek);
         }
 
         public void wybranoPokazSzczegolyPaczki(int id)
         {
-            if (id == 0)
+            if (id == paczka1.Id)
             {
                 paczki.wyswietlOknoSzczegolowPaczki(paczka1);
             }
@@ -245,9 +276,14 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-        public void wybranoZapiszPowiazanieKurieraZPaczka(int idKuriera, int idPaczki)
+        public void wybranoZapiszPowiazanieKurieraZPaczka(int idPaczki, int idKuriera)
         {
-            throw new NotImplementedException();
+            DaneKuriera tmpKurier;
+            DanePaczki paczka;
+            if (idKuriera == daneKuriera1.UserId) { tmpKurier = daneKuriera1; } else { tmpKurier = daneKuriera2; }
+            if (idPaczki == paczka1.Id) { paczka = paczka1; } else { paczka = paczka2; }
+            paczka.Status.Kurier = tmpKurier;
+            kurierzy.wyswietlOknoSzczegolowKuriera(tmpKurier, "Przypisano kuriera do paczki");
         }
 
         public void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status, int idPaczki)
@@ -371,134 +407,143 @@ namespace Kurier.Presenters
             throw new NotImplementedException();
         }
 
-        public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera1 = new Models.DTO.Uzytkownik.DaneKuriera()
-        {
-            Adres = new Adres()
-            {
-                KodPocztowy = "09-201",
-                Miasto = "Sierpc",
-                NumerMieszkania = "2",
-                Ulica = "Poniatowskiego"
-            },
-            Nazwisko = "Kowalski",
-            Imie = "Maciej",
-            UserId = 1
-        };
+        Models.DTO.Uzytkownik.DaneKuriera daneKuriera1, daneKuriera2;
+        DanePaczki paczka1, paczka2;
+        GUPIEDaneSamochodu samochod1, samochod2;
 
-        public static Models.DTO.Uzytkownik.DaneKuriera daneKuriera2 = new Models.DTO.Uzytkownik.DaneKuriera()
+        private void init()
         {
-            Adres = new Adres()
+            daneKuriera1 = new Models.DTO.Uzytkownik.DaneKuriera()
             {
-                KodPocztowy = "09-201",
-                Miasto = "Sierpc",
-                NumerMieszkania = "2",
-                Ulica = "Poniatowskiego"
-            },
-            Nazwisko = "Nowakowski",
-            Imie = "Krystian",
-            UserId = 2
-        };
-
-        DanePaczki paczka1 = new DanePaczki()
-        {
-            Id = 312,
-            AdresAdresata = new Adres()
-            {
-                KodPocztowy = "29-120",
-                Miasto = "Kluczewsko",
-                NumerMieszkania = "12",
-                Ulica = "Spółdzielcza"
-            },
-            Nadawca = new DaneUzytkownika()
-            {
-                Imie = "Jan",
-                Nazwisko = "Kowalski",
                 Adres = new Adres()
                 {
-                    Ulica = "Biała",
-                    KodPocztowy = "11-008",
-                    Miasto = "Kielce",
-                    NumerMieszkania = "139"
+                    KodPocztowy = "09-201",
+                    Miasto = "Sierpc",
+                    NumerMieszkania = "2",
+                    Ulica = "Poniatowskiego"
                 },
-            },
-            Adresat = new DaneUzytkownika()
+                Nazwisko = "Kowalski",
+                Imie = "Maciej",
+                UserId = 1
+            };
+
+            daneKuriera2 = new Models.DTO.Uzytkownik.DaneKuriera()
             {
-                Imie = "Maria",
-                Nazwisko = "Janda",
                 Adres = new Adres()
+                {
+                    KodPocztowy = "09-201",
+                    Miasto = "Sierpc",
+                    NumerMieszkania = "2",
+                    Ulica = "Poniatowskiego"
+                },
+                Nazwisko = "Nowakowski",
+                Imie = "Krystian",
+                UserId = 2
+            };
+
+            paczka1 = new DanePaczki()
+            {
+                Id = 312,
+                IdPaczki = "2/12/2016",
+                AdresAdresata = new Adres()
+                {
+                    KodPocztowy = "29-120",
+                    Miasto = "Kluczewsko",
+                    NumerMieszkania = "12",
+                    Ulica = "Spółdzielcza"
+                },
+                Nadawca = new DaneUzytkownika()
+                {
+                    Imie = "Jan",
+                    Nazwisko = "Kowalski",
+                    Adres = new Adres()
+                    {
+                        Ulica = "Biała",
+                        KodPocztowy = "11-008",
+                        Miasto = "Kielce",
+                        NumerMieszkania = "139"
+                    },
+                },
+                Adresat = new DaneUzytkownika()
+                {
+                    Imie = "Maria",
+                    Nazwisko = "Janda",
+                    Adres = new Adres()
+                    {
+                        Ulica = "Niebieska",
+                        KodPocztowy = "01-999",
+                        Miasto = "Białe Trzecie",
+                        NumerMieszkania = "139"
+                    },
+                },
+                Status = new Status() { KodStatusu = 0, Kurier = daneKuriera1, Czas = new DateTime(1990, 10, 11) },
+                //Historia = new List<Status>() { new Status() { KodStatusu = 0, Czas = new DateTime(2016, 12, 02) }, new Status() { KodStatusu = 1, Czas = new DateTime(2016, 12, 04) } },
+                PoczatekObslugi = new DateTime(2016, 12, 02),
+                KoniecObslugi = new DateTime(2016, 12, 04)
+            };
+
+            paczka2 = new DanePaczki()
+            {
+                Id = 212,
+                IdPaczki = "4/12/2016",
+                AdresAdresata = new Adres()
                 {
                     Ulica = "Niebieska",
                     KodPocztowy = "01-999",
                     Miasto = "Białe Trzecie",
                     NumerMieszkania = "139"
                 },
-            },
-            Status = new Status() { KodStatusu = 0, Kurier = daneKuriera1, Czas = new DateTime(1990, 10, 11) },
-            //Historia = new List<Status>() { new Status() { KodStatusu = 0, Czas = new DateTime(2016, 12, 02) }, new Status() { KodStatusu = 1, Czas = new DateTime(2016, 12, 04) } },
-            PoczatekObslugi = new DateTime(2016, 12, 02),
-            KoniecObslugi = new DateTime(2016, 12, 04)
-        };
-
-        DanePaczki paczka2 = new DanePaczki()
-        {
-            Id = 212,
-            AdresAdresata = new Adres()
-            {
-                Ulica = "Niebieska",
-                KodPocztowy = "01-999",
-                Miasto = "Białe Trzecie",
-                NumerMieszkania = "139"
-            },
-            Nadawca = new DaneUzytkownika()
-            {
-                Imie = "Jan",
-                Nazwisko = "Kowalski",
-                Adres = new Adres()
+                Nadawca = new DaneUzytkownika()
                 {
-                    Ulica = "Biała",
-                    KodPocztowy = "11-008",
-                    Miasto = "Kielce",
-                    NumerMieszkania = "139"
+                    Imie = "Jan",
+                    Nazwisko = "Kowalski",
+                    Adres = new Adres()
+                    {
+                        Ulica = "Biała",
+                        KodPocztowy = "11-008",
+                        Miasto = "Kielce",
+                        NumerMieszkania = "139"
+                    },
                 },
-            },
-            Adresat = new DaneUzytkownika()
-            {
-                Imie = "Maria",
-                Nazwisko = "Janda",
-                Adres = new Adres()
+                Adresat = new DaneUzytkownika()
                 {
-                    Ulica = "Niebieska",
-                    KodPocztowy = "01-999",
-                    Miasto = "Białe Trzecie",
-                    NumerMieszkania = "139"
+                    Imie = "Maria",
+                    Nazwisko = "Janda",
+                    Adres = new Adres()
+                    {
+                        Ulica = "Niebieska",
+                        KodPocztowy = "01-999",
+                        Miasto = "Białe Trzecie",
+                        NumerMieszkania = "139"
+                    },
                 },
-            },
-            Status = new Status() { KodStatusu = 1, Kurier = daneKuriera2, Czas = new DateTime(1990, 10, 11) },
-            PoczatekObslugi = new DateTime(1990, 10, 10),
-            KoniecObslugi = new DateTime(1990, 10, 12)
-        };
+                Status = new Status() { KodStatusu = 1, Kurier = null, Czas = new DateTime(1990, 10, 11) },
+                PoczatekObslugi = new DateTime(1990, 10, 10),
+                KoniecObslugi = new DateTime(1990, 10, 12)
+            };
 
-        GUPIEDaneSamochodu samochod2 = new GUPIEDaneSamochodu()
-        {
-            Id = 2,
-            Marka = "Peugeot",
-            Model = "Boxer",
-            NumRejestracyjny = "PO L74B6",
-            DataKontroli = new DateTime(2017, 3, 15),
-            Stan = "Sprawny",
-            Kurier = null
-        };
+            samochod2 = new GUPIEDaneSamochodu()
+            {
+                Id = 2,
+                Marka = "Peugeot",
+                Model = "Boxer",
+                NumRejestracyjny = "PO L74B6",
+                DataKontroli = new DateTime(2017, 3, 15),
+                Stan = "Sprawny",
+                Kurier = null
+            };
 
-        GUPIEDaneSamochodu samochod1 = new GUPIEDaneSamochodu()
-        {
-            Id = 1,
-            Marka = "Citroen",
-            Model = "Jumper",
-            NumRejestracyjny = "PO 6478A",
-            DataKontroli = new DateTime(2017, 3, 15),
-            Stan = "Sprawny",
-            Kurier = daneKuriera1
-        };
+            samochod1 = new GUPIEDaneSamochodu()
+            {
+                Id = 1,
+                Marka = "Citroen",
+                Model = "Jumper",
+                NumRejestracyjny = "PO 6478A",
+                DataKontroli = new DateTime(2017, 3, 15),
+                Stan = "Sprawny",
+                Kurier = daneKuriera1
+            };
+        }
     }
     public class GUPIEDaneSamochodu : Models.DTO.Samochod.DaneSamochodu
     {

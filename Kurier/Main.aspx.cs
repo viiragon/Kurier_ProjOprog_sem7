@@ -36,6 +36,18 @@ namespace Kurier
             System.Diagnostics.Debug.WriteLine(message);
         }
 
+        public static string getProperDateString(DateTime date)
+        {
+            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
+            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
+            return day + "." + month + "." + date.Year;
+        }
+
+        public static string getProperAddressString(Models.DTO.Adres adres)
+        {
+            return adres.Ulica + " " + adres.NumerMieszkania + " " + adres.Miasto + " " + adres.KodPocztowy;
+        }
+
         protected void onClickBtCentrala(object sender, EventArgs e)
         {
             Presenters.Atrapa.LOL_TO_JA_XD.startCentrala();

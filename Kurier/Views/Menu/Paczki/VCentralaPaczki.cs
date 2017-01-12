@@ -43,7 +43,7 @@ namespace Kurier.Views.Menu
 
         public void wybranoKurierPaczki(int id)
         {
-            //kurierzyP.wybranoPokazSzczegolyKuriera(id);
+            paczkiP.wybranoPokazSzczegolyKurieraDlaPaczki(id);
         }
     }
 }

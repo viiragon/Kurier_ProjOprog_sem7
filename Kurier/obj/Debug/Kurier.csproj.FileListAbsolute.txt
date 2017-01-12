@@ -389,3 +389,4 @@ C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.dll
 C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache

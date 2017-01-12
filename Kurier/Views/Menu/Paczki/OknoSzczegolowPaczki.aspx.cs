@@ -20,19 +20,46 @@ namespace Kurier.Views.Menu
         protected void Page_Load(object sender, EventArgs e)
         {
             Pages.setCurrent(this);
-          
-            rptPaczki.DataSource = new DanePaczki[1] { paczka };
-            rptPaczki.DataBind();
 
-            rptKurier.DataSource = new DaneKuriera[1] { kurier };
-            rptKurier.DataBind();
+            if (paczka != null)
+            {
+                lAdresat.Text = MainLauncher.getProperAddressString(paczka.AdresAdresata);
+                if (paczka.PoczatekObslugi.HasValue)
+                {
+                    lNadana.Text = MainLauncher.getProperDateString(paczka.PoczatekObslugi.Value);
+                }
+                if (paczka.KoniecObslugi.HasValue)
+                {
+                    lOdebrana.Text = MainLauncher.getProperDateString(paczka.KoniecObslugi.Value);
+                }
+                else
+                {
+                    lOdebrana.Text = "Jeszcze nie dostarczona";
+                }
+                if (kurier != null)
+                {
+                    phKurier.Visible = true;
+                    phBrakKuriera.Visible = false;
+                    lImie.Text = kurier.Imie;
+                    lNazwisko.Text = kurier.Nazwisko;
+                    LKurierAdres.Text = MainLauncher.getProperAddressString(kurier.Adres);
+                }
+                else
+                {
+                    phKurier.Visible = false;
+                    phBrakKuriera.Visible = true;
+                }
+            }
         }
 
         public static void wyswietlOkno(VCentralaPaczki caller, DanePaczki dp)
         {
             controller = caller;
             paczka = dp;
-            kurier = dp.Status.KodStatusu == 0 ? Atrapa.daneKuriera1 : Atrapa.daneKuriera2;
+            if (paczka != null)
+            {
+                kurier = paczka.Status.Kurier;
+            }
             Pages.loadPage("/Views/Menu/Paczki/OknoSzczegolowPaczki.aspx");
         }
     }

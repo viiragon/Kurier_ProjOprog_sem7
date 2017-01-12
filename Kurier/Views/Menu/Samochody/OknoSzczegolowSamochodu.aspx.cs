@@ -41,15 +41,8 @@ namespace Kurier.Views.Menu
                 {
                     lKurier.Text = "Brak";
                 }
-                lDataKontroli.Text = getProperDateString(samochod.DataKontroli);
+                lDataKontroli.Text = MainLauncher.getProperDateString(samochod.DataKontroli);
             }
-        }
-
-        private string getProperDateString(DateTime date)
-        {
-            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
-            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
-            return day + "." + month + "." + date.Year;
         }
 
         public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu s,

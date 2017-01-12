@@ -14,9 +14,9 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
         private Interfaces.View.IVCentralaKurierzy kurierzy;
         private KurierzyModel kurierzyModel;
 
-        public KurierzyPrezenter()
+        public KurierzyPrezenter(Interfaces.Presenter.ICMPaczki paczkiP)
         {
-            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this);
+            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this, paczkiP);
             kurierzyModel = new KurierzyModel();
         }
 

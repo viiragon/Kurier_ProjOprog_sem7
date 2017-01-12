@@ -75,5 +75,11 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
                 //Komunikat
             }
         }
+
+
+        public void wybranoPokazSzczegolyKurieraDlaPaczki(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

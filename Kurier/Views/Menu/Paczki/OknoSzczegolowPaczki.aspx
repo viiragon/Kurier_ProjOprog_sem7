@@ -11,57 +11,20 @@
     <form id="form1" runat="server">
         <header>Szczegóły Paczki</header>
         <article>
-            <asp:Repeater ID="rptPaczki" runat="server">
-                <HeaderTemplate>
-                    <div id="divPaczki">
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <div><b>Adresat: </b><%# Eval("Adres.Ulica") %> <%# Eval("Adres.NumerMieszkania") %>, <%# Eval("Adres.KodPocztowy") %> <%# Eval("Adres.Miasto") %></div>
-                    <div><b>Historia:</b></div>
-                    <div>Nadana: <%# Eval("PoczatekObslugi") %></div>
-                    <div>Odebrana: <%# Eval("KoniecObslugi") %></div>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <div><b>Adresat: </b><%# Eval("Adres.Ulica") %> <%# Eval("Adres.NumerMieszkania") %>, <%# Eval("Adres.KodPocztowy") %> <%# Eval("Adres.Miasto") %></div>
-                    <div><b>Historia:</b></div>
-                    <div>Nadana: <%# Eval("PoczatekObslugi") %></div>
-                </AlternatingItemTemplate>
-                <FooterTemplate>
-                    </div>
-                </FooterTemplate>
-            </asp:Repeater>
+            <div><b>Adresat: </b><asp:Label ID="lAdresat" runat="server"></asp:Label></div>
+            <div><b>Historia:</b></div>
+            <div>Nadana: <asp:Label ID="lNadana" runat="server"></asp:Label></div>
+            <div>Odebrana: <asp:Label ID="lOdebrana" runat="server"></asp:Label></div>
 
-            <asp:Repeater ID="rptKurier" runat="server">
-                <HeaderTemplate>
-                    <div id="divPaczki">
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Id")) == 1 %>'>
-                        <div><b>Dane Kuriera:</b> </div>
-                        <div><b>Imię: </b><%# Eval("Imie") %></div>
-                        <div><b>Nazwisko: </b><%# Eval("Nazwisko") %></div>
-                        <div><b>Adres: </b><%# Eval("Adres.Ulica") %>  <%# Eval("Adres.NumerMieszkania") %>, <%# Eval("Adres.KodPocztowy") %> <%# Eval("Adres.Miasto") %></div>
-                    </asp:PlaceHolder>
-                    <asp:PlaceHolder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Id")) == 3 %>'>Brak przypisanego kuriera do paczki!
-                    </asp:PlaceHolder>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Id")) == 1 %>'>
-                        <div><b>Dane Kuriera:</b> </div>
-                        <div><b>Imię: </b><%# Eval("Imie") %></div>
-                        <div><b>Nazwisko: </b><%# Eval("Nazwisko") %></div>
-                        <div><b>Adres: </b><%# Eval("Adres.Ulica") %>  <%# Eval("Adres.NumerMieszkania") %>, <%# Eval("Adres.KodPocztowy") %> <%# Eval("Adres.Miasto") %></div>
-
-                    </asp:PlaceHolder>
-                    <asp:PlaceHolder ID="placeholder1" runat="server" Visible='<%# Convert.ToInt32(Eval("Id")) == 3 %>'>Brak przypisanego kuriera do paczki!
-                    </asp:PlaceHolder>
-
-                </AlternatingItemTemplate>
-                <FooterTemplate>
-                    </div>
-                </FooterTemplate>
-            </asp:Repeater>
-
+            <asp:PlaceHolder ID="phKurier" runat="server" Visible="true">
+                <div><b>Dane Kuriera:</b> </div>
+                <div><b>Imię: </b><asp:Label ID="lImie" runat="server"></asp:Label></div>
+                <div><b>Nazwisko: </b><asp:Label ID="lNazwisko" runat="server"></asp:Label></div>
+                <div><b>Adres: </b><asp:Label ID="LKurierAdres" runat="server"></asp:Label></div>
+            </asp:PlaceHolder>
+            <asp:PlaceHolder ID="phBrakKuriera" runat="server" Visible="false">
+                Brak przypisanego kuriera do paczki!
+            </asp:PlaceHolder>
         </article>
     </form>
 </body>
