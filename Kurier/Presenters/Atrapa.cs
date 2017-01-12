@@ -81,7 +81,7 @@ namespace Kurier.Presenters
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo; //kurier, samochody, statystyka, paczka
-                logowanie.wyswietlMenuGlowneCentrali(user, /*this*/ new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter(), new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), /*this*/ new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter());
+                logowanie.wyswietlMenuGlowneCentrali(user, this/* new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter()*/, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), /*this*/ new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter());
             }
             else
             {

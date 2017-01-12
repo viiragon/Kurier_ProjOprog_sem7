@@ -52,7 +52,10 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            throw new NotImplementedException();
+            DaneSamochodu dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
+            //samochodyModel.PowiazKurieraISamochod();
+            samochody.aktualizujOknoSzczegolowSamochodu(dSamochod);
+          //  throw new NotImplementedException();
         }
 
         public void wybranoUsunSamochod(int id)
@@ -70,12 +73,12 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
         {
-            bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
-            if (czyPoprawneDane)
-            {
+           // bool czyPoprawneDane = samochodyModel.WalidujDaneSamochodu(dane);
+          //  if (czyPoprawneDane)
+          //  {
                 samochodyModel.DodajSamochod(dane);
                 //komunikat o dodaniu
-            }
+          //  }
             wybranoPokazListeSamochodow();
         }
 
