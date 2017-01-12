@@ -24,68 +24,60 @@ namespace Kurier.Presenters.KurierManager
         private DanePaczki[] paczki;
         private Models.DTO.Samochod.DaneSamochodu samochod;
 
-        KurierPrezenter()
-            {
-                ivKurier = Interfaces.View.IVKurier.createInstance(this);
-                mKurier = new Models.DataAccess.KurierzyModel();
-            }
+        public KurierPrezenter()
+        {
+            ivKurier = Interfaces.View.IVKurier.createInstance(this);
+            mKurier = new Models.DataAccess.KurierzyModel();
+            mPaczka = new Models.DataAccess.PaczkaModel();
+        }
 
         public void wybranoEdytujStatusPaczki(int id)
         {
             DanePaczki paczka = mPaczka.PobierzPaczke(id);
             //ivKurier.wyswietlFormularzEdycjiStatusuPaczki(paczka);
-            //throw new NotImplementedException();
         }
 
         public void wybranoPokazDateKolejnegoPrzegladu()
         {
             ivKurier.wyswietlOknoKolejnegoPrzegladu(DateTime.Now);
-          //  throw new NotImplementedException();
         }
 
         public void wybranoPokazListeZlecenKuriera()
         {
             //pobranie danych kuriera i paczki
             ivKurier.wyswietlOknoListyZlecenKuriera(kurier,paczki);
-            throw new NotImplementedException();
         }
 
         public void wybranoPokazSamochodKuriera()
         {
             //dane samochodu
             ivKurier.wyswietlOknoPrzypisanegoSamochodu(samochod);
-          //  throw new NotImplementedException();
         }
 
         public void wybranoPokazSzczegolyPaczkiDlaKuriera(int id)
         {
             DanePaczki paczka = mPaczka.PobierzPaczke(id);
             ivKurier.wyswietlOknoSzczegolowPaczkiDlaKuriera(paczka);
-         //   throw new NotImplementedException();
         }
 
         public void wybranoWydajPaczke(DanePaczki paczka)
         {
             ivKurier.wyswietlOknoWydaniaPaczki(paczka);
-         //   throw new NotImplementedException();
         }
 
         public void wybranoWylogujKuriera()
         {
             ivKurier.wyswietlFormularzLogowaniaJakoKurier();
-         //   throw new NotImplementedException();
         }
 
         public void wybranoZalogujKuriera(DaneUzytkownika dane)
         {
             ivKurier.wyswietlFormularzLogowaniaJakoKurier();
-            //throw new NotImplementedException();
         }
 
         public void wybranoZapiszStatusPaczki(Status status, int idPaczki)
         {
             mPaczka.ZmienStatusPaczki(status, idPaczki);
-           // throw new NotImplementedException();
         }
     }
 }

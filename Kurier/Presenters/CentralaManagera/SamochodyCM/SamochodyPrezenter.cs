@@ -12,7 +12,6 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
     public class SamochodyPrezenter : ICMSamochody
     {
         private Interfaces.View.IVCentralaSamochody samochody;
-        private Interfaces.View.IVCentralaKurierzy kurierzy;
         private SamochodyModel samochodyModel;
         private KurierzyModel kurierzyModel;
         public SamochodyPrezenter()
