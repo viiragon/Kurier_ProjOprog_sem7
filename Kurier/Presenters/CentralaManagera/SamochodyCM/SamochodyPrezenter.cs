@@ -53,7 +53,8 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            ///
+            DaneKuriera[] listakurierow = kurierzyModel.PobierzListeKurierow().ToArray();
+            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, listakurierow);
         }
 
         public void wybranoUsunSamochod(int id)
