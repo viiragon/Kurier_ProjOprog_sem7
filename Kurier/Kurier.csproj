@@ -135,8 +135,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx" />
+    <Content Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx" />
     <Content Include="Views\Menu\Kurier\LogowanieKurier.aspx" />
     <Content Include="Views\Menu\Kurier\MenuGlowneKurier.aspx" />
+    <Content Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx" />
     <Content Include="Views\Menu\OknoNajczestszeMiasta.aspx" />
     <Content Include="Views\Menu\Paczki\OknoCentralaPaczki.aspx" />
     <Content Include="Views\Menu\Samochody\OknoPrzypisaniaKuriera.aspx" />
@@ -236,7 +239,28 @@
     <Compile Include="Presenters\KurierManagera\Paczka.cs" />
     <Compile Include="Presenters\KurierManagera\Samochod.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\Menu\Kurier\VCentralaKurier.cs" />
+    <Compile Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx.cs">
+      <DependentUpon>OknoPrzypisywaniaKurieraDoPaczki.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoPrzypisywaniaKurieraDoPaczki.aspx.designer.cs">
+      <DependentUpon>OknoPrzypisywaniaKurieraDoPaczki.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx.cs">
+      <DependentUpon>OknoListyKurierow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoListyKurierow.aspx.designer.cs">
+      <DependentUpon>OknoListyKurierow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx.cs">
+      <DependentUpon>OknoSzczegolowKuriera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\OknoSzczegolowKuriera.aspx.designer.cs">
+      <DependentUpon>OknoSzczegolowKuriera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\CentrKurier\VCentralaKurier.cs" />
     <Compile Include="Views\Menu\Kurier\LogowanieKurier.aspx.cs">
       <DependentUpon>LogowanieKurier.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

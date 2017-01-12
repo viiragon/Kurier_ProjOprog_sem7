@@ -61,7 +61,7 @@ namespace Kurier.Models.DataAccess
     public bool WalidujDaneSamochodu(DaneSamochodu samochod)
     {
       return WalidujRejestracje(samochod.NumRejestracyjny)
-          && WalidujStatus(samochod.Stan);
+             && WalidujStatus(samochod.Stan);
     }
 
     private bool WalidujRejestracje(String NumRejestracyjny)

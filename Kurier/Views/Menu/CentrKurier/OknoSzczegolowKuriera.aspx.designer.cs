@@ -10,7 +10,7 @@
 namespace Kurier.Views.Menu {
     
     
-    public partial class OknoSzczegolowPaczki {
+    public partial class OknoSzczegolowKuriera {
         
         /// <summary>
         /// form1 control.
@@ -22,40 +22,22 @@ namespace Kurier.Views.Menu {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lAdresat control.
+        /// phMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lAdresat;
+        protected global::System.Web.UI.WebControls.PlaceHolder phMessage;
         
         /// <summary>
-        /// lNadana control.
+        /// lMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lNadana;
-        
-        /// <summary>
-        /// lOdebrana control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lOdebrana;
-        
-        /// <summary>
-        /// phKurier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phKurier;
+        protected global::System.Web.UI.WebControls.Label lMessage;
         
         /// <summary>
         /// lImie control.
@@ -83,14 +65,5 @@ namespace Kurier.Views.Menu {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LKurierAdres;
-        
-        /// <summary>
-        /// phBrakKuriera control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phBrakKuriera;
     }
 }

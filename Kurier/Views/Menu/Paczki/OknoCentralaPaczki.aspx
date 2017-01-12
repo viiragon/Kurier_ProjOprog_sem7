@@ -21,7 +21,7 @@
                 <asp:Repeater ID="rptPaczki" runat="server" OnItemCommand="onClickButton">
                     <ItemTemplate>
                         <tr>
-                            <td><%# Eval("Id") %></td>
+                            <td><%# Eval("IdPaczki") %></td>
                             <td>
                                 <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>Nadana
                                 </asp:PlaceHolder>
