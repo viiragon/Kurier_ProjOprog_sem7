@@ -92,7 +92,14 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
                 samochodyModel.PowiazKurieraISamochod(idSamochodu, idKuriera);
                 dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
                 dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
-                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
+                if (idKuriera == -1)
+                {
+                    samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Usunięto przypisanie", null);
+                }
+                else
+                {
+                    samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
+                }
             }
             else
             {
