@@ -10,6 +10,7 @@ namespace Kurier.Interfaces.Presenter
         void wybranoDodajKuriera();
         void wybranoEdytujKuriera(int id);
         void wybranoPokazListeKurierow();
+        void wybranoPokazSzczegolyKuriera(int id);
         void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
         void wybranoZapiszNowegoKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier);
     }

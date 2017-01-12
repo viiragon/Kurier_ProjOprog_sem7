@@ -35,5 +35,15 @@ namespace Kurier.Views.Menu
         {
             OknoSzczegolowPaczki.wyswietlOkno(this, paczka);
         }
+
+        public void wybranoSzczegolyPaczki(int id)
+        {
+            paczkiP.wybranoPokazSzczegolyPaczki(id);
+        }
+
+        public void wybranoKurierPaczki(int id)
+        {
+            //kurierzyP.wybranoPokazSzczegolyKuriera(id);
+        }
     }
 }

@@ -16,6 +16,17 @@ namespace Kurier.Models.DataAccess
 {
   public class UzytkownicyModel : IMUzytkownicy
   {
+    private ApplicationContext _context;
+    
+    public UzytkownicyModel()
+    {
+      _context = new ApplicationContext();
+    }
+
+    public UzytkownicyModel(ApplicationContext context)
+    {
+      _context = context;
+    }
 
     public void ZalogujDoCentrali(DaneAuthUzytkownika dane)
     {

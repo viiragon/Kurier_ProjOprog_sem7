@@ -19,11 +19,14 @@ namespace Kurier.Presenters
         //TA KLASA JEST ATRAPĄ!!!! ZMIEŃCIE JĄ NA FAKTYCZNE KLASY PREZENTERÓW
 
         public static Atrapa LOL_TO_JA_XD = new Atrapa();
-        public static ICMLogowanie LOL_TO_TEZ_JA_XD;
+        public static ICMLogowanie PCentrLogowanie;
         public static ICMSamochody PCentrSamochody;
-        public static ICMStatystyka LOL_A_TO_MOZE_NIE_JA_XD;
-        public static ICMKurierzy TOP_KEK_XD;
-        public static ICMPaczki KEK_XD;
+        public static ICMStatystyka PCentrStatystyka;
+        public static ICMKurierzy PCentrKurierzy;
+        public static ICMPaczki PCentrPaczki;
+
+        public static IPKurier PKurier;
+        public static IPKlient PKlient;
 
         private Interfaces.View.IVCentralaLogowanie logowanie;
         private Interfaces.View.IVCentralaStatystyka statystyka;
@@ -37,19 +40,21 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            LOL_TO_TEZ_JA_XD = this;
-            LOL_A_TO_MOZE_NIE_JA_XD = this;
-            PCentrSamochody = new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
-            TOP_KEK_XD = this;
-            KEK_XD = this;
-            logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(LOL_TO_TEZ_JA_XD);
-            statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(LOL_A_TO_MOZE_NIE_JA_XD);
-            paczki = Interfaces.View.IVCentralaPaczki.createInstance(KEK_XD);
+            PCentrLogowanie = this;
+            PCentrStatystyka = this;
+            PCentrSamochody = this;//new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
+            PCentrKurierzy = this;
+            PCentrPaczki = this;
+            PKurier = this;
+            PKlient = this;
+            logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(PCentrLogowanie);
+            statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(PCentrStatystyka);
+            paczki = Interfaces.View.IVCentralaPaczki.createInstance(PCentrPaczki);
             samochody = Interfaces.View.IVCentralaSamochody.createInstance(PCentrSamochody);
-            kurierzy = null;// Interfaces.View.IVCentralaKurierzy.createInstance(this);
+            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(PCentrKurierzy);
 
-            ivKurier = Interfaces.View.IVKurier.createInstance(this);
-            ivKlient = Interfaces.View.IVKlient.createInstance(this);
+            ivKurier = Interfaces.View.IVKurier.createInstance(PKurier);
+            ivKlient = Interfaces.View.IVKlient.createInstance(PKlient);
             samochod1.Kurier = daneKuriera1;
         }
 
@@ -106,6 +111,11 @@ namespace Kurier.Presenters
         }
 
         public void wybranoPokazListeKurierow()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void wybranoPokazSzczegolyKuriera(int id)
         {
             throw new NotImplementedException();
         }
@@ -489,8 +499,6 @@ namespace Kurier.Presenters
             Stan = "Sprawny",
             Kurier = daneKuriera1
         };
-
-
     }
     public class GUPIEDaneSamochodu : Models.DTO.Samochod.DaneSamochodu
     {

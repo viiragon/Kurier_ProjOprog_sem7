@@ -12,7 +12,7 @@ namespace Kurier.Interfaces.View
     {
         public static IVCentralaKurierzy createInstance(Presenter.ICMKurierzy kurierzyP)
         {
-            throw new NotImplementedException();
+            return null;
         }
         public abstract void wyswietlFormularzDodawaniaKuriera();
         public abstract void wyswietlFormularzEdycjiKuriera(DaneKuriera kurier);

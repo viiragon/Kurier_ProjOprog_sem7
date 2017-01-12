@@ -186,6 +186,96 @@ namespace KurierTest.Models
             Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBlednyStan));
             Assert.IsFalse(new SamochodyModel(context).WalidujDaneSamochodu(samochodBrakStanu));
         }
+
+        [TestMethod]
+        public void PobierzListeSamochodowZDataKontroliTest()
+        {
+            DaneSamochodu samochod1 = new DaneSamochodu()
+            {
+                Id = 1,
+                Marka = "BMW",
+                Model = "M3",
+                NumRejestracyjny = "WE123R",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2016, 10, 21)
+
+            };
+
+            DaneSamochodu samochod2 = new DaneSamochodu()
+            {
+                Id = 2,
+                Marka = "BMW",
+                Model = "M3",
+                NumRejestracyjny = "PO123W",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2017, 2, 16)
+
+            };
+
+            DaneSamochodu samochod3 = new DaneSamochodu()
+            {
+                Id = 3,
+                Marka = "BMW",
+                Model = "M3",
+                NumRejestracyjny = "WX123A",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2016, 11, 19)
+
+            };
+
+            DaneSamochodu samochod4 = new DaneSamochodu()
+            {
+                Id = 4,
+                Marka = "BMW",
+                Model = "M3",
+                NumRejestracyjny = "WE123E",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2016,12,24)
+
+            };
+
+            ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod1, samochod2, samochod3, samochod4 });
+            DateTime dataOd = new DateTime(2016, 11, 1);
+            DateTime dataDo = new DateTime(2016, 12, 31);
+            var list = new SamochodyModel(context).PobierzListeSamochodowZDataKontroli(dataOd, dataDo);
+
+            Assert.IsNull(list.Find(p => p == samochod1));
+            Assert.IsNull(list.Find(p => p == samochod2));
+
+            Assert.IsNotNull(list.Find(p => p == samochod3));
+            Assert.IsNotNull(list.Find(p => p == samochod4));
+        }
+
+        [TestMethod]
+        public void ZmienDaneSamochoduTest()
+        {
+            DaneSamochodu samochod = new DaneSamochodu()
+            {
+                Id = 1,
+                Marka = "BMW",
+                Model = "M3",
+                NumRejestracyjny = "WE123R",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2016, 10, 21)
+
+            };
+
+            DaneSamochodu samochodZmieniony = new DaneSamochodu()
+            {
+                Id = 1,
+                Marka = "Honda",
+                Model = "Prelude",
+                NumRejestracyjny = "WE123R",
+                Stan = "Sprawny",
+                DataKontroli = new DateTime(2016, 10, 21)
+
+            };
+
+            ApplicationContext context = MockMainteiner.PobierzContextSamochodow(new List<DaneSamochodu>() { samochod });
+
+            //new SamochodyModel(context).ZmienDaneSamochodu(samochod);
+
+        }
     }
 }
 

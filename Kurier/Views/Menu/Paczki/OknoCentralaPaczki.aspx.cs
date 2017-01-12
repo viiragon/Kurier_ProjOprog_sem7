@@ -21,8 +21,11 @@ namespace Kurier.Views.Menu
             {
                 controller.setCentralaPaczki(this);
             }
-            rptPaczki.DataSource = paczki;
-            rptPaczki.DataBind();
+            if (!IsPostBack)
+            {
+                rptPaczki.DataSource = paczki;
+                rptPaczki.DataBind();
+            }
         }
 
         public static void wyswietlOkno(VCentralaPaczki caller, DanePaczki[] lista)
@@ -32,14 +35,27 @@ namespace Kurier.Views.Menu
             Pages.loadPage("/Views/Menu/Paczki/OknoCentralaPaczki.aspx");
         }
 
-        protected void onClickDetails(object sender, EventArgs e)
+        protected void onClickButton(object sender, RepeaterCommandEventArgs e)
         {
-            Presenters.Atrapa.KEK_XD.wybranoPokazSzczegolyPaczki(0);
-        }
+            Button c;
+            switch (e.CommandName)
+            {
+                case "details":
+                    c = e.Item.FindControl("btDetails") as Button;
+                    if (c != null)
+                    {
+                        controller.wybranoSzczegolyPaczki(Convert.ToInt32(e.CommandArgument));
+                    }
+                    break;
+                case "kurier":
+                    c = e.Item.FindControl("btKurier") as Button;
+                    if (c != null)
+                    {
+                        controller.wybranoKurierPaczki(Convert.ToInt32(e.CommandArgument));
+                    }
+                    break;
 
-        protected void onClickKurier(object sender, EventArgs e)
-        {
-            Presenters.Atrapa.KEK_XD.wybranoPokazSzczegolyPaczki(1);
+            }
         }
     }
 }

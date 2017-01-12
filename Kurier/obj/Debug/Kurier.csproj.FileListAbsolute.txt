@@ -41,7 +41,6 @@ C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migration
 C:\TfsProjects\projOprog\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init2.resources
 C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init.resources
-C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrations.init2.resources
 C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.dll
 C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.pdb
@@ -150,42 +149,6 @@ C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.Migrations.init.resources
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.dll
 C:\TfsProjects\projOprog2\Kurier\obj\Debug\Kurier.pdb
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll.config
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.pdb
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Newtonsoft.Json.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Owin.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.pdb
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Newtonsoft.Json.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.init.resources
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.dll
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.xml
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll.config
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll
 C:\_Git\KurierPO\Kurier\bin\Kurier.pdb
@@ -260,4 +223,57 @@ C:\Users\Domin\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.Migrat
 C:\Users\Domin\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Domin\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.dll
 C:\Users\Domin\Source\Repos\Kurier_ProjOprog_sem7\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Newtonsoft.Json.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Owin.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\System.Web.Providers.dll
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\Newtonsoft.Json.xml
+C:\Users\Jacek\Source\Repos\Kurier_ProjOprog_sem7\Kurier\bin\System.Web.Providers.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll.config
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Newtonsoft.Json.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Owin.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Antlr3.Runtime.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\EntityFramework.SqlServer.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Newtonsoft.Json.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.xml
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.Init.resources
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.x.resources
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.dll
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
