@@ -21,11 +21,11 @@
                 <asp:Repeater ID="rptKurierzy" runat="server" OnItemCommand="onClickPrzypisz">
                     <ItemTemplate>
                          <tr>
-                            <td>Id: <%# Eval("Id") %></td>
+                            <td>Id: <%# Eval("UserId") %></td>
                             <td><%# Eval("Imie") %></td>
                             <td><%# Eval("Nazwisko") %></td>
                             <td>
-                                <asp:Button Text="Przypisz" ID="btPrzypisz" CommandArgument='<%# Eval("Id") %>' CommandName="przypisz" runat="server" />
+                                <asp:Button Text="Przypisz" ID="btPrzypisz" CommandArgument='<%# Eval("UserId") %>' CommandName="przypisz" runat="server" />
                             </td>
                         </tr>
                     </ItemTemplate>
