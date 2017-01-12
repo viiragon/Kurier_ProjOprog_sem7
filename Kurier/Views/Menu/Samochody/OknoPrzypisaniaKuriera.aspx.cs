@@ -47,5 +47,10 @@ namespace Kurier.Views.Menu.Samochody
                 controller.wybranoPowiazKurieraZSamochodu(id_samochodu, id_kuriera);
             }
         }
+
+        protected void onClickBrakPrzypisania(object sender, EventArgs e)
+        {
+            controller.wybranoPowiazKurieraZSamochodu(id_samochodu, -1);
+        }
     }
 }

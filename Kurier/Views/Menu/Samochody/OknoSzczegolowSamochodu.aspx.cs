@@ -33,7 +33,7 @@ namespace Kurier.Views.Menu
                 lModel.Text = samochod.Model;
                 lRejestracja.Text = samochod.NumRejestracyjny;
                 lStan.Text = samochod.Stan;
-                if (kurier != null)
+                if (kurier != null && kurier.UserId != -1)
                 {
                     lKurier.Text = kurier.Imie + " " + kurier.Nazwisko;
                 }
