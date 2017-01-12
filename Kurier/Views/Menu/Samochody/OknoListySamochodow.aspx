@@ -11,6 +11,11 @@
     <form id="form1" runat="server">
         <header>Lista Samochodów</header>
         <article>
+            <asp:PlaceHolder ID="phMessage" Visible="false" runat="server">
+                <div id="message">
+                    <asp:Label ID="lMessage" runat="server"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
             <table>
                 <tr>
                     <td>Id</td>
@@ -31,7 +36,7 @@
                                 <asp:Button Text="Szczegóły" ID="btDetails" CommandArgument='<%# Eval("Id") %>' CommandName="details" runat="server" />
                             </td>
                              <td>
-                               <asp:Button Text="Usuń" OnClick="onClickBtDelete" runat="server" /></td>
+                               <asp:Button Text="Usuń" CommandArgument='<%# Eval("Id") %>' CommandName="delete" runat="server" /></td>
                         </tr>
                     </ItemTemplate>
               </asp:Repeater>

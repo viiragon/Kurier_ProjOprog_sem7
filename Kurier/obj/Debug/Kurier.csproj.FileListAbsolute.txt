@@ -180,16 +180,11 @@ C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Microsof
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\Newtonsoft.Json.xml
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Razor.xml
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.init.resources
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.init2.resources
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.adrespaczki.resources
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.dodanienulowalnychdatdopaczki.resources
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.dodaniezewnetrzengoiddlapaczki.resources
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.dll
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.pdb
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.dll
 C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\bin\System.Web.Providers.xml
-C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll.config
 C:\_Git\KurierPO\Kurier\bin\Kurier.dll
 C:\_Git\KurierPO\Kurier\bin\Kurier.pdb
@@ -353,7 +348,44 @@ C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\System.Web.Providers
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\bin\System.Web.Razor.xml
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.Migrations.Init.resources
-C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.Migrations.test.resources
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem\Kurier\obj\Debug\Kurier.pdb
+C:\TfsProjects\projOprog4\Kurier\bin\Kurier.dll.config
+C:\TfsProjects\projOprog4\Kurier\bin\Kurier.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Kurier.pdb
+C:\TfsProjects\projOprog4\Kurier\bin\Antlr3.Runtime.dll
+C:\TfsProjects\projOprog4\Kurier\bin\EntityFramework.dll
+C:\TfsProjects\projOprog4\Kurier\bin\EntityFramework.SqlServer.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.Core.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.Cookies.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.OAuth.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Newtonsoft.Json.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Owin.dll
+C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Providers.dll
+C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Razor.dll
+C:\TfsProjects\projOprog4\Kurier\bin\Antlr3.Runtime.pdb
+C:\TfsProjects\projOprog4\Kurier\bin\EntityFramework.xml
+C:\TfsProjects\projOprog4\Kurier\bin\EntityFramework.SqlServer.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.Core.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.Cookies.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Microsoft.Owin.Security.OAuth.xml
+C:\TfsProjects\projOprog4\Kurier\bin\Newtonsoft.Json.xml
+C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Providers.xml
+C:\TfsProjects\projOprog4\Kurier\bin\System.Web.Razor.xml
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.Init.resources
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.Migrations.test.resources
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.dll
+C:\TfsProjects\projOprog4\Kurier\obj\Debug\Kurier.pdb

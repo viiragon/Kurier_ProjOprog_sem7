@@ -11,6 +11,8 @@ namespace Kurier.Views.Menu
     {
         private static VCentralaSamochody controller;
         public static Models.DTO.Samochod.DaneSamochodu samochod;
+        public static Models.DTO.Uzytkownik.DaneKuriera kurier;
+        public static string komunikat;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,17 +21,44 @@ namespace Kurier.Views.Menu
             {
                 controller.setOknoSzczegolowSamochodu(this);
             }
-            if (!IsPostBack)
+            if (komunikat != null)
             {
-                rptSamochody.DataSource = new Models.DTO.Samochod.DaneSamochodu[] { samochod };
-                rptSamochody.DataBind();
+                phMessage.Visible = true;
+                lMessage.Text = komunikat;
+            }
+            if (samochod != null)
+            {
+                lId.Text = samochod.Id.ToString();
+                lMarka.Text = samochod.Marka;
+                lModel.Text = samochod.Model;
+                lRejestracja.Text = samochod.NumRejestracyjny;
+                lStan.Text = samochod.Stan;
+                if (kurier != null)
+                {
+                    lKurier.Text = kurier.Imie + " " + kurier.Nazwisko;
+                }
+                else
+                {
+                    lKurier.Text = "Brak";
+                }
+                lDataKontroli.Text = getProperDateString(samochod.DataKontroli);
             }
         }
 
-        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu s)
+        private string getProperDateString(DateTime date)
+        {
+            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
+            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
+            return day + "." + month + "." + date.Year;
+        }
+
+        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu s,
+            string komunikatArg, Models.DTO.Uzytkownik.DaneKuriera kurierArg)
         {
             samochod = s;
+            kurier = kurierArg;
             controller = caller;
+            komunikat = komunikatArg;
             Pages.loadPage("/Views/Menu/Samochody/OknoSzczegolowSamochodu.aspx");
         }
         protected void onClickBtCarEdit(object sender, EventArgs e)
@@ -38,7 +67,15 @@ namespace Kurier.Views.Menu
         }
         protected void onClickBtDelete(object sender, EventArgs e)
         {
-
+            controller.wybranoUsunSamochod(samochod.Id);
+        }
+        protected void onClickBtBindKurier(object sender, EventArgs e)
+        {
+            controller.wybranoPrzypiszKurieraDoSamochodu(samochod.Id);
+        }
+        protected void onClickBtSend(object sender, EventArgs e)
+        {
+            controller.wyswietlOknoWysylaniaZleceniaDoSerwisu(samochod);
         }
     }
 }

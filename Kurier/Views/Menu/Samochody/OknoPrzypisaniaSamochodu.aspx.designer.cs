@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kurier.Views.Menu {
+namespace Kurier.Views.Menu.Samochody {
     
     
-    public partial class OknoListySamochodow {
+    public partial class OknoPrzypisaniaSamochodu {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,12 @@ namespace Kurier.Views.Menu {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// phMessage control.
+        /// rptKurierzy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phMessage;
-        
-        /// <summary>
-        /// lMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lMessage;
-        
-        /// <summary>
-        /// rptSamochody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSamochody;
+        protected global::System.Web.UI.WebControls.Repeater rptKurierzy;
     }
 }

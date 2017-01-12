@@ -20,10 +20,10 @@ namespace Kurier.Views.Menu.Kurier
         }
         
 
-       // public VKurier(Interfaces.Presenter.ICMKurierzy kurierzyP)
-       // {
-       //     this.kurierzyP = kurierzyP;
-       // }
+        //public VKurier(Interfaces.Presenter.ICMKurierzy kurierzyP)
+        //{
+        //    this.kurierzyP = kurierzyP;
+        //}
 
         public void setOknoLogowanieKurier(OknoLogowanieKurier logowanie)
         {

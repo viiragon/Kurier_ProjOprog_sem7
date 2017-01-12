@@ -12,7 +12,7 @@ namespace KurierTest.Models
 {
   class TestDataFactory
   {
-    public static DaneSamochodu Samochod => new DaneSamochodu()
+    public static DaneSamochodu Samochod = new DaneSamochodu()
     {
       Id = 5,
       NumRejestracyjny = "WTS9231",

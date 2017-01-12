@@ -37,8 +37,8 @@
                         <tr>
                             <td><%# Eval("Id") %></td>
                             <td>
-                                <p><%# Eval("Adres.Miasto") %> <%# Eval("Adres.KodPocztowy") %></p>
-                                <p><%# Eval("Adres.Ulica") %> <%# Eval("Adres.NumerMieszkania") %></p>
+                                <p><%# Eval("AdresAdresata.Miasto") %> <%# Eval("AdresAdresata.KodPocztowy") %></p>
+                                <p><%# Eval("AdresAdresata.Ulica") %> <%# Eval("AdresAdresata.NumerMieszkania") %></p>
                             </td>
                             <td>
                                 <asp:PlaceHolder ID="placeholderBlaBlaBla" runat="server" Visible='<%# Convert.ToInt32(Eval("Status.KodStatusu")) == 1 %>'>Nadana

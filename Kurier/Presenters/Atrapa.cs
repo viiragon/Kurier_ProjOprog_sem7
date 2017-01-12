@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Kurier.Interfaces.Presenter;
 using Kurier.Models.DTO.Paczka;
 using Kurier.Models.DTO.Uzytkownik;
+using Kurier.Models.DTO.Statystyka;
+using Kurier.Models.DTO.Samochod;
 using Kurier.Models.DTO;
 using Kurier.Models.DTO.Paczka;
-using Kurier.Presenters.CentralaManager;
-
 
 namespace Kurier.Presenters
 {
@@ -19,11 +19,14 @@ namespace Kurier.Presenters
         //TA KLASA JEST ATRAPĄ!!!! ZMIEŃCIE JĄ NA FAKTYCZNE KLASY PREZENTERÓW
 
         public static Atrapa LOL_TO_JA_XD = new Atrapa();
-        public static ICMLogowanie LOL_TO_TEZ_JA_XD = LOL_TO_JA_XD;
-        public static ICMSamochody LOL_XD = LOL_TO_JA_XD;
-        public static ICMStatystyka LOL_A_TO_MOZE_NIE_JA_XD = LOL_TO_JA_XD;
-        public static ICMKurierzy TOP_KEK_XD = LOL_TO_JA_XD;
-        public static ICMPaczki KEK_XD = LOL_TO_JA_XD;
+        public static ICMLogowanie PCentrLogowanie;
+        public static ICMSamochody PCentrSamochody;
+        public static ICMStatystyka PCentrStatystyka;
+        public static ICMKurierzy PCentrKurierzy;
+        public static ICMPaczki PCentrPaczki;
+
+        public static IPKurier PKurier;
+        public static IPKlient PKlient;
 
         private Interfaces.View.IVCentralaLogowanie logowanie;
         private Interfaces.View.IVCentralaStatystyka statystyka;
@@ -37,16 +40,22 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(this);
-            statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(this);
-            paczki = Interfaces.View.IVCentralaPaczki.createInstance(this);
-            samochody = Interfaces.View.IVCentralaSamochody.createInstance(this);
-            kurierzy = null;// Interfaces.View.IVCentralaKurierzy.createInstance(this);
-        //    kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(this);
+            PCentrLogowanie = this;
+            PCentrStatystyka = this;
+            PCentrSamochody = this;//new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter();
+            PCentrKurierzy = this;
+            PCentrPaczki = this;
+            PKurier = this;
+            PKlient = this;
+            logowanie = Interfaces.View.IVCentralaLogowanie.createInstance(PCentrLogowanie);
+            statystyka = Interfaces.View.IVCentralaStatystyka.createInstance(PCentrStatystyka);
+            paczki = Interfaces.View.IVCentralaPaczki.createInstance(PCentrPaczki);
+            samochody = Interfaces.View.IVCentralaSamochody.createInstance(PCentrSamochody);
+            kurierzy = Interfaces.View.IVCentralaKurierzy.createInstance(PCentrKurierzy);
 
-            ivKurier = Interfaces.View.IVKurier.createInstance(this);
-            ivKlient = Interfaces.View.IVKlient.createInstance(this);
-
+            ivKurier = Interfaces.View.IVKurier.createInstance(PKurier);
+            ivKlient = Interfaces.View.IVKlient.createInstance(PKlient);
+            samochod1.Kurier = daneKuriera1;
         }
 
         public void startCentrala()
@@ -80,8 +89,8 @@ namespace Kurier.Presenters
                 user.Telefon = 0700880;
                 user.Uprawnienia = 0;
                 user.Login = dane.Login;
-                user.Haslo = dane.Haslo; //kurier, samochody, statystyka, paczka
-                logowanie.wyswietlMenuGlowneCentrali(user, this /*new Presenters.CentralaManager.KurierzyCM.KurierzyPrezenter()*/, new Presenters.CentralaManager.SamochodyCM.SamochodyPrezenter(), /*this*/ new Presenters.CentralaManager.StatystykiCM.StatystykiPrezenter(), new Presenters.CentralaManager.PaczkiCM.PaczkiPrezenter());
+                user.Haslo = dane.Haslo;
+                logowanie.wyswietlMenuGlowneCentrali(user, this, PCentrSamochody, this, this);
             }
             else
             {
@@ -103,8 +112,12 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeKurierow()
         {
+            throw new NotImplementedException();
+        }
 
-            //throw new NotImplementedException();
+        public void wybranoPokazSzczegolyKuriera(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void wybranoZapiszEdycjeKuriera(Models.DTO.Uzytkownik.DaneKuriera kurier)
@@ -158,22 +171,25 @@ namespace Kurier.Presenters
 
         public void wybranoPokazListeSamochodow()
         {
-            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] {samochod, samochod2 });
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod1, samochod2 }, null);
         }
 
         public void wybranoPokazSzczegolySamochodu(int id)
         {
-            throw new NotImplementedException();
+            GUPIEDaneSamochodu retSamochod = id == samochod1.Id ? samochod1 : samochod2;
+            MainLauncher.message((retSamochod.Kurier == null) + "");
+            samochody.wyswietlOknoSzczegolowSamochodu(retSamochod, retSamochod.Kurier);
         }
 
         public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
         {
-            throw new NotImplementedException();
+            samochody.wyswietlOknoPrzypisaniaSamochoduDoKuriera(idSamochodu, new DaneKuriera[] { daneKuriera1, daneKuriera2 });
         }
 
         public void wybranoUsunSamochod(int id)
         {
-            throw new NotImplementedException();
+            DaneSamochodu samochod = id == samochod1.Id ? samochod2 : samochod1;
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod }, "Samochód został usunięty");
         }
 
         public void wybranoWyslijZlecenieDoSerwisu()
@@ -188,7 +204,11 @@ namespace Kurier.Presenters
 
         public void wybranoZapiszPowiazanieKurieraZSamochodem(int idSamochodu, int idKuriera)
         {
-            throw new NotImplementedException();
+            DaneKuriera kurier = idKuriera == daneKuriera1.UserId ? daneKuriera1 : daneKuriera2;
+            GUPIEDaneSamochodu samochod = idSamochodu == samochod1.Id ? samochod1 : samochod2;
+            kurier.Samochod = samochod;
+            samochod.Kurier = kurier;
+            samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(samochod, "Przypisano kuriera", kurier);
         }
 
         public void wybranoEdytujStatusPaczki(int id)
@@ -341,14 +361,8 @@ namespace Kurier.Presenters
                 Models.DTO.Uzytkownik.DaneUzytkownika user = daneKuriera1;
                 user.Login = dane.Login;
                 user.Haslo = dane.Haslo;
-                if (new Random().Next(100) > 50)
-                {
-                    ivKurier.wyswietlOknoListyZlecenKuriera(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 });
-                }
-                else
-                {
-                    ivKurier.wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 }, samochod);
-                }
+                //ivKurier.wyswietlOknoListyZlecenKuriera(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 });
+                ivKurier.wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(user, new Models.DTO.Paczka.DanePaczki[] { paczka1, paczka2 }, samochod1);
             }
         }
 
@@ -380,9 +394,9 @@ namespace Kurier.Presenters
                 NumerMieszkania = "2",
                 Ulica = "Poniatowskiego"
             },
-            Nazwisko = "Kowalski",
-            Imie = "Maciej",
-            UserId = 3
+            Nazwisko = "Nowakowski",
+            Imie = "Krystian",
+            UserId = 2
         };
 
         DanePaczki paczka1 = new DanePaczki()
@@ -464,24 +478,30 @@ namespace Kurier.Presenters
             KoniecObslugi = new DateTime(1990, 10, 12)
         };
 
-        Models.DTO.Samochod.DaneSamochodu samochod2 = new Models.DTO.Samochod.DaneSamochodu()
+        GUPIEDaneSamochodu samochod2 = new GUPIEDaneSamochodu()
         {
             Id = 2,
             Marka = "Peugeot",
             Model = "Boxer",
             NumRejestracyjny = "PO L74B6",
             DataKontroli = new DateTime(2017, 3, 15),
-            Stan = "Sprawny"
+            Stan = "Sprawny",
+            Kurier = null
         };
 
-        Models.DTO.Samochod.DaneSamochodu samochod = new Models.DTO.Samochod.DaneSamochodu()
+        GUPIEDaneSamochodu samochod1 = new GUPIEDaneSamochodu()
         {
             Id = 1,
             Marka = "Citroen",
             Model = "Jumper",
             NumRejestracyjny = "PO 6478A",
             DataKontroli = new DateTime(2017, 3, 15),
-            Stan = "Sprawny"
+            Stan = "Sprawny",
+            Kurier = daneKuriera1
         };
+    }
+    public class GUPIEDaneSamochodu : Models.DTO.Samochod.DaneSamochodu
+    {
+        public Models.DTO.Uzytkownik.DaneKuriera Kurier { get; set; }
     }
 }

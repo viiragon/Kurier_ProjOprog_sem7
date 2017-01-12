@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Kurier.Models.DTO.Samochod;
+using Kurier.Views.Menu;
 
 namespace Kurier.Views.Menu
 {
@@ -12,11 +13,18 @@ namespace Kurier.Views.Menu
         private OknoEdycjiSamochodu oknoEdycjiSamochodu;
         private OknoListySamochodow oknoListySamochodow;
         private OknoSzczegolowSamochodu oknoSzczegolowSamochodu;
+        private OknoWyslaniaZleceniaDoSerwisu oknoWyslaniaZleceniaDoSerwisu;
+        //private OknoPrzypisaniaSamochodu oknoPrzypisaniaSamochodu;
         private Interfaces.Presenter.ICMSamochody samochodyP;
 
         public VCentralaSamochody(Interfaces.Presenter.ICMSamochody samochodyP)
         {
             this.samochodyP = samochodyP;
+        }
+
+        public void setOknoWyslaniaZleceniaDoSerwisu(OknoWyslaniaZleceniaDoSerwisu okno)
+        {
+            this.oknoWyslaniaZleceniaDoSerwisu = okno;
         }
 
         public void setCentralaSamochody(OknoDodawaniaSamochodu centralaSamochody)
@@ -39,6 +47,31 @@ namespace Kurier.Views.Menu
             this.oknoSzczegolowSamochodu = okno;
         }
 
+        public void setOknoPrzypisaniaSamochodu(/*Samochody.OknoPrzypisaniaSamochodu okno*/)
+        {
+            //this.oknoPrzypisaniaSamochodu = okno;
+        }
+
+        public void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu)
+        {
+            samochodyP.wybranoPrzypiszKurieraDoSamochodu(idSamochodu);
+        }
+
+        public void wybranoPowiazKurieraZSamochodu(int idSamochodu, int idKuriera)
+        {
+            samochodyP.wybranoZapiszPowiazanieKurieraZSamochodem(idSamochodu, idKuriera);
+        }
+
+        public void wybranoPokazSzczegoly(int idSamochodu)
+        {
+            samochodyP.wybranoPokazSzczegolySamochodu(idSamochodu);
+        }
+
+        public void wybranoUsunSamochod(int idSamochodu)
+        {
+            samochodyP.wybranoUsunSamochod(idSamochodu);
+        }
+
         public override void aktualizujOknoSzczegolowSamochodu(DaneSamochodu samochod)
         {
            
@@ -54,14 +87,19 @@ namespace Kurier.Views.Menu
             OknoEdycjiSamochodu.wyswietlOkno(this, samochod);
         }
 
-        public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista)
+        public override void wyswietlOknoListySamochodow(DaneSamochodu[] lista, string komunikat)
         {
-            OknoListySamochodow.wyswietlOkno(this, lista);
+            OknoListySamochodow.wyswietlOkno(this, lista, komunikat);
         }
 
-        public override void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod)
+        public override void wyswietlOknoSzczegolowSamochoduZKomunikatem(DaneSamochodu samochod, string komunikat, Models.DTO.Uzytkownik.DaneKuriera kurier)
         {
-            OknoSzczegolowSamochodu.wyswietlOkno(this, samochod);
+            OknoSzczegolowSamochodu.wyswietlOkno(this, samochod, komunikat, kurier);
+        }
+
+        public override void wyswietlOknoSzczegolowSamochodu(DaneSamochodu samochod, Models.DTO.Uzytkownik.DaneKuriera kurier)
+        {
+            OknoSzczegolowSamochodu.wyswietlOkno(this, samochod, null, kurier);
         }
 
         public override void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod)
@@ -69,5 +107,9 @@ namespace Kurier.Views.Menu
            
         }
 
+        public override void wyswietlOknoPrzypisaniaSamochoduDoKuriera(int idSamochodu, Models.DTO.Uzytkownik.DaneKuriera[] kurierzy)
+        {
+            //Samochody.OknoPrzypisaniaSamochodu.wyswietlOkno(this, idSamochodu, kurierzy);
+        }
     }
 }

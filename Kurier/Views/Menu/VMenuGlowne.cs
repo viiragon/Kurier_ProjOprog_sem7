@@ -53,12 +53,17 @@ namespace Kurier.Views.Menu
         public void wybranoPokazListeSamochodow()
         {
             samochodyP.wybranoPokazListeSamochodow();
-            //Presenters.Atrapa.LOL_XD.wybranoPokazListeSamochodow();
+            //Presenters.Atrapa.PCentrSamochody.wybranoPokazListeSamochodow();
         }
 
         public void wybranoPokazNajczeszychKlientow()
         {
             statystykaP.wybranoPokazNajczestszychKlientow();
+        }
+
+        public void wybranoPokazNajczestszeMiasta()
+        {
+            statystykaP.wybranoPokazNajczestszeObszaryPaczek();
         }
     }
 }

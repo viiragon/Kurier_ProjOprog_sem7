@@ -30,6 +30,9 @@
             <p>
                 <asp:Button Text="Najczęstsi klienci" OnClick="onClickBtNajczestsiKlienci" runat="server" />
             </p>
+            <p>
+                <asp:Button Text="Najczestsze miasta docelowe" OnClick="onClickBtNajczestszeMiasta" runat="server" />
+            </p>
         </article>
     </form>
 </body>

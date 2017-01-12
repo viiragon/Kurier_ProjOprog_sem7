@@ -10,7 +10,7 @@
 namespace Kurier.Views.Menu {
     
     
-    public partial class OknoListySamochodow {
+    public partial class OknoWyslaniaZleceniaDoSerwisu {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,30 @@ namespace Kurier.Views.Menu {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// phMessage control.
+        /// lError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phMessage;
+        protected global::System.Web.UI.WebControls.Label lError;
         
         /// <summary>
-        /// lMessage control.
+        /// lSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lMessage;
+        protected global::System.Web.UI.WebControls.Label lSuccess;
         
         /// <summary>
-        /// rptSamochody control.
+        /// tbInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSamochody;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea tbInfo;
     }
 }
