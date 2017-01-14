@@ -111,7 +111,7 @@ namespace Kurier.Views.Menu
 
         public override void wyswietlOknoWysylaniaZleceniaDoSerwisu(DaneSamochodu samochod)
         {
-           
+            OknoWyslaniaZleceniaDoSerwisu.wyswietlOkno(this, samochod);
         }
 
         public override void wyswietlOknoPrzypisaniaSamochoduDoKuriera(int idSamochodu, Models.DTO.Uzytkownik.DaneKuriera[] kurierzy)
