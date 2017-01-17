@@ -40,7 +40,7 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            bool atrapimy = true;
+            bool atrapimy = false;
 
             PCentrLogowanie = atrapimy && true
                 ? this as Interfaces.Presenter.ICMLogowanie 
@@ -567,6 +567,11 @@ namespace Kurier.Presenters
                 Stan = "Sprawny",
                 Kurier = daneKuriera1
             };
+        }
+
+        public void wybranoWyslijZlecenieDoSerwisu(DaneSamochodu dane)
+        {
+            throw new NotImplementedException();
         }
     }
     public class GUPIEDaneSamochodu : Models.DTO.Samochod.DaneSamochodu
