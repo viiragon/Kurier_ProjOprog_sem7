@@ -56,7 +56,7 @@ namespace Kurier.Views.Menu
         {
             controller = caller;
             paczka = dp;
-            if (paczka != null)
+            if (paczka != null && paczka.Status != null)
             {
                 kurier = paczka.Status.Kurier;
             }
