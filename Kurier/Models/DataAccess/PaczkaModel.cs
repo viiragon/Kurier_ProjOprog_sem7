@@ -70,11 +70,12 @@ namespace Kurier.Models.DataAccess
 
     private bool WalidujAdres(Adres adres)
     {
-      return Regex.IsMatch(adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$")
-             && Regex.IsMatch(adres.Miasto, @"^[A-Z][a-z]{2,}$")
-             && adres.Ulica.Length > 0
-             && adres.NumerMieszkania.Length > 0;
-    }
+            return true;
+            //return //Regex.IsMatch(adres.KodPocztowy, @"^[0-9]{2}\-[0-9]{3}$")
+                //&& Regex.IsMatch(adres.Miasto, @"^[A-Z][a-z]{2,}$")
+                //&& adres.Ulica.Length > 0
+                //&& adres.NumerMieszkania.Length > 0;
+        }
 
     public void ZmienStatusPaczki(Status status, int idPaczki)
     {

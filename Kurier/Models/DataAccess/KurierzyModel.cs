@@ -34,7 +34,8 @@ namespace Kurier.Models.DataAccess
 
         public DaneKuriera PobierzKuriera(int id)
         {
-            return _context.Kurierzy.Find(id);
+            //return _context.Kurierzy.Find(id);
+            return _context.Kurierzy.FirstOrDefault(p => p.UserId == id);
         }
 
         public List<DaneKuriera> PobierzListeKurierow()
