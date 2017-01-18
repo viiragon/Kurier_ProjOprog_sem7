@@ -51,8 +51,6 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
         {
             DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
             kurierzy.wyswietlOknoSzczegolowKuriera(kurier, "Szczegóły Kuriera: " + kurier.Imie + " " + kurier.Nazwisko);
-            //wyświetlenie okna
-            //throw new NotImplementedException();
         }
     }
 }
