@@ -466,3 +466,4 @@ C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\bin\System.Web.Razor.xm
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.pdb
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.Migrations._2.resources
+C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.Migrations._1.resources
