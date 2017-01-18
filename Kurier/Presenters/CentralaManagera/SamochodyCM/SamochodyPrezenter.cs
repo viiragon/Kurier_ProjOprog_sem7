@@ -68,8 +68,14 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
         }
 
         public void wybranoWyslijZlecenieDoSerwisu(Models.DTO.Samochod.DaneSamochodu dane)
-        {           
-            MailMessage zlecenie = new MailMessage();
+        {
+            var client = new SmtpClient("smtp.gmail.com", 587)
+            {
+                Credentials = new NetworkCredential("kuriercentrala@gmail.com", "centrala123a"), EnableSsl = true
+            };
+            client.Send("kuriercentrala@gmail.com", "testowacentrala@gmail.com", "Zlecenie do serwisu", dane.ToString());
+           // Console.WriteLine("Send");
+           /* MailMessage zlecenie = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             zlecenie.From = new MailAddress("kuriercentrala@gmail.com"); //kuriercentrala centrala123a testowacentrala testowa123a
             zlecenie.To.Add("testowacentrala@gmail.com");
@@ -81,7 +87,11 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             SmtpServer.Credentials = new System.Net.NetworkCredential("kuriercentrala", "centrala123a");
             SmtpServer.EnableSsl = true;
 
-            SmtpServer.Send(zlecenie);
+            SmtpServer.Send(zlecenie);*/
+
+            System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\text.txt");
+            file.WriteLine(dane.ToString());
+            file.Close();
 
            // samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu(null);
         }
