@@ -89,6 +89,8 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
 
             SmtpServer.Send(zlecenie);*/
 
+
+            /*do pliku lokalnego?*/
             System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\text.txt");
             file.WriteLine(dane.ToString());
             file.Close();
