@@ -14,7 +14,7 @@ namespace Kurier.Interfaces.Presenter
         void wybranoPokazSzczegolySamochodu(int id);
         void wybranoPrzypiszKurieraDoSamochodu(int idSamochodu);
         void wybranoUsunSamochod(int id);
-        void wybranoWyslijZlecenieDoSerwisu();
+        void wybranoWyslijZlecenieDoSerwisu(Models.DTO.Samochod.DaneSamochodu dane);
         void wybranoZapiszNowySamochod(Models.DTO.Samochod.DaneSamochodu dane);
         void wybranoZapiszPowiazanieKurieraZSamochodem(int idSamochodu, int idKuriera);
     }

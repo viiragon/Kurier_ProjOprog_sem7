@@ -35,12 +35,14 @@ namespace Kurier.Views.Menu
         {
             if (String.IsNullOrEmpty(tbInfo.Value))
             {
-                lError.Text = "Informacja dla serwisu nie może być pusta!";
+                lSuccess.Text = "";
+                lError.Text = "Błąd: Informacja dla serwisu nie może być pusta!";
                 return false;
             }
-            if(tbInfo.Value.Length > 500)
+            if (tbInfo.Value.Length > 500)
             {
-                lError.Text = "Informacja dla serwisu nie może mieć więcej niż 500 znaków!";
+                lSuccess.Text = "";
+                lError.Text = "Błąd: Informacja dla serwisu nie może mieć więcej niż 500 znaków!";
                 return false;
             }
             return true;
@@ -52,7 +54,7 @@ namespace Kurier.Views.Menu
             {
                 //wybranoWyslijZlecenieDoSerwisu();
                 lError.Text = "";
-                lSuccess.Text = "Zlecenie zostało wysłane";
+                lSuccess.Text = "Sukces: Zlecenie zostało wysłane.";
             }
         }
     }

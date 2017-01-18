@@ -6,13 +6,16 @@ using Kurier.Interfaces.Presenter;
 using Kurier.Models.DTO.Samochod;
 using Kurier.Models.DataAccess;
 using Kurier.Models.DTO.Uzytkownik;
+using System.Net.Mail;
+using System.Net;
 
 namespace Kurier.Presenters.CentralaManager.SamochodyCM
 {
+
     public class SamochodyPrezenter : ICMSamochody
-    {
+    { 
+
         private Interfaces.View.IVCentralaSamochody samochody;
-        private Interfaces.View.IVCentralaKurierzy kurierzy;
         private SamochodyModel samochodyModel;
         private KurierzyModel kurierzyModel;
         public SamochodyPrezenter()
@@ -21,7 +24,7 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             samochodyModel = new SamochodyModel();
             kurierzyModel = new KurierzyModel();
         }
-
+        
         public void wybranoAktualizujSzczegolySamochodu(int id)
         {
             DaneSamochodu samochod = samochodyModel.PobierzSamochod(id);
@@ -64,9 +67,23 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             wybranoPokazListeSamochodow();
         }
 
-        public void wybranoWyslijZlecenieDoSerwisu()
-        {
-            samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu(null);
+        public void wybranoWyslijZlecenieDoSerwisu(Models.DTO.Samochod.DaneSamochodu dane)
+        {           
+            MailMessage zlecenie = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            zlecenie.From = new MailAddress("kuriercentrala@gmail.com"); //kuriercentrala centrala123a testowacentrala testowa123a
+            zlecenie.To.Add("testowacentrala@gmail.com");
+            zlecenie.Subject = "Zlecenie do serwisu";
+            zlecenie.Body = dane.ToString();
+           // zlecenie.Body = "Tu będzie tekst";
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("kuriercentrala", "centrala123a");
+            SmtpServer.EnableSsl = true;
+
+            SmtpServer.Send(zlecenie);
+
+           // samochody.wyswietlOknoWysylaniaZleceniaDoSerwisu(null);
         }
 
         public void wybranoZapiszNowySamochod(DaneSamochodu dane)
@@ -75,7 +92,6 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
             if (czyPoprawneDane)
             {
                 samochodyModel.DodajSamochod(dane);
-                //komunikat o dodaniu
             }
             wybranoPokazListeSamochodow();
         }
@@ -92,7 +108,14 @@ namespace Kurier.Presenters.CentralaManager.SamochodyCM
                 samochodyModel.PowiazKurieraISamochod(idSamochodu, idKuriera);
                 dSamochod = samochodyModel.PobierzSamochod(idSamochodu);
                 dKuriera = kurierzyModel.PobierzKuriera(idKuriera);
-                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
+                if (idKuriera == -1)
+                {
+                    samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Usunięto przypisanie", null);
+                }
+                else
+                {
+                    samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(dSamochod, "Przypisano kuriera", dKuriera);
+                }
             }
             else
             {

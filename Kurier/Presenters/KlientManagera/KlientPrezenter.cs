@@ -31,7 +31,7 @@ namespace Kurier.Presenters.KlientManager
 
         public void wybranoLogowanieJakoKlient()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzLogowaniaKlienta();
         }
 
         public void wybranoNadaniePaczki()
@@ -51,7 +51,7 @@ namespace Kurier.Presenters.KlientManager
 
         public void wybranoWylogujKlienta()
         {
-            throw new NotImplementedException();
+            ivKlient.wyswietlFormularzLogowaniaKlienta();
         }
 
         public void wybranoZalogujMnieJakoKlient(DaneUzytkownika dane)
@@ -90,7 +90,8 @@ namespace Kurier.Presenters.KlientManager
 
         public void wybranoZarejestrujMnieJakoKlient(DaneKlienta dane)
         {
-            throw new NotImplementedException();
+            //do poprawy
+            ivKlient.wyswietlOknoRejestracjiKlienta();
         }
     }
 }

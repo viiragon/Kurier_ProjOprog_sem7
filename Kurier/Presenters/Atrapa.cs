@@ -236,7 +236,15 @@ namespace Kurier.Presenters
             GUPIEDaneSamochodu samochod = idSamochodu == samochod1.Id ? samochod1 : samochod2;
             kurier.Samochod = samochod;
             samochod.Kurier = kurier;
-            samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(samochod, "Przypisano kuriera", kurier);
+            if (idKuriera == -1)
+            {
+                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(samochod, "Usunięto przypisanie", null);
+            }
+            else
+            {
+                samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(samochod, "Przypisano kuriera", kurier);
+            }
+            //samochody.wyswietlOknoSzczegolowSamochoduZKomunikatem(samochod, "Przypisano kuriera", kurier);
         }
 
         public void wybranoEdytujStatusPaczki(int id)
