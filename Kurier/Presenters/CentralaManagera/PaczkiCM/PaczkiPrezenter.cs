@@ -65,7 +65,7 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
             
         }
 
-        public void wybranoZapiszStatusPaczki(Models.DTO.Paczka.Status status, int idPaczki)
+        public void wybranoZapiszStatusPaczkiDlaCentrali(Models.DTO.Paczka.Status status, int idPaczki)
         {
             DanePaczki paczki = paczkaModel.PobierzPaczke(idPaczki);
             bool poprawneDanePaczki = paczkaModel.WalidujDanePaczki(paczki);

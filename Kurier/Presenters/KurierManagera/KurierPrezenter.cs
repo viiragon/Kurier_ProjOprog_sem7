@@ -45,7 +45,7 @@ namespace Kurier.Presenters.KurierManager
         public void wybranoPokazListeZlecenKuriera()
         {
             //pobranie danych kuriera i paczki
-            ivKurier.wyswietlOknoListyZlecenKuriera(kurier,paczki);
+            ivKurier.wyswietlOknoListyZlecenKuriera(kurier,paczki, null);
         }
 
         public void wybranoPokazSamochodKuriera()

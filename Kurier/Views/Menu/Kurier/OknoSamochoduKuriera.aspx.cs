@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Kurier.Views.Menu
 {
-    public partial class OknoSzczegolowSamochodu : System.Web.UI.Page
+    public partial class OknoSamochoduKuriera : System.Web.UI.Page
     {
-        private static VCentralaSamochody controller;
+        private static Kurier.VKurier controller;
         public static Models.DTO.Samochod.DaneSamochodu samochod;
         public static Models.DTO.Uzytkownik.DaneKuriera kurier;
         public static string komunikat;
@@ -19,7 +19,7 @@ namespace Kurier.Views.Menu
             Pages.setCurrent(this);
             if (controller != null)
             {
-                controller.setOknoSzczegolowSamochodu(this);
+                controller.setOknoSamochoduKuriera(this);
             }
             if (komunikat != null)
             {
@@ -33,42 +33,18 @@ namespace Kurier.Views.Menu
                 lModel.Text = samochod.Model;
                 lRejestracja.Text = samochod.NumRejestracyjny;
                 lStan.Text = samochod.Stan;
-                if (kurier != null && kurier.UserId != -1)
-                {
-                    lKurier.Text = kurier.Imie + " " + kurier.Nazwisko;
-                }
-                else
-                {
-                    lKurier.Text = "Brak";
-                }
                 lDataKontroli.Text = samochod.DataKontroli.getProperDateString();
             }
         }
 
-        public static void wyswietlOkno(VCentralaSamochody caller, Models.DTO.Samochod.DaneSamochodu s,
+        public static void wyswietlOkno(Kurier.VKurier caller, Models.DTO.Samochod.DaneSamochodu s,
             string komunikatArg, Models.DTO.Uzytkownik.DaneKuriera kurierArg)
         {
             samochod = s;
             kurier = kurierArg;
             controller = caller;
             komunikat = komunikatArg;
-            Pages.loadPage("/Views/Menu/Samochody/OknoSzczegolowSamochodu.aspx");
-        }
-        protected void onClickBtCarEdit(object sender, EventArgs e)
-        {
-            controller.wyswietlOknoEdycjiSamochodu(samochod);
-        }
-        protected void onClickBtDelete(object sender, EventArgs e)
-        {
-            controller.wybranoUsunSamochod(samochod.Id);
-        }
-        protected void onClickBtBindKurier(object sender, EventArgs e)
-        {
-            controller.wybranoPrzypiszKurieraDoSamochodu(samochod.Id);
-        }
-        protected void onClickBtSend(object sender, EventArgs e)
-        {
-            controller.wyswietlOknoWysylaniaZleceniaDoSerwisu(samochod);
+            Pages.loadPage("/Views/Menu/Kurier/OknoSamochoduKuriera.aspx");
         }
     }
 }

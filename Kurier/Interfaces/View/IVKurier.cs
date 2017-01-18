@@ -20,8 +20,8 @@ namespace Kurier.Interfaces.View
         public abstract void wyswietlKomunikatOBlednychDanychLogowania();
         public abstract void wyswietlOknoKolejnegoPrzegladu(DateTime data);
         public abstract void wyswietlOknoSzczegolowPaczkiDlaKuriera(DanePaczki paczka);
-        public abstract void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia);
-        public abstract void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod);
+        public abstract void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, string komunikat);
+        public abstract void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod, string komunikat);
         public abstract void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod);
         public abstract void wyswietlOknoWydaniaPaczki(DanePaczki paczki);
     }

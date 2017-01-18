@@ -465,3 +465,5 @@ C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\bin\System.Web.Provider
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\bin\System.Web.Razor.xml
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_semi\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Documents\Visual Studio 2013\Projects\Kurier\Kurier\obj\Debug\Kurier.Migrations.test.resources

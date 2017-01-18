@@ -11,19 +11,15 @@ namespace Kurier.Views.Menu.Kurier
     {
         private OknoLogowanieKurier logowanie;
         private Kurier.MenuGlowneKurier menuKurier;
+        private OknoSamochoduKuriera szczegolySamochodu;
         private Interfaces.Presenter.IPKurier presenter;
-        private Interfaces.Presenter.ICMKurierzy kurierzyP;
+
+        private Models.DTO.Uzytkownik.DaneKuriera kurier;
 
         public VKurier(Interfaces.Presenter.IPKurier presenter)
         {
             this.presenter = presenter;
         }
-        
-
-        //public VKurier(Interfaces.Presenter.ICMKurierzy kurierzyP)
-        //{
-        //    this.kurierzyP = kurierzyP;
-        //}
 
         public void setOknoLogowanieKurier(OknoLogowanieKurier logowanie)
         {
@@ -33,6 +29,11 @@ namespace Kurier.Views.Menu.Kurier
         public void setMenuGlowneKurier(Kurier.MenuGlowneKurier menuKurier)
         {
             this.menuKurier = menuKurier;
+        }
+
+        public void setOknoSamochoduKuriera(OknoSamochoduKuriera szczegolySamochodu)
+        {
+            this.szczegolySamochodu = szczegolySamochodu;
         }
 
         public void wybranoZaloguj(string login, string password)
@@ -46,6 +47,35 @@ namespace Kurier.Views.Menu.Kurier
         public void wybranoWyloguj()
         {
             presenter.wybranoWylogujKuriera();
+        }
+
+        public void wybranoPokazSamochod()
+        {
+            presenter.wybranoPokazSamochodKuriera();
+        }
+
+        public void wybranoWydaj(DanePaczki paczka)
+        {
+            Status status = new Status
+            {
+                Id = paczka.Status.Id,
+                KodStatusu = (int)StatusEnum.WDrodze,
+                Czas = paczka.Status.Czas,
+                Kurier = paczka.Status.Kurier
+            };
+            presenter.wybranoZapiszStatusPaczki(status, paczka.Id);
+        }
+
+        public void wybranoDorecz(DanePaczki paczka)
+        {
+            Status status = new Status
+            {
+                Id = paczka.Status.Id,
+                KodStatusu = (int)StatusEnum.Doreczona,
+                Czas = paczka.Status.Czas,
+                Kurier = paczka.Status.Kurier
+            };
+            presenter.wybranoZapiszStatusPaczki(status, paczka.Id);
         }
 
         public override void wyswietlFormularzEdycjiStatusuPaczki(string[] statusy)
@@ -68,19 +98,20 @@ namespace Kurier.Views.Menu.Kurier
             throw new NotImplementedException();
         }
 
-        public override void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia)
+        public override void wyswietlOknoListyZlecenKuriera(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, string komunikat)
         {
-            Kurier.MenuGlowneKurier.wyswietlOkno(this, dane, zlecenia);
+            Kurier.MenuGlowneKurier.wyswietlOkno(this, dane, zlecenia, komunikat);
+            kurier = dane as Models.DTO.Uzytkownik.DaneKuriera;
         }
 
-        public override void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod)
+        public override void wyswietlOknoListyZlecenKurieraZKomunikatemOPrzegladzie(Models.DTO.Uzytkownik.DaneUzytkownika dane, DanePaczki[] zlecenia, DaneSamochodu samochod, string komunikat)
         {
-            Kurier.MenuGlowneKurier.wyswietlOknoIKomunikatOPrzegladzie(this, dane, zlecenia, samochod);
+            Kurier.MenuGlowneKurier.wyswietlOknoIKomunikatOPrzegladzie(this, dane, zlecenia, samochod, komunikat);
         }
 
         public override void wyswietlOknoPrzypisanegoSamochodu(DaneSamochodu samochod)
         {
-            throw new NotImplementedException();
+            OknoSamochoduKuriera.wyswietlOkno(this, samochod, null, kurier);
         }
 
         public override void wyswietlOknoWydaniaPaczki(DanePaczki paczki)

@@ -29,7 +29,7 @@ namespace Kurier.Views.Menu
             {
                 lImie.Text = kurier.Imie;
                 lNazwisko.Text = kurier.Nazwisko;
-                LKurierAdres.Text = MainLauncher.getProperAddressString(kurier.Adres);
+                LKurierAdres.Text = kurier.Adres.getProperAddressString();
             }
         }
 

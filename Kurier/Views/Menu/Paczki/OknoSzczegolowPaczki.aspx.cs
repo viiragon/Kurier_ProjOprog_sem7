@@ -23,14 +23,14 @@ namespace Kurier.Views.Menu
 
             if (paczka != null)
             {
-                lAdresat.Text = MainLauncher.getProperAddressString(paczka.AdresAdresata);
+                lAdresat.Text = paczka.AdresAdresata.getProperAddressString();
                 if (paczka.PoczatekObslugi.HasValue)
                 {
-                    lNadana.Text = MainLauncher.getProperDateString(paczka.PoczatekObslugi.Value);
+                    lNadana.Text = paczka.PoczatekObslugi.Value.getProperDateString();
                 }
                 if (paczka.KoniecObslugi.HasValue)
                 {
-                    lOdebrana.Text = MainLauncher.getProperDateString(paczka.KoniecObslugi.Value);
+                    lOdebrana.Text = paczka.KoniecObslugi.Value.getProperDateString();
                 }
                 else
                 {
@@ -42,7 +42,7 @@ namespace Kurier.Views.Menu
                     phBrakKuriera.Visible = false;
                     lImie.Text = kurier.Imie;
                     lNazwisko.Text = kurier.Nazwisko;
-                    LKurierAdres.Text = MainLauncher.getProperAddressString(kurier.Adres);
+                    LKurierAdres.Text = kurier.Adres.getProperAddressString();
                 }
                 else
                 {

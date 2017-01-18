@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kurier.Views.Menu.Kurier {
+namespace Kurier.Views.Menu {
     
     
-    public partial class MenuGlowneKurier {
+    public partial class OknoSamochoduKuriera {
         
         /// <summary>
-        /// lUser control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lUser;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// phMessage control.
@@ -40,102 +40,57 @@ namespace Kurier.Views.Menu.Kurier {
         protected global::System.Web.UI.WebControls.Label lMessage;
         
         /// <summary>
-        /// phResult control.
+        /// lId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phResult;
+        protected global::System.Web.UI.WebControls.Label lId;
         
         /// <summary>
-        /// lSuccess control.
+        /// lMarka control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lSuccess;
+        protected global::System.Web.UI.WebControls.Label lMarka;
         
         /// <summary>
-        /// phTableNadane control.
+        /// lModel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phTableNadane;
+        protected global::System.Web.UI.WebControls.Label lModel;
         
         /// <summary>
-        /// rptNadane control.
+        /// lRejestracja control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptNadane;
+        protected global::System.Web.UI.WebControls.Label lRejestracja;
         
         /// <summary>
-        /// phPustaNadane control.
+        /// lStan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPustaNadane;
+        protected global::System.Web.UI.WebControls.Label lStan;
         
         /// <summary>
-        /// phTableWDrodze control.
+        /// lDataKontroli control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phTableWDrodze;
-        
-        /// <summary>
-        /// rptWDrodze control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptWDrodze;
-        
-        /// <summary>
-        /// phPustaWDrodze control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPustaWDrodze;
-        
-        /// <summary>
-        /// phTableDoreczone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phTableDoreczone;
-        
-        /// <summary>
-        /// rptDoreczone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDoreczone;
-        
-        /// <summary>
-        /// phPustaDoreczone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPustaDoreczone;
+        protected global::System.Web.UI.WebControls.Label lDataKontroli;
     }
 }

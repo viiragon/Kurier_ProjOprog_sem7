@@ -33,5 +33,10 @@ namespace Kurier.Models.DTO
         return hashCode;
       }
     }
+
+    public string getProperAddressString()
+    {
+        return this.Ulica + " " + this.NumerMieszkania + ", " + this.Miasto + " " + this.KodPocztowy;
+    }
   }
 }

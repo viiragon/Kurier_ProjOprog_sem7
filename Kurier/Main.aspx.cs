@@ -6,6 +6,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+namespace System
+{
+    public static class MyExtensions
+    {
+        public static string getProperDateString(this DateTime date)
+        {
+            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
+            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
+            return day + "." + month + "." + date.Year;
+        }
+
+        public static string ToString(this DateTime date)
+        {
+            return date.getProperDateString();
+        }
+    }
+}
+
 namespace Kurier
 {
     public class Pages
@@ -32,20 +50,9 @@ namespace Kurier
             //new Presenters.Presenter(this);
         }
 
-        public static void message(String message) {
+        public static void message(String message)
+        {
             System.Diagnostics.Debug.WriteLine(message);
-        }
-
-        public static string getProperDateString(DateTime date)
-        {
-            string day = date.Day > 9 ? "" + date.Day : "0" + date.Day;
-            string month = date.Month > 9 ? "" + date.Month : "0" + date.Month;
-            return day + "." + month + "." + date.Year;
-        }
-
-        public static string getProperAddressString(Models.DTO.Adres adres)
-        {
-            return adres.Ulica + " " + adres.NumerMieszkania + " " + adres.Miasto + " " + adres.KodPocztowy;
         }
 
         protected void onClickBtCentrala(object sender, EventArgs e)
