@@ -40,7 +40,7 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            bool atrapimy = false;
+            bool atrapimy = true;
 
             PCentrLogowanie = atrapimy && true
                 ? this as Interfaces.Presenter.ICMLogowanie
@@ -226,7 +226,8 @@ namespace Kurier.Presenters
 
         public void wybranoZapiszNowySamochod(Models.DTO.Samochod.DaneSamochodu dane)
         {
-            throw new NotImplementedException();
+            dane.Id = samochod2.Id + 1;
+            samochody.wyswietlOknoListySamochodow(new Models.DTO.Samochod.DaneSamochodu[] { samochod1, samochod2, dane }, "Samochód został dodany");
         }
 
         public void wybranoZapiszPowiazanieKurieraZSamochodem(int idSamochodu, int idKuriera)

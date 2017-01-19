@@ -41,11 +41,11 @@ namespace Kurier.Views.Menu
             }
             DateTime tmpData = new DateTime();
             DateTime.TryParseExact(tbDataKont.Text, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out tmpData);
-            bool dataOk = DateTime.Now < tmpData; 
+            bool dataOk = DateTime.Now < tmpData;
             if (String.IsNullOrEmpty(tbDataKont.Text) || !dataOk)
             {
                 jestOk = false;
-                lError.Text += "“Niepoprawna data kontroli” ";
+                lError.Text += "-Niepoprawna data kontroli ";
             }
             if (String.IsNullOrEmpty(tbMarka.Text))
             {
@@ -76,7 +76,17 @@ namespace Kurier.Views.Menu
         {
             if (walidujDane())
             {
-                //todo zapisz
+                DateTime tmpData = new DateTime();
+                DateTime.TryParseExact(tbDataKont.Text, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out tmpData);
+                DaneSamochodu samochod = new DaneSamochodu
+                {
+                    Marka = tbMarka.Text,
+                    Model = tbModel.Text,
+                    NumRejestracyjny = tbNumRej.Text,
+                    Stan = tbStan.Text,
+                    DataKontroli = tmpData
+                };
+                controller.wybranoDodajSamochod(samochod);
             }
         }
     }
