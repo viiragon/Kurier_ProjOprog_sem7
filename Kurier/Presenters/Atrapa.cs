@@ -40,7 +40,7 @@ namespace Kurier.Presenters
 
         public Atrapa()
         {
-            bool atrapimy = true;
+            bool atrapimy = false;
 
             PCentrLogowanie = atrapimy && true
                 ? this as Interfaces.Presenter.ICMLogowanie

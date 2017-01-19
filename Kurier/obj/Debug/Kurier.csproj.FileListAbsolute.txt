@@ -507,3 +507,4 @@ C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem715\Kurier\obj\Debug\Kurier.Migr
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem715\Kurier\obj\Debug\Kurier.csproj.GenerateResource.Cache
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem715\Kurier\obj\Debug\Kurier.dll
 C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem715\Kurier\obj\Debug\Kurier.pdb
+C:\Users\Artur\Source\Repos\Kurier_ProjOprog_sem715\Kurier\obj\Debug\Kurier.Migrations.test1.resources

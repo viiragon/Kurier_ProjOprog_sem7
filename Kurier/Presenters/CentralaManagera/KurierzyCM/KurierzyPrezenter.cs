@@ -39,12 +39,25 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
 
         public void wybranoZapiszEdycjeKuriera(DaneKuriera kurier)
         {
-            throw new NotImplementedException();
+            //Sprawdzic
+            bool poprawne = kurierzyModel.WalidujDaneKuriera(kurier);
+                if(poprawne)
+            {
+                //Dodac
+                throw new NotImplementedException();
+                //kurierzyModel.DodajKuriera(kurier);
+            }
+           // throw new NotImplementedException();
         }
 
         public void wybranoZapiszNowegoKuriera(DaneKuriera kurier)
         {
-            throw new NotImplementedException();
+            bool poprawne = kurierzyModel.WalidujDaneKuriera(kurier);
+            if (poprawne)
+            {
+                kurierzyModel.DodajKuriera(kurier);
+            }
+           // throw new NotImplementedException();
         }
 
         public void wybranoPokazSzczegolyKuriera(int id)
