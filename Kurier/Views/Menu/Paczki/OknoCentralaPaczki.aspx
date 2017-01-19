@@ -37,6 +37,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </table>
+            <asp:Button Text="Statystyki dostarczonych paczek" OnClick="onClickBtStatystykiDostarczonychPaczek" runat="server" />
         </article>
     </form>
 </body>

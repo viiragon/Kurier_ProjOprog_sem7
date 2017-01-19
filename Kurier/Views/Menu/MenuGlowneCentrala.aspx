@@ -33,6 +33,9 @@
             <p>
                 <asp:Button Text="Najczestsze miasta docelowe" OnClick="onClickBtNajczestszeMiasta" runat="server" />
             </p>
+            <p>
+                <asp:Button Text="Obciążenie kurierów" OnClick="onClickBtObciazenieKurierów" runat="server" />
+            </p>
         </article>
     </form>
 </body>
