@@ -13,10 +13,12 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
     public class PaczkiPrezenter : ICMPaczki
     {
         private Interfaces.View.IVCentralaPaczki paczki;
+        private Interfaces.View.IVCentralaKurierzy kurierzy;
+
         private PaczkaModel paczkaModel;
         private KurierzyModel kurierzyModel;
 
-        public PaczkiPrezenter()
+        public PaczkiPrezenter(Interfaces.Presenter.ICMPaczki paczkiP)
         {
             paczki = Interfaces.View.IVCentralaPaczki.createInstance(this);
             paczkaModel = new PaczkaModel();
@@ -79,6 +81,9 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
 
         public void wybranoPokazSzczegolyKurieraDlaPaczki(int id)
         {
+            DanePaczki paczka = paczkaModel.PobierzPaczke(id);
+            DaneKuriera kurierzy = kurierzyModel.PobierzKuriera(id);
+            
             throw new NotImplementedException();
         }
     }
