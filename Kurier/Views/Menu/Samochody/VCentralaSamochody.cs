@@ -64,6 +64,11 @@ namespace Kurier.Views.Menu
             samochodyP.wybranoPrzypiszKurieraDoSamochodu(idSamochodu);
         }
 
+        public void wybranoDodajSamochod(DaneSamochodu samochod)
+        {
+            samochodyP.wybranoZapiszNowySamochod(samochod);
+        }
+
         public void wybranoPowiazKurieraZSamochodu(int idSamochodu, int idKuriera)
         {
             samochodyP.wybranoZapiszPowiazanieKurieraZSamochodem(idSamochodu, idKuriera);

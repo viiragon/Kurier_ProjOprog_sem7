@@ -188,6 +188,10 @@
     <Compile Include="Migrations\201701182316437_1.Designer.cs">
       <DependentUpon>201701182316437_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701182331380_test1.cs" />
+    <Compile Include="Migrations\201701182331380_test1.Designer.cs">
+      <DependentUpon>201701182331380_test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess\StatystykiModel.cs" />
     <Compile Include="Models\DataAccess\UzytkownicyModel.cs" />
@@ -436,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701182316437_1.resx">
       <DependentUpon>201701182316437_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701182331380_test1.resx">
+      <DependentUpon>201701182331380_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
