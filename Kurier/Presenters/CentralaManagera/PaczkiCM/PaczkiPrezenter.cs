@@ -78,13 +78,24 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
             }
         }
 
-
+        //Sprawdzic
         public void wybranoPokazSzczegolyKurieraDlaPaczki(int id)
         {
             DanePaczki paczka = paczkaModel.PobierzPaczke(id);
-            DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
             
-            kurierzy.wyswietlOknoSzczegolowKuriera(kurier, "Kurier: " + kurier.Imie + " " + kurier.Nazwisko);
+            DaneKuriera kurier = kurierzyModel.PobierzKuriera(id);
+            // kurierzyModel.PobierzListePaczekKuriera
+            if (kurier == null)
+            {
+                throw new NotImplementedException();
+               // paczki.wyswietlOknoSzczegolowPaczki(paczka);
+            }
+            else
+            {
+                paczki.wyswietlOknoSzczegolowPaczki(paczka);
+               // throw new NotImplementedException();
+            }            
+           // kurierzy.wyswietlOknoSzczegolowKuriera(kurier, "Kurier: ");
             
           //  throw new NotImplementedException();
         }

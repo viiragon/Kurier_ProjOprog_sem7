@@ -43,6 +43,7 @@ namespace Kurier.Presenters.CentralaManager.KurierzyCM
             bool poprawne = kurierzyModel.WalidujDaneKuriera(kurier);
                 if(poprawne)
             {
+                
                 //Dodac
                 throw new NotImplementedException();
                 //kurierzyModel.DodajKuriera(kurier);
