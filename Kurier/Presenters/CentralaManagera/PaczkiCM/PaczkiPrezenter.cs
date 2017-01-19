@@ -13,6 +13,7 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
     public class PaczkiPrezenter : ICMPaczki
     {
         private Interfaces.View.IVCentralaPaczki paczki;
+        //Sprawdzic Kurirow dla paczek
         private Interfaces.View.IVCentralaKurierzy kurierzy;
 
         private PaczkaModel paczkaModel;
@@ -25,6 +26,7 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
             kurierzyModel = new KurierzyModel();
         }
 
+        //String[]?
         public void wybranoEdytujStatusPaczki(int id)
         {
             DanePaczki paczka = paczkaModel.PobierzPaczke(id);
@@ -46,6 +48,7 @@ namespace Kurier.Presenters.CentralaManager.PaczkiCM
             paczki.wyswietlOknoSzczegolowPaczki(paczka);
         }
 
+        //Metody w modelu
         public void wybranoPrzypiszKurieraDoPaczki(int idPaczki)
         {
             //paczki.
