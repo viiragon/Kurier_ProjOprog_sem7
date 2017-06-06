@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="kurier_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adresy">
+          <Key>
+            <PropertyRef Name="adres_id" />
+          </Key>
+          <Property Name="adres_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulica" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="region_id" Type="int" />
+        </EntityType>
+        <EntityType Name="klienci">
+          <Key>
+            <PropertyRef Name="klient_id" />
+          </Key>
+          <Property Name="klient_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="numer_telefonu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="typ_klienta" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="klienciadresy">
+          <Key>
+            <PropertyRef Name="klient_id" />
+            <PropertyRef Name="adres_id" />
+          </Key>
+          <Property Name="klient_id" Type="int" Nullable="false" />
+          <Property Name="adres_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kurierzy">
+          <Key>
+            <PropertyRef Name="kurier_id" />
+          </Key>
+          <Property Name="kurier_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="region_id" Type="int" />
+        </EntityType>
+        <EntityType Name="oddzialy">
+          <Key>
+            <PropertyRef Name="oddzial_id" />
+          </Key>
+          <Property Name="oddzial_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ulica" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="opisy">
+          <Key>
+            <PropertyRef Name="opis_id" />
+          </Key>
+          <Property Name="opis_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opis" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="przeplywy">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="oddzial_id" Type="int" Nullable="false" />
+          <Property Name="opis_id" Type="int" Nullable="false" />
+          <Property Name="data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="przesylki">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="koszt" Type="float" Nullable="false" />
+          <Property Name="ubezpieczenie" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="wymiary" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="waga" Type="float" Nullable="false" />
+          <Property Name="typ" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="regiony">
+          <Key>
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="region_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="regionyoddzialy">
+          <Key>
+            <PropertyRef Name="region_id" />
+            <PropertyRef Name="oddzial_id" />
+          </Key>
+          <Property Name="region_id" Type="int" Nullable="false" />
+          <Property Name="oddzial_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reklamacje">
+          <Key>
+            <PropertyRef Name="reklamacja_id" />
+          </Key>
+          <Property Name="reklamacja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="klient_id" Type="int" Nullable="false" />
+          <Property Name="przesylka_id" Type="int" Nullable="false" />
+          <Property Name="data_zlozenia" Type="datetime" Nullable="false" />
+          <Property Name="data_rozpatrzenia" Type="datetime" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="samochody">
+          <Key>
+            <PropertyRef Name="samochod_id" />
+          </Key>
+          <Property Name="samochod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numer_rejestracyjny" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pojemnosc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ladownosc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kurier_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="zamowienia">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nadawca_id" Type="int" Nullable="false" />
+          <Property Name="nadawca_adres_id" Type="int" Nullable="false" />
+          <Property Name="odbiorca_id" Type="int" Nullable="false" />
+          <Property Name="odbiorca_adres_id" Type="int" Nullable="false" />
+          <Property Name="kurier_id" Type="int" />
+          <Property Name="samochod_id" Type="int" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="zakonczona" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <Association Name="FK_adresy_regiony">
+          <End Role="regiony" Type="Self.regiony" Multiplicity="0..1" />
+          <End Role="adresy" Type="Self.adresy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regiony">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="adresy">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_klienciadresy_adresy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="1" />
+          <End Role="klienciadresy" Type="Self.klienciadresy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adresy">
+              <PropertyRef Name="adres_id" />
+            </Principal>
+            <Dependent Role="klienciadresy">
+              <PropertyRef Name="adres_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_klienciadresy_klienci">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="klienciadresy" Type="Self.klienciadresy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="klienciadresy">
+              <PropertyRef Name="klient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kurierzy_regiony">
+          <End Role="regiony" Type="Self.regiony" Multiplicity="0..1" />
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regiony">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="kurierzy">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_oddzialy">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oddzialy">
+              <PropertyRef Name="oddzial_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="oddzial_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_opisy">
+          <End Role="opisy" Type="Self.opisy" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opisy">
+              <PropertyRef Name="opis_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="opis_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_regionyoddzialy_oddzialy">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="1" />
+          <End Role="regionyoddzialy" Type="Self.regionyoddzialy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oddzialy">
+              <PropertyRef Name="oddzial_id" />
+            </Principal>
+            <Dependent Role="regionyoddzialy">
+              <PropertyRef Name="oddzial_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_regionyoddzialy_regiony">
+          <End Role="regiony" Type="Self.regiony" Multiplicity="1" />
+          <End Role="regionyoddzialy" Type="Self.regionyoddzialy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regiony">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="regionyoddzialy">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reklamacje_klienci">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="reklamacje" Type="Self.reklamacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="reklamacje">
+              <PropertyRef Name="klient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reklamacje_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="reklamacje" Type="Self.reklamacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="reklamacje">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_samochody_kurierzy">
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="0..1" />
+          <End Role="samochody" Type="Self.samochody" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kurierzy">
+              <PropertyRef Name="kurier_id" />
+            </Principal>
+            <Dependent Role="samochody">
+              <PropertyRef Name="kurier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_adresy_nadawcy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adresy">
+              <PropertyRef Name="adres_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="nadawca_adres_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_adresy_odbiorcy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adresy">
+              <PropertyRef Name="adres_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="odbiorca_adres_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_kurierzy">
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kurierzy">
+              <PropertyRef Name="kurier_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="kurier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_nadawcy">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="nadawca_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_odbiorcy">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="odbiorca_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_samochody">
+          <End Role="samochody" Type="Self.samochody" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="samochody">
+              <PropertyRef Name="samochod_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="samochod_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="kurier_dbModelStoreContainer">
+          <EntitySet Name="adresy" EntityType="Self.adresy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="klienci" EntityType="Self.klienci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="klienciadresy" EntityType="Self.klienciadresy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kurierzy" EntityType="Self.kurierzy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="oddzialy" EntityType="Self.oddzialy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opisy" EntityType="Self.opisy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="przeplywy" EntityType="Self.przeplywy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="przesylki" EntityType="Self.przesylki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="regiony" EntityType="Self.regiony" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="regionyoddzialy" EntityType="Self.regionyoddzialy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reklamacje" EntityType="Self.reklamacje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="samochody" EntityType="Self.samochody" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zamowienia" EntityType="Self.zamowienia" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_adresy_regiony" Association="Self.FK_adresy_regiony">
+            <End Role="regiony" EntitySet="regiony" />
+            <End Role="adresy" EntitySet="adresy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_klienciadresy_adresy" Association="Self.FK_klienciadresy_adresy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="klienciadresy" EntitySet="klienciadresy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_klienciadresy_klienci" Association="Self.FK_klienciadresy_klienci">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="klienciadresy" EntitySet="klienciadresy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kurierzy_regiony" Association="Self.FK_kurierzy_regiony">
+            <End Role="regiony" EntitySet="regiony" />
+            <End Role="kurierzy" EntitySet="kurierzy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_oddzialy" Association="Self.FK_przeplywy_oddzialy">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_opisy" Association="Self.FK_przeplywy_opisy">
+            <End Role="opisy" EntitySet="opisy" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_przesylki" Association="Self.FK_przeplywy_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_regionyoddzialy_oddzialy" Association="Self.FK_regionyoddzialy_oddzialy">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="regionyoddzialy" EntitySet="regionyoddzialy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_regionyoddzialy_regiony" Association="Self.FK_regionyoddzialy_regiony">
+            <End Role="regiony" EntitySet="regiony" />
+            <End Role="regionyoddzialy" EntitySet="regionyoddzialy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reklamacje_klienci" Association="Self.FK_reklamacje_klienci">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="reklamacje" EntitySet="reklamacje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reklamacje_przesylki" Association="Self.FK_reklamacje_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="reklamacje" EntitySet="reklamacje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_samochody_kurierzy" Association="Self.FK_samochody_kurierzy">
+            <End Role="kurierzy" EntitySet="kurierzy" />
+            <End Role="samochody" EntitySet="samochody" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_adresy_nadawcy" Association="Self.FK_zamowienia_adresy_nadawcy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_adresy_odbiorcy" Association="Self.FK_zamowienia_adresy_odbiorcy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_kurierzy" Association="Self.FK_zamowienia_kurierzy">
+            <End Role="kurierzy" EntitySet="kurierzy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_nadawcy" Association="Self.FK_zamowienia_nadawcy">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_odbiorcy" Association="Self.FK_zamowienia_odbiorcy">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_przesylki" Association="Self.FK_zamowienia_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_samochody" Association="Self.FK_zamowienia_samochody">
+            <End Role="samochody" EntitySet="samochody" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kurier_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adresy">
+          <Key>
+            <PropertyRef Name="adres_id" />
+          </Key>
+          <Property Name="adres_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="numer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="region_id" Type="Int32" />
+          <NavigationProperty Name="regiony" Relationship="Self.FK_adresy_regiony" FromRole="adresy" ToRole="regiony" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK_zamowienia_adresy_nadawcy" FromRole="adresy" ToRole="zamowienia" />
+          <NavigationProperty Name="zamowienia1" Relationship="Self.FK_zamowienia_adresy_odbiorcy" FromRole="adresy" ToRole="zamowienia" />
+          <NavigationProperty Name="klienci" Relationship="Self.klienciadresy" FromRole="adresy" ToRole="klienci" />
+        </EntityType>
+        <EntityType Name="klienci">
+          <Key>
+            <PropertyRef Name="klient_id" />
+          </Key>
+          <Property Name="klient_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numer_telefonu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="typ_klienta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="reklamacje" Relationship="Self.FK_reklamacje_klienci" FromRole="klienci" ToRole="reklamacje" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK_zamowienia_nadawcy" FromRole="klienci" ToRole="zamowienia" />
+          <NavigationProperty Name="zamowienia1" Relationship="Self.FK_zamowienia_odbiorcy" FromRole="klienci" ToRole="zamowienia" />
+          <NavigationProperty Name="adresy" Relationship="Self.klienciadresy" FromRole="klienci" ToRole="adresy" />
+        </EntityType>
+        <EntityType Name="kurierzy">
+          <Key>
+            <PropertyRef Name="kurier_id" />
+          </Key>
+          <Property Name="kurier_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="region_id" Type="Int32" />
+          <NavigationProperty Name="regiony" Relationship="Self.FK_kurierzy_regiony" FromRole="kurierzy" ToRole="regiony" />
+          <NavigationProperty Name="samochody" Relationship="Self.FK_samochody_kurierzy" FromRole="kurierzy" ToRole="samochody" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK_zamowienia_kurierzy" FromRole="kurierzy" ToRole="zamowienia" />
+        </EntityType>
+        <EntityType Name="oddzialy">
+          <Key>
+            <PropertyRef Name="oddzial_id" />
+          </Key>
+          <Property Name="oddzial_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="przeplywy" Relationship="Self.FK_przeplywy_oddzialy" FromRole="oddzialy" ToRole="przeplywy" />
+          <NavigationProperty Name="regiony" Relationship="Self.regionyoddzialy" FromRole="oddzialy" ToRole="regiony" />
+        </EntityType>
+        <EntityType Name="opisy">
+          <Key>
+            <PropertyRef Name="opis_id" />
+          </Key>
+          <Property Name="opis_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="przeplywy" Relationship="Self.FK_przeplywy_opisy" FromRole="opisy" ToRole="przeplywy" />
+        </EntityType>
+        <EntityType Name="przeplywy">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="oddzial_id" Type="Int32" Nullable="false" />
+          <Property Name="opis_id" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="oddzialy" Relationship="Self.FK_przeplywy_oddzialy" FromRole="przeplywy" ToRole="oddzialy" />
+          <NavigationProperty Name="opisy" Relationship="Self.FK_przeplywy_opisy" FromRole="przeplywy" ToRole="opisy" />
+          <NavigationProperty Name="przesylki" Relationship="Self.FK_przeplywy_przesylki" FromRole="przeplywy" ToRole="przesylki" />
+        </EntityType>
+        <EntityType Name="przesylki">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="koszt" Type="Double" Nullable="false" />
+          <Property Name="ubezpieczenie" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="wymiary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="waga" Type="Double" Nullable="false" />
+          <Property Name="typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="przeplywy" Relationship="Self.FK_przeplywy_przesylki" FromRole="przesylki" ToRole="przeplywy" />
+          <NavigationProperty Name="reklamacje" Relationship="Self.FK_reklamacje_przesylki" FromRole="przesylki" ToRole="reklamacje" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK_zamowienia_przesylki" FromRole="przesylki" ToRole="zamowienia" />
+        </EntityType>
+        <EntityType Name="regiony">
+          <Key>
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="region_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="miasto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="adresy" Relationship="Self.FK_adresy_regiony" FromRole="regiony" ToRole="adresy" />
+          <NavigationProperty Name="kurierzy" Relationship="Self.FK_kurierzy_regiony" FromRole="regiony" ToRole="kurierzy" />
+          <NavigationProperty Name="oddzialy" Relationship="Self.regionyoddzialy" FromRole="regiony" ToRole="oddzialy" />
+        </EntityType>
+        <EntityType Name="reklamacje">
+          <Key>
+            <PropertyRef Name="reklamacja_id" />
+          </Key>
+          <Property Name="reklamacja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="klient_id" Type="Int32" Nullable="false" />
+          <Property Name="przesylka_id" Type="Int32" Nullable="false" />
+          <Property Name="data_zlozenia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="data_rozpatrzenia" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="klienci" Relationship="Self.FK_reklamacje_klienci" FromRole="reklamacje" ToRole="klienci" />
+          <NavigationProperty Name="przesylki" Relationship="Self.FK_reklamacje_przesylki" FromRole="reklamacje" ToRole="przesylki" />
+        </EntityType>
+        <EntityType Name="samochody">
+          <Key>
+            <PropertyRef Name="samochod_id" />
+          </Key>
+          <Property Name="samochod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numer_rejestracyjny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pojemnosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ladownosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kurier_id" Type="Int32" />
+          <NavigationProperty Name="kurierzy" Relationship="Self.FK_samochody_kurierzy" FromRole="samochody" ToRole="kurierzy" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK_zamowienia_samochody" FromRole="samochody" ToRole="zamowienia" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="zamowienia">
+          <Key>
+            <PropertyRef Name="przesylka_id" />
+          </Key>
+          <Property Name="przesylka_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nadawca_id" Type="Int32" Nullable="false" />
+          <Property Name="nadawca_adres_id" Type="Int32" Nullable="false" />
+          <Property Name="odbiorca_id" Type="Int32" Nullable="false" />
+          <Property Name="odbiorca_adres_id" Type="Int32" Nullable="false" />
+          <Property Name="kurier_id" Type="Int32" />
+          <Property Name="samochod_id" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="zakonczona" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="adresy" Relationship="Self.FK_zamowienia_adresy_nadawcy" FromRole="zamowienia" ToRole="adresy" />
+          <NavigationProperty Name="adresy1" Relationship="Self.FK_zamowienia_adresy_odbiorcy" FromRole="zamowienia" ToRole="adresy" />
+          <NavigationProperty Name="klienci" Relationship="Self.FK_zamowienia_nadawcy" FromRole="zamowienia" ToRole="klienci" />
+          <NavigationProperty Name="klienci1" Relationship="Self.FK_zamowienia_odbiorcy" FromRole="zamowienia" ToRole="klienci" />
+          <NavigationProperty Name="kurierzy" Relationship="Self.FK_zamowienia_kurierzy" FromRole="zamowienia" ToRole="kurierzy" />
+          <NavigationProperty Name="przesylki" Relationship="Self.FK_zamowienia_przesylki" FromRole="zamowienia" ToRole="przesylki" />
+          <NavigationProperty Name="samochody" Relationship="Self.FK_zamowienia_samochody" FromRole="zamowienia" ToRole="samochody" />
+        </EntityType>
+        <Association Name="FK_adresy_regiony">
+          <End Role="regiony" Type="Self.regiony" Multiplicity="0..1" />
+          <End Role="adresy" Type="Self.adresy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regiony">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="adresy">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_adresy_nadawcy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adresy">
+              <PropertyRef Name="adres_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="nadawca_adres_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_adresy_odbiorcy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adresy">
+              <PropertyRef Name="adres_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="odbiorca_adres_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reklamacje_klienci">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="reklamacje" Type="Self.reklamacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="reklamacje">
+              <PropertyRef Name="klient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_nadawcy">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="nadawca_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_odbiorcy">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="odbiorca_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kurierzy_regiony">
+          <End Role="regiony" Type="Self.regiony" Multiplicity="0..1" />
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regiony">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="kurierzy">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_samochody_kurierzy">
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="0..1" />
+          <End Role="samochody" Type="Self.samochody" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kurierzy">
+              <PropertyRef Name="kurier_id" />
+            </Principal>
+            <Dependent Role="samochody">
+              <PropertyRef Name="kurier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_kurierzy">
+          <End Role="kurierzy" Type="Self.kurierzy" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kurierzy">
+              <PropertyRef Name="kurier_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="kurier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_oddzialy">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oddzialy">
+              <PropertyRef Name="oddzial_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="oddzial_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_opisy">
+          <End Role="opisy" Type="Self.opisy" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opisy">
+              <PropertyRef Name="opis_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="opis_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_przeplywy_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="przeplywy" Type="Self.przeplywy" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="przeplywy">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_reklamacje_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="reklamacje" Type="Self.reklamacje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="reklamacje">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_przesylki">
+          <End Role="przesylki" Type="Self.przesylki" Multiplicity="1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="przesylki">
+              <PropertyRef Name="przesylka_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="przesylka_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_zamowienia_samochody">
+          <End Role="samochody" Type="Self.samochody" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="samochody">
+              <PropertyRef Name="samochod_id" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="samochod_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="klienciadresy">
+          <End Role="adresy" Type="Self.adresy" Multiplicity="*" />
+          <End Role="klienci" Type="Self.klienci" Multiplicity="*" />
+        </Association>
+        <Association Name="regionyoddzialy">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="*" />
+          <End Role="regiony" Type="Self.regiony" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="kurier_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adresy" EntityType="Self.adresy" />
+          <EntitySet Name="klienci" EntityType="Self.klienci" />
+          <EntitySet Name="kurierzy" EntityType="Self.kurierzy" />
+          <EntitySet Name="oddzialy" EntityType="Self.oddzialy" />
+          <EntitySet Name="opisy" EntityType="Self.opisy" />
+          <EntitySet Name="przeplywy" EntityType="Self.przeplywy" />
+          <EntitySet Name="przesylki" EntityType="Self.przesylki" />
+          <EntitySet Name="regiony" EntityType="Self.regiony" />
+          <EntitySet Name="reklamacje" EntityType="Self.reklamacje" />
+          <EntitySet Name="samochody" EntityType="Self.samochody" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="zamowienia" EntityType="Self.zamowienia" />
+          <AssociationSet Name="FK_adresy_regiony" Association="Self.FK_adresy_regiony">
+            <End Role="regiony" EntitySet="regiony" />
+            <End Role="adresy" EntitySet="adresy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_adresy_nadawcy" Association="Self.FK_zamowienia_adresy_nadawcy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_adresy_odbiorcy" Association="Self.FK_zamowienia_adresy_odbiorcy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reklamacje_klienci" Association="Self.FK_reklamacje_klienci">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="reklamacje" EntitySet="reklamacje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_nadawcy" Association="Self.FK_zamowienia_nadawcy">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_odbiorcy" Association="Self.FK_zamowienia_odbiorcy">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kurierzy_regiony" Association="Self.FK_kurierzy_regiony">
+            <End Role="regiony" EntitySet="regiony" />
+            <End Role="kurierzy" EntitySet="kurierzy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_samochody_kurierzy" Association="Self.FK_samochody_kurierzy">
+            <End Role="kurierzy" EntitySet="kurierzy" />
+            <End Role="samochody" EntitySet="samochody" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_kurierzy" Association="Self.FK_zamowienia_kurierzy">
+            <End Role="kurierzy" EntitySet="kurierzy" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_oddzialy" Association="Self.FK_przeplywy_oddzialy">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_opisy" Association="Self.FK_przeplywy_opisy">
+            <End Role="opisy" EntitySet="opisy" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_przeplywy_przesylki" Association="Self.FK_przeplywy_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="przeplywy" EntitySet="przeplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_reklamacje_przesylki" Association="Self.FK_reklamacje_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="reklamacje" EntitySet="reklamacje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_przesylki" Association="Self.FK_zamowienia_przesylki">
+            <End Role="przesylki" EntitySet="przesylki" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_zamowienia_samochody" Association="Self.FK_zamowienia_samochody">
+            <End Role="samochody" EntitySet="samochody" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="klienciadresy" Association="Self.klienciadresy">
+            <End Role="adresy" EntitySet="adresy" />
+            <End Role="klienci" EntitySet="klienci" />
+          </AssociationSet>
+          <AssociationSet Name="regionyoddzialy" Association="Self.regionyoddzialy">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="regiony" EntitySet="regiony" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kurier_dbModelStoreContainer" CdmEntityContainer="kurier_dbEntities">
+          <EntitySetMapping Name="adresy">
+            <EntityTypeMapping TypeName="kurier_dbModel.adresy">
+              <MappingFragment StoreEntitySet="adresy">
+                <ScalarProperty Name="adres_id" ColumnName="adres_id" />
+                <ScalarProperty Name="ulica" ColumnName="ulica" />
+                <ScalarProperty Name="numer" ColumnName="numer" />
+                <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+                <ScalarProperty Name="miasto" ColumnName="miasto" />
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="klienci">
+            <EntityTypeMapping TypeName="kurier_dbModel.klienci">
+              <MappingFragment StoreEntitySet="klienci">
+                <ScalarProperty Name="klient_id" ColumnName="klient_id" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="numer_telefonu" ColumnName="numer_telefonu" />
+                <ScalarProperty Name="typ_klienta" ColumnName="typ_klienta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kurierzy">
+            <EntityTypeMapping TypeName="kurier_dbModel.kurierzy">
+              <MappingFragment StoreEntitySet="kurierzy">
+                <ScalarProperty Name="kurier_id" ColumnName="kurier_id" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oddzialy">
+            <EntityTypeMapping TypeName="kurier_dbModel.oddzialy">
+              <MappingFragment StoreEntitySet="oddzialy">
+                <ScalarProperty Name="oddzial_id" ColumnName="oddzial_id" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="ulica" ColumnName="ulica" />
+                <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+                <ScalarProperty Name="miasto" ColumnName="miasto" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opisy">
+            <EntityTypeMapping TypeName="kurier_dbModel.opisy">
+              <MappingFragment StoreEntitySet="opisy">
+                <ScalarProperty Name="opis_id" ColumnName="opis_id" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="przeplywy">
+            <EntityTypeMapping TypeName="kurier_dbModel.przeplywy">
+              <MappingFragment StoreEntitySet="przeplywy">
+                <ScalarProperty Name="przesylka_id" ColumnName="przesylka_id" />
+                <ScalarProperty Name="oddzial_id" ColumnName="oddzial_id" />
+                <ScalarProperty Name="opis_id" ColumnName="opis_id" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="przesylki">
+            <EntityTypeMapping TypeName="kurier_dbModel.przesylki">
+              <MappingFragment StoreEntitySet="przesylki">
+                <ScalarProperty Name="przesylka_id" ColumnName="przesylka_id" />
+                <ScalarProperty Name="numer" ColumnName="numer" />
+                <ScalarProperty Name="koszt" ColumnName="koszt" />
+                <ScalarProperty Name="ubezpieczenie" ColumnName="ubezpieczenie" />
+                <ScalarProperty Name="wymiary" ColumnName="wymiary" />
+                <ScalarProperty Name="waga" ColumnName="waga" />
+                <ScalarProperty Name="typ" ColumnName="typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="regiony">
+            <EntityTypeMapping TypeName="kurier_dbModel.regiony">
+              <MappingFragment StoreEntitySet="regiony">
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="miasto" ColumnName="miasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reklamacje">
+            <EntityTypeMapping TypeName="kurier_dbModel.reklamacje">
+              <MappingFragment StoreEntitySet="reklamacje">
+                <ScalarProperty Name="reklamacja_id" ColumnName="reklamacja_id" />
+                <ScalarProperty Name="klient_id" ColumnName="klient_id" />
+                <ScalarProperty Name="przesylka_id" ColumnName="przesylka_id" />
+                <ScalarProperty Name="data_zlozenia" ColumnName="data_zlozenia" />
+                <ScalarProperty Name="data_rozpatrzenia" ColumnName="data_rozpatrzenia" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="samochody">
+            <EntityTypeMapping TypeName="kurier_dbModel.samochody">
+              <MappingFragment StoreEntitySet="samochody">
+                <ScalarProperty Name="samochod_id" ColumnName="samochod_id" />
+                <ScalarProperty Name="numer_rejestracyjny" ColumnName="numer_rejestracyjny" />
+                <ScalarProperty Name="pojemnosc" ColumnName="pojemnosc" />
+                <ScalarProperty Name="ladownosc" ColumnName="ladownosc" />
+                <ScalarProperty Name="kurier_id" ColumnName="kurier_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="kurier_dbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zamowienia">
+            <EntityTypeMapping TypeName="kurier_dbModel.zamowienia">
+              <MappingFragment StoreEntitySet="zamowienia">
+                <ScalarProperty Name="przesylka_id" ColumnName="przesylka_id" />
+                <ScalarProperty Name="nadawca_id" ColumnName="nadawca_id" />
+                <ScalarProperty Name="nadawca_adres_id" ColumnName="nadawca_adres_id" />
+                <ScalarProperty Name="odbiorca_id" ColumnName="odbiorca_id" />
+                <ScalarProperty Name="odbiorca_adres_id" ColumnName="odbiorca_adres_id" />
+                <ScalarProperty Name="kurier_id" ColumnName="kurier_id" />
+                <ScalarProperty Name="samochod_id" ColumnName="samochod_id" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="zakonczona" ColumnName="zakonczona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="klienciadresy" TypeName="kurier_dbModel.klienciadresy" StoreEntitySet="klienciadresy">
+            <EndProperty Name="adresy">
+              <ScalarProperty Name="adres_id" ColumnName="adres_id" />
+            </EndProperty>
+            <EndProperty Name="klienci">
+              <ScalarProperty Name="klient_id" ColumnName="klient_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="regionyoddzialy" TypeName="kurier_dbModel.regionyoddzialy" StoreEntitySet="regionyoddzialy">
+            <EndProperty Name="oddzialy">
+              <ScalarProperty Name="oddzial_id" ColumnName="oddzial_id" />
+            </EndProperty>
+            <EndProperty Name="regiony">
+              <ScalarProperty Name="region_id" ColumnName="region_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
